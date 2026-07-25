@@ -40,6 +40,7 @@ PROJECT_MODULES = [
     "app.strategy.multi_timeframe_context",
     "app.strategy.order_block_lifecycle",
     "app.strategy.order_blocks",
+    "app.strategy.setup_candidate",
     "app.strategy.setup_qualification",
     "app.strategy.strategy_context",
     "app.strategy.strategy_readiness",
