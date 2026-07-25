@@ -32,6 +32,7 @@ PROJECT_MODULES = [
     "app.strategy.liquidity",
     "app.strategy.liquidity_sweeps",
     "app.strategy.market_structure",
+    "app.strategy.order_blocks",
     "app.strategy.swings",
 ]
 
