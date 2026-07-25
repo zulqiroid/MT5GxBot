@@ -18,6 +18,13 @@ from app.domain.risk import (
     RiskLimits,
     evaluate_trade_plan,
 )
+from app.domain.sizing import (
+    GoldSymbolSpecification,
+    PositionSize,
+    PositionSizeBlockReason,
+    PositionSizeDecision,
+    calculate_position_size,
+)
 from app.domain.trading import (
     CANONICAL_GOLD_SYMBOL,
     MAX_TRADE_RISK_PERCENT,
@@ -36,7 +43,11 @@ __all__ = [
     "DailyRiskSnapshot",
     "EntryType",
     "GoldExposureSnapshot",
+    "GoldSymbolSpecification",
     "PendingOrderSnapshot",
+    "PositionSize",
+    "PositionSizeBlockReason",
+    "PositionSizeDecision",
     "PositionSnapshot",
     "RiskBlockReason",
     "RiskDecision",
@@ -46,6 +57,7 @@ __all__ = [
     "TradePlan",
     "TradePlanStatus",
     "TradeSide",
+    "calculate_position_size",
     "can_transition",
     "evaluate_trade_plan",
 ]

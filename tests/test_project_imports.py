@@ -9,6 +9,7 @@ PROJECT_MODULES = [
     "app.domain.exposure",
     "app.domain.lifecycle",
     "app.domain.risk",
+    "app.domain.sizing",
     "app.domain.trading",
     "app.logs.logger",
     "app.broker.account_service",
