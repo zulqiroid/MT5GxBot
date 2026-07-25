@@ -1,0 +1,18 @@
+# ============================================================
+# GoldXBot — Direct Runtime Dependencies
+# ============================================================
+#
+# This file contains dependencies directly used by GoldXBot.
+# Do not add transitive dependencies here.
+#
+# Python runtime: CPython 3.11 x64
+# Target platform: Windows x64
+#
+
+loguru==0.7.3
+MetaTrader5==5.0.5735
+numpy==2.4.6
+pandas==3.0.3
+pydantic==2.13.4
+pydantic-settings==2.14.2
+python-dotenv==1.2.2
