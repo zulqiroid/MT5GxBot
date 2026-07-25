@@ -19,6 +19,7 @@ PROJECT_MODULES = [
     "app.logs.logger",
     "app.market.candle_model",
     "app.market.closed_candle",
+    "app.market.closed_candle_service",
     "app.market.market_data_service",
     "app.market.market_data_validator",
     "app.market.timeframes",
