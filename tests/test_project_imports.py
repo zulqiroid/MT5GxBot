@@ -26,6 +26,7 @@ PROJECT_MODULES = [
     "app.market.multi_timeframe_service",
     "app.market.timeframes",
     "app.safety.trading_permission_guard",
+    "app.strategy.displacement",
     "app.strategy.fair_value_gaps",
     "app.strategy.fvg_mitigation",
     "app.strategy.liquidity",
