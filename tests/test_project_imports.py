@@ -7,6 +7,7 @@ PROJECT_MODULES = [
     "app.config.settings",
     "app.domain",
     "app.domain.exposure",
+    "app.domain.lifecycle",
     "app.domain.risk",
     "app.domain.trading",
     "app.logs.logger",
