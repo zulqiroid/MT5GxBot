@@ -33,3 +33,17 @@ DEFAULT_GOLD_SYMBOL_CANDIDATES: list[str] = [
     "GOLD",
     "Gold",
 ]
+
+LIVE_TRADING_CONFIRMATION_PHRASE = "I_ACKNOWLEDGE_LIVE_TRADING_RISK"
+
+VALID_LOG_LEVELS = frozenset(
+    {
+        "TRACE",
+        "DEBUG",
+        "INFO",
+        "SUCCESS",
+        "WARNING",
+        "ERROR",
+        "CRITICAL",
+    }
+)
