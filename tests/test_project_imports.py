@@ -27,6 +27,7 @@ PROJECT_MODULES = [
     "app.market.timeframes",
     "app.safety.trading_permission_guard",
     "app.strategy.liquidity",
+    "app.strategy.liquidity_sweeps",
     "app.strategy.market_structure",
     "app.strategy.swings",
 ]
