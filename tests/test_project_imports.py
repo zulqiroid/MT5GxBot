@@ -34,6 +34,7 @@ PROJECT_MODULES = [
     "app.strategy.liquidity_sweeps",
     "app.strategy.market_structure",
     "app.strategy.ote_zones",
+    "app.strategy.multi_timeframe_context",
     "app.strategy.order_block_lifecycle",
     "app.strategy.order_blocks",
     "app.strategy.strategy_context",
