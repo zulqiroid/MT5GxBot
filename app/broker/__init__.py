@@ -14,6 +14,14 @@ from app.broker.mt5_client import (
     MT5ConnectionSnapshot,
     MT5ConnectionState,
 )
+from app.broker.symbol_service import (
+    BrokerGoldSymbolSnapshot,
+    GoldSymbolService,
+    SymbolInfoClient,
+    SymbolService,
+    SymbolServiceError,
+    SymbolServiceErrorReason,
+)
 
 __all__ = [
     "AccountInfoClient",
@@ -22,10 +30,16 @@ __all__ = [
     "AccountServiceError",
     "AccountServiceErrorReason",
     "BrokerAccountSnapshot",
+    "BrokerGoldSymbolSnapshot",
+    "GoldSymbolService",
     "MT5Adapter",
     "MT5Client",
     "MT5ConnectionError",
     "MT5ConnectionSnapshot",
     "MT5ConnectionState",
     "MetaTrader5Adapter",
+    "SymbolInfoClient",
+    "SymbolService",
+    "SymbolServiceError",
+    "SymbolServiceErrorReason",
 ]
