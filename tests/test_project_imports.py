@@ -27,6 +27,7 @@ PROJECT_MODULES = [
     "app.market.timeframes",
     "app.safety.trading_permission_guard",
     "app.strategy.dealing_ranges",
+    "app.strategy.directional_permission",
     "app.strategy.displacement",
     "app.strategy.fair_value_gaps",
     "app.strategy.fvg_mitigation",
