@@ -3,6 +3,10 @@ import importlib
 import pytest
 
 PROJECT_MODULES = [
+    "app.broker",
+    "app.broker.account_service",
+    "app.broker.mt5_client",
+    "app.broker.symbol_service",
     "app.config.constants",
     "app.config.settings",
     "app.domain",
@@ -12,9 +16,6 @@ PROJECT_MODULES = [
     "app.domain.sizing",
     "app.domain.trading",
     "app.logs.logger",
-    "app.broker.account_service",
-    "app.broker.mt5_client",
-    "app.broker.symbol_service",
     "app.market.candle_model",
     "app.market.market_data_service",
     "app.market.market_data_validator",
