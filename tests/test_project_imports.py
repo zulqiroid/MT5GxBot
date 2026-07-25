@@ -42,6 +42,7 @@ PROJECT_MODULES = [
     "app.strategy.order_blocks",
     "app.strategy.setup_candidate",
     "app.strategy.price_planning_admission",
+    "app.strategy.price_planning_blueprint",
     "app.strategy.setup_candidate_quality",
     "app.strategy.setup_qualification",
     "app.strategy.strategy_context",
