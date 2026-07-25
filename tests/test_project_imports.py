@@ -5,6 +5,8 @@ import pytest
 PROJECT_MODULES = [
     "app.config.constants",
     "app.config.settings",
+    "app.domain",
+    "app.domain.trading",
     "app.logs.logger",
     "app.broker.account_service",
     "app.broker.mt5_client",
