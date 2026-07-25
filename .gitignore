@@ -1,0 +1,100 @@
+﻿# ============================================================
+# GoldXBot — Repository Ignore Policy
+# ============================================================
+
+# Secrets and local configuration
+.env
+.env.*
+!.env.example
+
+*.pem
+*.key
+*.p12
+*.pfx
+credentials*.json
+secrets*.json
+
+# Python virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# Python caches
+__pycache__/
+*.py[cod]
+*$py.class
+
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.pytype/
+.hypothesis/
+
+# Coverage
+.coverage
+.coverage.*
+coverage.xml
+htmlcov/
+
+# Build artifacts
+build/
+dist/
+*.egg-info/
+.eggs/
+wheels/
+
+# Tool environments
+.tox/
+.nox/
+
+# Runtime logs
+*.log
+*.log.*
+logs/
+data/logs/*
+!data/logs/.gitkeep
+
+# Runtime state
+data/state/
+data/cache/
+data/tmp/
+data/exports/
+data/reports/
+
+# Local databases
+*.db
+*.sqlite
+*.sqlite3
+*.db-journal
+*.db-shm
+*.db-wal
+*.sqlite-journal
+*.sqlite-shm
+*.sqlite-wal
+
+# Temporary files
+*.tmp
+*.temp
+*.bak
+*.backup
+*.swp
+*.swo
+
+# MetaTrader compiled files
+*.ex4
+*.ex5
+
+# IDEs
+.vscode/
+.idea/
+*.iml
+
+# Operating system files
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Crash dumps
+*.dmp
+*.dump
