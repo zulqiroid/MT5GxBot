@@ -40,6 +40,7 @@ PROJECT_MODULES = [
     "app.strategy.order_block_lifecycle",
     "app.strategy.order_blocks",
     "app.strategy.strategy_context",
+    "app.strategy.strategy_readiness",
     "app.strategy.swings",
 ]
 
