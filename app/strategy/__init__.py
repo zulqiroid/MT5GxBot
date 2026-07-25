@@ -1,3 +1,21 @@
+from app.strategy.market_structure import (
+    BreakDirection,
+    BreakKind,
+    MarketStructureAnalysisError,
+    MarketStructureAnalyzer,
+    MarketStructureBias,
+    MarketStructureErrorReason,
+    MarketStructurePolicy,
+    MarketStructureSnapshot,
+    StructureAnalyzer,
+    StructureBias,
+    StructureBreakDirection,
+    StructureBreakEvent,
+    StructureBreakKind,
+    StructureEvent,
+    StructureSnapshot,
+    analyze_market_structure,
+)
 from app.strategy.swings import (
     ConfirmedSwingDetector,
     ConfirmedSwingPoint,
@@ -13,9 +31,24 @@ from app.strategy.swings import (
 )
 
 __all__ = [
+    "BreakDirection",
+    "BreakKind",
     "ConfirmedSwingDetector",
     "ConfirmedSwingPoint",
     "ConfirmedSwingSet",
+    "MarketStructureAnalysisError",
+    "MarketStructureAnalyzer",
+    "MarketStructureBias",
+    "MarketStructureErrorReason",
+    "MarketStructurePolicy",
+    "MarketStructureSnapshot",
+    "StructureAnalyzer",
+    "StructureBias",
+    "StructureBreakDirection",
+    "StructureBreakEvent",
+    "StructureBreakKind",
+    "StructureEvent",
+    "StructureSnapshot",
     "SwingDetectionError",
     "SwingDetectionErrorReason",
     "SwingDetectionPolicy",
@@ -23,5 +56,6 @@ __all__ = [
     "SwingKind",
     "SwingPoint",
     "SwingPointSet",
+    "analyze_market_structure",
     "detect_confirmed_swings",
 ]
