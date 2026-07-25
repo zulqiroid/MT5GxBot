@@ -22,6 +22,7 @@ PROJECT_MODULES = [
     "app.market.closed_candle_service",
     "app.market.market_data_service",
     "app.market.market_data_validator",
+    "app.market.multi_timeframe_service",
     "app.market.timeframes",
     "app.safety.trading_permission_guard",
 ]
