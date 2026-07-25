@@ -6,6 +6,7 @@ PROJECT_MODULES = [
     "app.config.constants",
     "app.config.settings",
     "app.domain",
+    "app.domain.exposure",
     "app.domain.trading",
     "app.logs.logger",
     "app.broker.account_service",
