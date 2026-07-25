@@ -6,6 +6,16 @@ from app.broker.account_service import (
     AccountServiceErrorReason,
     BrokerAccountSnapshot,
 )
+from app.broker.exposure_service import (
+    BrokerExposureClient,
+    BrokerExposureErrorReason,
+    BrokerExposureSafetyIssue,
+    BrokerExposureService,
+    BrokerExposureServiceError,
+    BrokerGoldExposureSnapshot,
+    BrokerPendingOrderSnapshot,
+    BrokerPositionSnapshot,
+)
 from app.broker.mt5_client import (
     MetaTrader5Adapter,
     MT5Adapter,
@@ -30,7 +40,15 @@ __all__ = [
     "AccountServiceError",
     "AccountServiceErrorReason",
     "BrokerAccountSnapshot",
+    "BrokerExposureClient",
+    "BrokerExposureErrorReason",
+    "BrokerExposureSafetyIssue",
+    "BrokerExposureService",
+    "BrokerExposureServiceError",
+    "BrokerGoldExposureSnapshot",
     "BrokerGoldSymbolSnapshot",
+    "BrokerPendingOrderSnapshot",
+    "BrokerPositionSnapshot",
     "GoldSymbolService",
     "MT5Adapter",
     "MT5Client",

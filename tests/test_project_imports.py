@@ -5,6 +5,7 @@ import pytest
 PROJECT_MODULES = [
     "app.broker",
     "app.broker.account_service",
+    "app.broker.exposure_service",
     "app.broker.mt5_client",
     "app.broker.symbol_service",
     "app.config.constants",

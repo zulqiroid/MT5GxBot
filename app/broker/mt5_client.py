@@ -140,6 +140,26 @@ class MetaTrader5Adapter:
             count,
         )
 
+    def positions_get(
+        self,
+        *,
+        symbol: str | None = None,
+    ) -> Any:
+        if symbol is None:
+            return mt5.positions_get()
+
+        return mt5.positions_get(symbol=symbol)
+
+    def orders_get(
+        self,
+        *,
+        symbol: str | None = None,
+    ) -> Any:
+        if symbol is None:
+            return mt5.orders_get()
+
+        return mt5.orders_get(symbol=symbol)
+
 
 class MT5Client:
     """
@@ -466,6 +486,68 @@ class MT5Client:
                     timeframe,
                     start_pos,
                     count,
+                ),
+            )
+
+    def positions_get(
+        self,
+        symbol: str | None = None,
+    ) -> Any:
+        """Read open positions without performing trade operations."""
+
+        normalized_symbol = None if symbol is None else self._required_symbol(symbol)
+
+        with self._lock:
+            self._require_initialized()
+
+            operation = getattr(
+                self._adapter,
+                "positions_get",
+                None,
+            )
+
+            if not callable(operation):
+                self._last_error = (
+                    -1,
+                    "MT5 adapter does not support positions_get.",
+                )
+                raise MT5ConnectionError(*self._last_error)
+
+            return self._safe_adapter_read(
+                "positions_get",
+                lambda: operation(
+                    symbol=normalized_symbol,
+                ),
+            )
+
+    def orders_get(
+        self,
+        symbol: str | None = None,
+    ) -> Any:
+        """Read active orders without performing trade operations."""
+
+        normalized_symbol = None if symbol is None else self._required_symbol(symbol)
+
+        with self._lock:
+            self._require_initialized()
+
+            operation = getattr(
+                self._adapter,
+                "orders_get",
+                None,
+            )
+
+            if not callable(operation):
+                self._last_error = (
+                    -1,
+                    "MT5 adapter does not support orders_get.",
+                )
+                raise MT5ConnectionError(*self._last_error)
+
+            return self._safe_adapter_read(
+                "orders_get",
+                lambda: operation(
+                    symbol=normalized_symbol,
                 ),
             )
 
