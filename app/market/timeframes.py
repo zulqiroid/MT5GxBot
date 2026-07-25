@@ -1,7 +1,6 @@
-﻿from __future__ import annotations
+from __future__ import annotations
 
 import MetaTrader5 as mt5
-
 
 MT5_TIMEFRAMES: dict[str, int] = {
     "M1": mt5.TIMEFRAME_M1,
@@ -19,8 +18,6 @@ def get_mt5_timeframe(timeframe_name: str) -> int:
 
     if timeframe is None:
         supported = ", ".join(MT5_TIMEFRAMES.keys())
-        raise ValueError(
-            f"Unsupported timeframe: {timeframe_name}. Supported: {supported}"
-        )
+        raise ValueError(f"Unsupported timeframe: {timeframe_name}. Supported: {supported}")
 
     return timeframe

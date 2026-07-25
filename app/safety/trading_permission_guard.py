@@ -1,4 +1,4 @@
-﻿from __future__ import annotations
+from __future__ import annotations
 
 from dataclasses import dataclass
 
@@ -70,14 +70,10 @@ class TradingPermissionGuard:
             )
 
         if not account_trade_allowed:
-            reasons.append(
-                "Account trading is not allowed by terminal/broker/account permissions."
-            )
+            reasons.append("Account trading is not allowed by terminal/broker/account permissions.")
 
         if not account_expert_allowed:
-            reasons.append(
-                "Expert/algorithmic trading is not allowed for this account/session."
-            )
+            reasons.append("Expert/algorithmic trading is not allowed for this account/session.")
 
         if symbol_info is None:
             reasons.append(f"Symbol info missing for {symbol}.")
@@ -98,14 +94,11 @@ class TradingPermissionGuard:
                 )
 
         live_mode_blocked = (
-            self._settings.bot_mode == BotMode.LIVE
-            and not self._settings.enable_live_trading
+            self._settings.bot_mode == BotMode.LIVE and not self._settings.enable_live_trading
         )
 
         if live_mode_blocked:
-            reasons.append(
-                "LIVE mode is blocked because ENABLE_LIVE_TRADING=false."
-            )
+            reasons.append("LIVE mode is blocked because ENABLE_LIVE_TRADING=false.")
 
         safe_for_future_order = (
             terminal_connected

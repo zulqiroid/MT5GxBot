@@ -1,10 +1,9 @@
-﻿from __future__ import annotations
+from __future__ import annotations
 
 from dataclasses import dataclass
 
 import pandas as pd
 from loguru import logger
-
 
 REQUIRED_CANDLE_COLUMNS: tuple[str, ...] = (
     "time",
@@ -51,17 +50,13 @@ class MarketDataValidator:
                 reasons=("DataFrame is empty.",),
             )
 
-        missing_columns = [
-            column for column in REQUIRED_CANDLE_COLUMNS if column not in df.columns
-        ]
+        missing_columns = [column for column in REQUIRED_CANDLE_COLUMNS if column not in df.columns]
 
         if missing_columns:
             reasons.append(f"Missing columns: {missing_columns}")
 
         if len(df) < minimum_candles:
-            reasons.append(
-                f"Not enough candles. Current: {len(df)}, Minimum: {minimum_candles}"
-            )
+            reasons.append(f"Not enough candles. Current: {len(df)}, Minimum: {minimum_candles}")
 
         if "time" in df.columns:
             if df["time"].isna().any():

@@ -7,9 +7,9 @@ from pydantic import Field, field_validator, model_validator
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
 from app.config.constants import (
+    DEFAULT_GOLD_SYMBOL_CANDIDATES,
     AppEnvironment,
     BotMode,
-    DEFAULT_GOLD_SYMBOL_CANDIDATES,
     TimeframeName,
 )
 
@@ -122,8 +122,7 @@ class Settings(BaseSettings):
     def validate_safety_rules(self) -> "Settings":
         if self.risk_per_trade_percent > self.max_risk_per_trade_percent:
             raise ValueError(
-                "RISK_PER_TRADE_PERCENT cannot be greater than "
-                "MAX_RISK_PER_TRADE_PERCENT."
+                "RISK_PER_TRADE_PERCENT cannot be greater than MAX_RISK_PER_TRADE_PERCENT."
             )
 
         if self.bot_mode == BotMode.LIVE and not self.enable_live_trading:

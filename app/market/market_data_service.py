@@ -1,4 +1,4 @@
-﻿from __future__ import annotations
+from __future__ import annotations
 
 from datetime import datetime
 
@@ -63,9 +63,7 @@ class MarketDataService:
         self._validator.log_report(report)
 
         if not report.is_valid:
-            raise RuntimeError(
-                "Market data validation failed: " + " | ".join(report.reasons)
-            )
+            raise RuntimeError("Market data validation failed: " + " | ".join(report.reasons))
 
         return df
 
@@ -107,9 +105,9 @@ class MarketDataService:
         )
         logger.info(
             "\n{}",
-            candle_batch.dataframe[
-                ["time", "open", "high", "low", "close", "tick_volume"]
-            ].tail(count),
+            candle_batch.dataframe[["time", "open", "high", "low", "close", "tick_volume"]].tail(
+                count
+            ),
         )
 
         logger.info("========== LATEST VALIDATED CANDLE ==========")

@@ -1,4 +1,4 @@
-﻿from __future__ import annotations
+from __future__ import annotations
 
 import sys
 from datetime import datetime
@@ -60,12 +60,8 @@ def run_health_check(settings: Settings) -> int:
         permission_report = permission_guard.run_diagnostics(gold_symbol)
 
         if not permission_report.safe_for_future_order:
-            logger.warning(
-                "Future order execution is currently blocked by safety diagnostics."
-            )
-            logger.warning(
-                "This is OK in Phase 1 because we are not placing trades yet."
-            )
+            logger.warning("Future order execution is currently blocked by safety diagnostics.")
+            logger.warning("This is OK in Phase 1 because we are not placing trades yet.")
 
         market_data_service = MarketDataService(
             mt5_client=mt5_client,

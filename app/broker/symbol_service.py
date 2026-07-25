@@ -1,4 +1,4 @@
-﻿from __future__ import annotations
+from __future__ import annotations
 
 from loguru import logger
 
@@ -47,9 +47,7 @@ class SymbolService:
                 logger.success("Gold symbol detected from broker list: {}", symbol_name)
                 return symbol_name
 
-        logger.error(
-            "No gold symbol found. Check MT5 Market Watch and GOLD_SYMBOL_CANDIDATES."
-        )
+        logger.error("No gold symbol found. Check MT5 Market Watch and GOLD_SYMBOL_CANDIDATES.")
         return None
 
     def log_symbol_info(self, symbol: str) -> None:
