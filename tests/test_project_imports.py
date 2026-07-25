@@ -36,6 +36,7 @@ PROJECT_MODULES = [
     "app.strategy.ote_zones",
     "app.strategy.order_block_lifecycle",
     "app.strategy.order_blocks",
+    "app.strategy.strategy_context",
     "app.strategy.swings",
 ]
 
