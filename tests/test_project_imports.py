@@ -58,6 +58,7 @@ PROJECT_MODULES = [
     "app.strategy.planning_audit_manifest",
     "app.strategy.planning_audit_record",
     "app.strategy.planning_audit_export",
+    "app.strategy.planning_audit_verification",
     "app.strategy.setup_candidate_quality",
     "app.strategy.setup_qualification",
     "app.strategy.strategy_context",
