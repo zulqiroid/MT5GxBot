@@ -47,6 +47,7 @@ PROJECT_MODULES = [
     "app.strategy.price_reference_availability",
     "app.strategy.price_reference_resolution",
     "app.strategy.reward_risk_analysis",
+    "app.strategy.risk_budget_admission",
     "app.strategy.setup_candidate_quality",
     "app.strategy.setup_qualification",
     "app.strategy.strategy_context",
