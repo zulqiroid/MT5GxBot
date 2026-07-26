@@ -49,6 +49,7 @@ PROJECT_MODULES = [
     "app.strategy.reward_risk_analysis",
     "app.strategy.risk_budget_admission",
     "app.strategy.position_sizing_handoff",
+    "app.strategy.position_sizing_specification",
     "app.strategy.setup_candidate_quality",
     "app.strategy.setup_qualification",
     "app.strategy.strategy_context",
