@@ -55,6 +55,7 @@ PROJECT_MODULES = [
     "app.strategy.order_intent_blueprint",
     "app.strategy.order_intent_execution_lock",
     "app.strategy.planning_package",
+    "app.strategy.planning_audit_manifest",
     "app.strategy.setup_candidate_quality",
     "app.strategy.setup_qualification",
     "app.strategy.strategy_context",
