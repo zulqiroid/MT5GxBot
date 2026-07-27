@@ -63,6 +63,7 @@ PROJECT_MODULES = [
     "app.strategy.planning_audit_storage_blueprint",
     "app.strategy.planning_audit_storage_adapter_contract",
     "app.strategy.planning_audit_storage_adapter_assessment",
+    "app.strategy.planning_audit_storage_adapter_binding",
     "app.strategy.setup_candidate_quality",
     "app.strategy.setup_qualification",
     "app.strategy.strategy_context",
