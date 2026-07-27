@@ -68,6 +68,7 @@ PROJECT_MODULES = [
     "app.strategy.planning_audit_persistence_request",
     "app.strategy.planning_audit_persistence_request_verification",
     "app.strategy.planning_audit_persistence_outcome_contract",
+    "app.strategy.planning_audit_persistence_outcome_evidence",
     "app.strategy.setup_candidate_quality",
     "app.strategy.setup_qualification",
     "app.strategy.strategy_context",
