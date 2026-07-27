@@ -74,6 +74,7 @@ PROJECT_MODULES = [
     "app.strategy.planning_audit_final_bundle",
     "app.strategy.phase8_dry_run_foundation",
     "app.strategy.phase8_closed_candle_data_contract",
+    "app.strategy.phase8_closed_candle_snapshot",
     "app.strategy.setup_candidate_quality",
     "app.strategy.setup_qualification",
     "app.strategy.strategy_context",
