@@ -81,6 +81,7 @@ PROJECT_MODULES = [
     "app.strategy.phase8_offline_replay_plan",
     "app.strategy.phase8_offline_replay_event_contract",
     "app.strategy.phase8_offline_replay_event_materialization_plan",
+    "app.strategy.phase8_offline_replay_event_materialization",
     "app.strategy.setup_candidate_quality",
     "app.strategy.setup_qualification",
     "app.strategy.strategy_context",
