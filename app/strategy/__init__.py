@@ -356,6 +356,20 @@ from app.strategy.phase8_dry_run_foundation import (
     StrategyPhase8SimulationAdmissionGate,
     build_phase8_dry_run_foundation,
 )
+from app.strategy.phase8_simulation_input_package import (
+    PHASE_8_SIMULATION_INPUT_PACKAGE_SCHEMA_VERSION,
+    Phase8SimulationInputPackage,
+    Phase8SimulationInputPackageBlocker,
+    Phase8SimulationInputPackageDecision,
+    Phase8SimulationInputPackageError,
+    Phase8SimulationInputPackageErrorReason,
+    Phase8SimulationInputPackageFactory,
+    Phase8SimulationInputPackageReason,
+    Phase8SimulationInputPackageStatus,
+    StrategyPhase8SimulationInputPackage,
+    StrategyPhase8SimulationInputPackageFactory,
+    generate_phase8_simulation_input_package,
+)
 from app.strategy.planning_audit_export import (
     PLANNING_AUDIT_EXPORT_SCHEMA_VERSION,
     AuditExportEnvelope,
@@ -2114,4 +2128,16 @@ __all__ = [
     "StrategyPhase8ClosedCandleSnapshotVerificationFactory",
     "StrategyPhase8ClosedCandleSnapshotVerificationReceipt",
     "verify_phase8_closed_candle_snapshot",
+    "PHASE_8_SIMULATION_INPUT_PACKAGE_SCHEMA_VERSION",
+    "Phase8SimulationInputPackage",
+    "Phase8SimulationInputPackageBlocker",
+    "Phase8SimulationInputPackageDecision",
+    "Phase8SimulationInputPackageError",
+    "Phase8SimulationInputPackageErrorReason",
+    "Phase8SimulationInputPackageFactory",
+    "Phase8SimulationInputPackageReason",
+    "Phase8SimulationInputPackageStatus",
+    "StrategyPhase8SimulationInputPackage",
+    "StrategyPhase8SimulationInputPackageFactory",
+    "generate_phase8_simulation_input_package",
 ]
