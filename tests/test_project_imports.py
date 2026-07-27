@@ -78,6 +78,7 @@ PROJECT_MODULES = [
     "app.strategy.phase8_closed_candle_snapshot_verification",
     "app.strategy.phase8_simulation_input_package",
     "app.strategy.phase8_offline_simulation_run_specification",
+    "app.strategy.phase8_offline_replay_plan",
     "app.strategy.setup_candidate_quality",
     "app.strategy.setup_qualification",
     "app.strategy.strategy_context",
