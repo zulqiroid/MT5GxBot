@@ -71,6 +71,7 @@ PROJECT_MODULES = [
     "app.strategy.planning_audit_persistence_outcome_evidence",
     "app.strategy.planning_audit_persistence_outcome_receipt",
     "app.strategy.planning_audit_persistence_completion",
+    "app.strategy.planning_audit_final_bundle",
     "app.strategy.setup_candidate_quality",
     "app.strategy.setup_qualification",
     "app.strategy.strategy_context",
