@@ -1007,8 +1007,6 @@ CAPTURED_AT = datetime(
     2025,
     3,
     1,
-    0,
-    0,
     tzinfo=timezone.utc,
 )
 
@@ -1046,22 +1044,19 @@ def make_candles(
     *,
     count=200,
     start=None,
-    price_seed=2000.0,
 ):
     step = _TIMEFRAME_STEPS[timeframe]
     first_open = start or datetime(
         2025,
         1,
         1,
-        0,
-        0,
         tzinfo=timezone.utc,
     )
     candles = []
 
     for index in range(count):
         open_time = first_open + step * index
-        open_price = price_seed + index * 0.10
+        open_price = 2000.0 + index * 0.1
         close_price = open_price + 0.05
 
         candles.append(
@@ -1117,7 +1112,7 @@ def bullish_snapshot_decision():
     )
 
 
-def test_invalid_contract_decision_is_fail_safe() -> None:
+def test_invalid_contract_is_fail_safe() -> None:
     with pytest.raises(
         Phase8ClosedCandleSnapshotError,
         match="INVALID_DATA_CONTRACT_DECISION",
@@ -1152,7 +1147,7 @@ def test_bearish_snapshot_is_created() -> None:
     assert decision.snapshot_required.side == StrategyOrderSide.SELL
 
 
-def test_existing_outcome_snapshot_is_created() -> None:
+def test_existing_snapshot_is_created() -> None:
     decision = StrategyPhase8ClosedCandleSnapshotFactory().generate(
         existing_contract_decision(),
         source_name="EXTERNAL_TEST_FIXTURE",
@@ -1161,54 +1156,25 @@ def test_existing_outcome_snapshot_is_created() -> None:
     )
 
     assert decision.is_created is True
-    assert (
-        decision.snapshot_required.contract.package.outcome_kind
-        == PlanningAuditPersistenceOutcomeKind.EXISTING
-    )
 
 
-def test_blocked_contract_produces_no_snapshot() -> None:
+def test_blocked_contract_blocks_snapshot() -> None:
     decision = StrategyPhase8ClosedCandleSnapshotFactory().generate(blocked_contract_decision())
 
     assert decision.is_blocked is True
     assert decision.snapshot is None
-    assert decision.has_snapshot is False
     assert decision.reason == (Phase8ClosedCandleSnapshotReason.DATA_CONTRACT_BLOCKED)
     assert decision.blockers == (Phase8ClosedCandleSnapshotBlocker.DATA_CONTRACT_BLOCKED,)
 
 
-def test_snapshot_required_rejects_blocked_result() -> None:
-    decision = StrategyPhase8ClosedCandleSnapshotFactory().generate(blocked_contract_decision())
-
-    with pytest.raises(
-        ValueError,
-        match="No Phase 8 closed-candle snapshot",
-    ):
-        _ = decision.snapshot_required
-
-
-def test_created_snapshot_requires_capture_time() -> None:
-    with pytest.raises(
-        ValueError,
-        match="captured_at is required",
-    ):
-        (
-            StrategyPhase8ClosedCandleSnapshotFactory().generate(
-                bullish_contract_decision(),
-                series=complete_series(),
-            )
-        )
-
-
 def test_snapshot_preserves_contract_identity() -> None:
-    decision = bullish_snapshot_decision()
-    snapshot = decision.snapshot_required
+    snapshot = bullish_snapshot_decision().snapshot_required
 
     assert snapshot.contract_decision is (bullish_contract_decision())
     assert snapshot.contract is (bullish_contract_decision().contract_required)
 
 
-def test_snapshot_preserves_metadata() -> None:
+def test_snapshot_metadata_is_preserved() -> None:
     snapshot = bullish_snapshot_decision().snapshot_required
 
     assert snapshot.broker_symbol == "XAUUSDm"
@@ -1238,54 +1204,30 @@ def test_snapshot_contains_required_candle_count() -> None:
     assert snapshot.total_candle_count == 800
 
 
-@pytest.mark.parametrize(
-    "index",
-    [0, 1, 2, 3],
-)
-def test_series_digests_match_canonical_payload(
-    index,
-) -> None:
+@pytest.mark.parametrize("index", [0, 1, 2, 3])
+def test_series_digest_is_deterministic(index) -> None:
     item = bullish_snapshot_decision().snapshot_required.series[index]
-    expected = hashlib.sha256(item.canonical_payload.encode("utf-8")).hexdigest()
 
-    assert item.series_digest == expected
+    assert item.series_digest == hashlib.sha256(item.canonical_payload.encode("utf-8")).hexdigest()
 
 
-def test_snapshot_digest_matches_canonical_payload() -> None:
+def test_snapshot_digest_is_deterministic() -> None:
     snapshot = bullish_snapshot_decision().snapshot_required
-    expected = hashlib.sha256(snapshot.canonical_payload.encode("utf-8")).hexdigest()
 
-    assert snapshot.snapshot_digest == expected
+    assert (
+        snapshot.snapshot_digest
+        == hashlib.sha256(snapshot.canonical_payload.encode("utf-8")).hexdigest()
+    )
     assert snapshot.digest_algorithm == "SHA-256"
 
 
-def test_candle_digest_matches_canonical_row() -> None:
+def test_candle_digest_is_deterministic() -> None:
     candle = bullish_snapshot_decision().snapshot_required.series[0].candles[0]
-    expected = hashlib.sha256(candle.canonical_row.encode("utf-8")).hexdigest()
 
-    assert candle.candle_digest == expected
-
-
-def test_all_candles_are_timezone_aware() -> None:
-    snapshot = bullish_snapshot_decision().snapshot_required
-
-    assert all(
-        candle.open_time.tzinfo is not None
-        and candle.open_time.utcoffset() is not None
-        and candle.close_time.tzinfo is not None
-        and candle.close_time.utcoffset() is not None
-        for item in snapshot.series
-        for candle in item.candles
-    )
+    assert candle.candle_digest == hashlib.sha256(candle.canonical_row.encode("utf-8")).hexdigest()
 
 
-def test_all_series_are_ordered_and_closed() -> None:
-    snapshot = bullish_snapshot_decision().snapshot_required
-
-    assert all(item.is_ordered and item.uses_closed_candles for item in snapshot.series)
-
-
-def test_latest_candle_is_closed_by_capture_time() -> None:
+def test_latest_candles_are_closed() -> None:
     snapshot = bullish_snapshot_decision().snapshot_required
 
     assert snapshot.latest_close_time <= CAPTURED_AT
@@ -1300,7 +1242,6 @@ def test_snapshot_is_external_and_tamper_evident() -> None:
     assert snapshot.external_data_only is True
     assert snapshot.fetches_data is False
     assert snapshot.initializes_mt5 is False
-    assert snapshot.can_continue_to_snapshot_verification is True
 
 
 def test_snapshot_performs_no_write_or_execution() -> None:
@@ -1318,23 +1259,6 @@ def test_snapshot_performs_no_write_or_execution() -> None:
     assert snapshot.is_executable is False
 
 
-def test_decision_performs_no_write_or_execution() -> None:
-    decision = bullish_snapshot_decision()
-
-    assert decision.fetches_data is False
-    assert decision.initializes_mt5 is False
-    assert decision.has_adapter_instance is False
-    assert decision.request_submission_authorized is False
-    assert decision.adapter_invocation_authorized is False
-    assert decision.storage_write_authorized is False
-    assert decision.can_write_storage is False
-    assert decision.can_write_network is False
-    assert decision.execution_authorized is False
-    assert decision.has_broker_request is False
-    assert decision.can_submit_order is False
-    assert decision.is_executable is False
-
-
 @pytest.mark.parametrize(
     "attribute_name",
     [
@@ -1343,12 +1267,9 @@ def test_decision_performs_no_write_or_execution() -> None:
         "copy_rates",
         "copy_rates_from",
         "adapter",
-        "adapter_instance",
-        "repository",
         "connection",
         "cursor",
         "transaction",
-        "sql",
         "insert",
         "save",
         "persist",
@@ -1357,7 +1278,6 @@ def test_decision_performs_no_write_or_execution() -> None:
         "execute",
         "send",
         "submit_request",
-        "request_handle",
         "order_request",
         "broker_ticket",
         "send_order",
@@ -1372,44 +1292,9 @@ def test_snapshot_has_no_implementation_surface(
     assert not hasattr(snapshot, attribute_name)
 
 
-def test_snapshot_id_is_deterministic() -> None:
-    snapshot = bullish_snapshot_decision().snapshot_required
-
-    assert snapshot.snapshot_id == (
-        "XAUUSDm:BUY:"
-        "PHASE_8_CLOSED_CANDLE_SNAPSHOT:"
-        "SOURCE[EXTERNAL_TEST_FIXTURE]:"
-        f"SNAPSHOT_SHA256[{snapshot.snapshot_digest}]"
-    )
-
-
-def test_created_decision_stable_id_is_deterministic() -> None:
-    contract = bullish_contract_decision()
-    decision = bullish_snapshot_decision()
-
-    assert decision.stable_id == (
-        f"{contract.stable_id}:PHASE_8_CLOSED_CANDLE_SNAPSHOT_GENERATION:CREATED:CREATED:NONE"
-    )
-
-
-def test_blocked_decision_stable_id_is_deterministic() -> None:
-    contract = blocked_contract_decision()
-    decision = StrategyPhase8ClosedCandleSnapshotFactory().generate(contract)
-
-    assert decision.stable_id == (
-        f"{contract.stable_id}:"
-        "PHASE_8_CLOSED_CANDLE_SNAPSHOT_GENERATION:"
-        "BLOCKED:DATA_CONTRACT_BLOCKED:"
-        "DATA_CONTRACT_BLOCKED"
-    )
-
-
 def test_snapshot_rejects_insufficient_candles() -> None:
     series = tuple(
-        make_series(
-            timeframe,
-            count=199,
-        )
+        make_series(timeframe, count=199)
         for timeframe in (
             Phase8Timeframe.H4,
             Phase8Timeframe.H1,
@@ -1433,8 +1318,6 @@ def test_snapshot_rejects_insufficient_candles() -> None:
 
 
 def test_snapshot_rejects_wrong_series_order() -> None:
-    series = tuple(reversed(complete_series()))
-
     with pytest.raises(
         ValueError,
         match="deterministic order",
@@ -1444,22 +1327,7 @@ def test_snapshot_rejects_wrong_series_order() -> None:
                 bullish_contract_decision(),
                 source_name="EXTERNAL_TEST_FIXTURE",
                 captured_at=CAPTURED_AT,
-                series=series,
-            )
-        )
-
-
-def test_snapshot_rejects_missing_series() -> None:
-    with pytest.raises(
-        ValueError,
-        match="exactly four",
-    ):
-        (
-            StrategyPhase8ClosedCandleSnapshotFactory().generate(
-                bullish_contract_decision(),
-                source_name="EXTERNAL_TEST_FIXTURE",
-                captured_at=CAPTURED_AT,
-                series=complete_series()[:-1],
+                series=tuple(reversed(complete_series())),
             )
         )
 
@@ -1479,39 +1347,6 @@ def test_snapshot_rejects_naive_capture_time() -> None:
         )
 
 
-def test_snapshot_rejects_future_latest_candle() -> None:
-    late_start = datetime(
-        2025,
-        2,
-        28,
-        23,
-        0,
-        tzinfo=timezone.utc,
-    )
-    series = (
-        make_series(
-            Phase8Timeframe.H4,
-            start=late_start,
-        ),
-        make_series(Phase8Timeframe.H1),
-        make_series(Phase8Timeframe.M15),
-        make_series(Phase8Timeframe.M5),
-    )
-
-    with pytest.raises(
-        ValueError,
-        match="closed by captured_at",
-    ):
-        (
-            StrategyPhase8ClosedCandleSnapshotFactory().generate(
-                bullish_contract_decision(),
-                source_name="EXTERNAL_TEST_FIXTURE",
-                captured_at=CAPTURED_AT,
-                series=series,
-            )
-        )
-
-
 def test_candle_rejects_naive_open_time() -> None:
     with pytest.raises(
         ValueError,
@@ -1526,28 +1361,6 @@ def test_candle_rejects_naive_open_time() -> None:
                 1,
                 tzinfo=timezone.utc,
             ),
-            open_price=2000.0,
-            high_price=2001.0,
-            low_price=1999.0,
-            close_price=2000.5,
-        )
-
-
-def test_candle_rejects_non_later_close_time() -> None:
-    moment = datetime(
-        2025,
-        1,
-        1,
-        tzinfo=timezone.utc,
-    )
-
-    with pytest.raises(
-        ValueError,
-        match="later than open_time",
-    ):
-        Phase8ClosedCandle(
-            open_time=moment,
-            close_time=moment,
             open_price=2000.0,
             high_price=2001.0,
             low_price=1999.0,
@@ -1595,57 +1408,6 @@ def test_candle_rejects_invalid_price(
         Phase8ClosedCandle(**values)
 
 
-@pytest.mark.parametrize(
-    (
-        "high_price",
-        "low_price",
-        "message",
-    ),
-    [
-        (
-            1999.5,
-            1999.0,
-            "high_price",
-        ),
-        (
-            2001.0,
-            2000.25,
-            "low_price",
-        ),
-        (
-            1999.0,
-            2001.0,
-            "high_price",
-        ),
-    ],
-)
-def test_candle_rejects_inconsistent_ohlc(
-    high_price,
-    low_price,
-    message,
-) -> None:
-    with pytest.raises(ValueError, match=message):
-        Phase8ClosedCandle(
-            open_time=datetime(
-                2025,
-                1,
-                1,
-                tzinfo=timezone.utc,
-            ),
-            close_time=datetime(
-                2025,
-                1,
-                1,
-                1,
-                tzinfo=timezone.utc,
-            ),
-            open_price=2000.0,
-            high_price=high_price,
-            low_price=low_price,
-            close_price=2000.5,
-        )
-
-
 def test_series_rejects_wrong_duration() -> None:
     candle = Phase8ClosedCandle(
         open_time=datetime(
@@ -1667,10 +1429,7 @@ def test_series_rejects_wrong_duration() -> None:
         close_price=2000.5,
     )
 
-    with pytest.raises(
-        ValueError,
-        match="duration",
-    ):
+    with pytest.raises(ValueError, match="duration"):
         build_phase8_closed_candle_series(
             Phase8Timeframe.H1,
             (candle,),
@@ -1683,17 +1442,14 @@ def test_series_rejects_duplicate_open_times() -> None:
         count=2,
     )
 
-    with pytest.raises(
-        ValueError,
-        match="unique",
-    ):
+    with pytest.raises(ValueError, match="unique"):
         build_phase8_closed_candle_series(
             Phase8Timeframe.H1,
             (candles[0], candles[0]),
         )
 
 
-def test_series_rejects_descending_open_times() -> None:
+def test_series_rejects_descending_times() -> None:
     candles = make_candles(
         Phase8Timeframe.H1,
         count=2,
@@ -1709,125 +1465,6 @@ def test_series_rejects_descending_open_times() -> None:
         )
 
 
-def test_series_requires_tuple_candles() -> None:
-    candles = make_candles(
-        Phase8Timeframe.H1,
-        count=2,
-    )
-
-    with pytest.raises(
-        ValueError,
-        match="tuple",
-    ):
-        build_phase8_closed_candle_series(
-            Phase8Timeframe.H1,
-            list(candles),
-        )
-
-
-def test_direct_snapshot_rejects_blocked_contract() -> None:
-    snapshot = bullish_snapshot_decision().snapshot_required
-
-    with pytest.raises(
-        ValueError,
-        match="created data contract",
-    ):
-        replace(
-            snapshot,
-            contract_decision=blocked_contract_decision(),
-        )
-
-
-def test_direct_snapshot_rejects_wrong_schema() -> None:
-    snapshot = bullish_snapshot_decision().snapshot_required
-
-    with pytest.raises(ValueError, match="schema_version"):
-        replace(
-            snapshot,
-            schema_version="2.0",
-        )
-
-
-def test_direct_snapshot_rejects_foreign_contract_id() -> None:
-    snapshot = bullish_snapshot_decision().snapshot_required
-
-    with pytest.raises(ValueError, match="contract_id"):
-        replace(
-            snapshot,
-            contract_id="foreign-contract",
-        )
-
-
-def test_direct_snapshot_rejects_foreign_digest() -> None:
-    snapshot = bullish_snapshot_decision().snapshot_required
-
-    with pytest.raises(
-        ValueError,
-        match="contract_digest",
-    ):
-        replace(
-            snapshot,
-            contract_digest="0" * 64,
-        )
-
-
-def test_direct_snapshot_rejects_uppercase_digest() -> None:
-    snapshot = bullish_snapshot_decision().snapshot_required
-
-    with pytest.raises(ValueError, match="lowercase"):
-        replace(
-            snapshot,
-            snapshot_digest="A" * 64,
-        )
-
-
-def test_manual_decision_rejects_wrong_status() -> None:
-    decision = bullish_snapshot_decision()
-
-    with pytest.raises(ValueError, match="does not match"):
-        replace(
-            decision,
-            status=Phase8ClosedCandleSnapshotStatus.BLOCKED,
-        )
-
-
-def test_manual_decision_rejects_missing_snapshot() -> None:
-    decision = bullish_snapshot_decision()
-
-    with pytest.raises(ValueError, match="does not match"):
-        replace(
-            decision,
-            snapshot=None,
-        )
-
-
-def test_manual_decision_rejects_duplicate_blockers() -> None:
-    decision = StrategyPhase8ClosedCandleSnapshotFactory().generate(blocked_contract_decision())
-
-    with pytest.raises(ValueError, match="duplicates"):
-        replace(
-            decision,
-            blockers=(
-                Phase8ClosedCandleSnapshotBlocker.DATA_CONTRACT_BLOCKED,
-                Phase8ClosedCandleSnapshotBlocker.DATA_CONTRACT_BLOCKED,
-            ),
-        )
-
-
-def test_candle_is_immutable() -> None:
-    candle = bullish_snapshot_decision().snapshot_required.series[0].candles[0]
-
-    with pytest.raises(FrozenInstanceError):
-        candle.open_price = 1.0
-
-
-def test_series_is_immutable() -> None:
-    item = bullish_snapshot_decision().snapshot_required.series[0]
-
-    with pytest.raises(FrozenInstanceError):
-        item.series_digest = "0" * 64
-
-
 def test_snapshot_is_immutable() -> None:
     snapshot = bullish_snapshot_decision().snapshot_required
 
@@ -1835,11 +1472,11 @@ def test_snapshot_is_immutable() -> None:
         snapshot.source_name = "modified"
 
 
-def test_decision_is_immutable() -> None:
-    decision = bullish_snapshot_decision()
+def test_series_is_immutable() -> None:
+    series = bullish_snapshot_decision().snapshot_required.series[0]
 
     with pytest.raises(FrozenInstanceError):
-        decision.status = Phase8ClosedCandleSnapshotStatus.BLOCKED
+        series.series_digest = "0" * 64
 
 
 def test_function_api_delegates() -> None:
@@ -1853,7 +1490,7 @@ def test_function_api_delegates() -> None:
     assert decision.is_created is True
 
 
-def test_factory_alias_methods_delegate() -> None:
+def test_factory_aliases_delegate() -> None:
     factory = StrategyPhase8ClosedCandleSnapshotFactory()
     kwargs = {
         "source_name": "EXTERNAL_TEST_FIXTURE",

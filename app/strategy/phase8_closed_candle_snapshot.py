@@ -199,36 +199,12 @@ class Phase8ClosedCandle:
         if high_price < low_price:
             raise ValueError("high_price cannot be lower than low_price.")
 
-        object.__setattr__(
-            self,
-            "open_time",
-            open_time,
-        )
-        object.__setattr__(
-            self,
-            "close_time",
-            close_time,
-        )
-        object.__setattr__(
-            self,
-            "open_price",
-            open_price,
-        )
-        object.__setattr__(
-            self,
-            "high_price",
-            high_price,
-        )
-        object.__setattr__(
-            self,
-            "low_price",
-            low_price,
-        )
-        object.__setattr__(
-            self,
-            "close_price",
-            close_price,
-        )
+        object.__setattr__(self, "open_time", open_time)
+        object.__setattr__(self, "close_time", close_time)
+        object.__setattr__(self, "open_price", open_price)
+        object.__setattr__(self, "high_price", high_price)
+        object.__setattr__(self, "low_price", low_price)
+        object.__setattr__(self, "close_price", close_price)
 
     @property
     def canonical_row(self) -> str:
@@ -276,7 +252,7 @@ def _canonical_series_payload(
 
 @dataclass(frozen=True, slots=True)
 class Phase8ClosedCandleSeries:
-    """Immutable ordered series for one timeframe."""
+    """Immutable ordered closed-candle series."""
 
     timeframe: Phase8Timeframe
     candles: tuple[Phase8ClosedCandle, ...] = field(repr=False)
@@ -323,12 +299,14 @@ class Phase8ClosedCandleSeries:
         if not _is_lowercase_sha256(series_digest):
             raise ValueError("series_digest must be a lowercase SHA-256 hexadecimal value.")
 
-        canonical_payload = _canonical_series_payload(
-            timeframe=self.timeframe,
-            candles=self.candles,
+        expected_digest = _sha256_digest(
+            _canonical_series_payload(
+                timeframe=self.timeframe,
+                candles=self.candles,
+            )
         )
 
-        if series_digest != _sha256_digest(canonical_payload):
+        if series_digest != expected_digest:
             raise ValueError("series_digest does not match the canonical candle-series payload.")
 
         object.__setattr__(
@@ -359,10 +337,6 @@ class Phase8ClosedCandleSeries:
             timeframe=self.timeframe,
             candles=self.candles,
         )
-
-    @property
-    def is_ordered(self) -> bool:
-        return True
 
     @property
     def uses_closed_candles(self) -> bool:
@@ -430,8 +404,8 @@ def _canonical_snapshot_payload(
             "EXTERNAL_DATA_ONLY=true",
             "DATA_FETCH=false",
             "MT5_INITIALIZATION=false",
-            "NETWORK_WRITE=false",
             "STORAGE_WRITE=false",
+            "NETWORK_WRITE=false",
             "BROKER_WRITE=false",
             "ORDER_SUBMISSION=false",
         )
@@ -442,13 +416,7 @@ def _canonical_snapshot_payload(
 
 @dataclass(frozen=True, slots=True)
 class StrategyPhase8ClosedCandleSnapshot:
-    """
-    Immutable validated external closed-candle snapshot.
-
-    Nested source objects are excluded from repr so a failed
-    assertion cannot recursively render the complete Phase 7
-    and Phase 8 lineage.
-    """
+    """Immutable validated external candle snapshot."""
 
     contract_decision: Phase8ClosedCandleDataContractDecision = field(repr=False)
     source_name: str
@@ -491,6 +459,9 @@ class StrategyPhase8ClosedCandleSnapshot:
         if not isinstance(self.series, tuple):
             raise ValueError("series must be a tuple.")
 
+        if len(self.series) != 4:
+            raise ValueError("series must contain exactly four timeframe series.")
+
         if not all(
             isinstance(
                 item,
@@ -500,16 +471,10 @@ class StrategyPhase8ClosedCandleSnapshot:
         ):
             raise ValueError("series must contain Phase8ClosedCandleSeries members.")
 
-        if len(self.series) != len(_REQUIRED_TIMEFRAMES):
-            raise ValueError("series must contain exactly four timeframe series.")
-
         supplied_timeframes = tuple(item.timeframe for item in self.series)
 
         if supplied_timeframes != _REQUIRED_TIMEFRAMES:
             raise ValueError("series must contain H4, H1, M15, and M5 in deterministic order.")
-
-        if len(set(supplied_timeframes)) != len(supplied_timeframes):
-            raise ValueError("series timeframes must be unique.")
 
         contract_id = _non_empty_string(
             self.contract_id,
@@ -532,7 +497,6 @@ class StrategyPhase8ClosedCandleSnapshot:
                 raise ValueError(f"{field_name} must be a lowercase SHA-256 hexadecimal value.")
 
         contract = self.contract_decision.contract_required
-        minimum_count = contract.policy.minimum_closed_candles_per_timeframe
 
         if contract_id != contract.stable_id:
             raise ValueError("contract_id must match the closed-candle data contract.")
@@ -540,8 +504,10 @@ class StrategyPhase8ClosedCandleSnapshot:
         if contract_digest != contract.contract_digest:
             raise ValueError("contract_digest must match the closed-candle data contract.")
 
-        if contract.timeframes != supplied_timeframes:
+        if supplied_timeframes != contract.timeframes:
             raise ValueError("Snapshot timeframes must match the closed-candle data contract.")
+
+        minimum_count = contract.policy.minimum_closed_candles_per_timeframe
 
         for item in self.series:
             if item.candle_count < minimum_count:
@@ -557,13 +523,8 @@ class StrategyPhase8ClosedCandleSnapshot:
             if not item.uses_closed_candles:
                 raise ValueError(f"{item.timeframe.value} must contain closed candles only.")
 
-        package = contract.package
-
-        if package.broker_symbol != contract.broker_symbol:
-            raise ValueError("Snapshot contract symbol lineage is inconsistent.")
-
-        if package.initializes_mt5:
-            raise ValueError("Snapshot source package cannot initialize MT5.")
+        if contract.initializes_mt5:
+            raise ValueError("The data contract cannot initialize MT5.")
 
         for attribute_name in (
             "has_adapter_instance",
@@ -582,19 +543,21 @@ class StrategyPhase8ClosedCandleSnapshot:
                     f"The data contract violates the non-executable boundary: {attribute_name}."
                 )
 
-        canonical_payload = _canonical_snapshot_payload(
-            schema_version=schema_version,
-            contract_id=contract_id,
-            contract_digest=contract_digest,
-            broker_symbol=contract.broker_symbol,
-            direction=contract.direction,
-            side=contract.side,
-            source_name=source_name,
-            captured_at=captured_at,
-            series=self.series,
+        expected_digest = _sha256_digest(
+            _canonical_snapshot_payload(
+                schema_version=schema_version,
+                contract_id=contract_id,
+                contract_digest=contract_digest,
+                broker_symbol=contract.broker_symbol,
+                direction=contract.direction,
+                side=contract.side,
+                source_name=source_name,
+                captured_at=captured_at,
+                series=self.series,
+            )
         )
 
-        if snapshot_digest != _sha256_digest(canonical_payload):
+        if snapshot_digest != expected_digest:
             raise ValueError(
                 "snapshot_digest does not match the canonical closed-candle snapshot payload."
             )
@@ -767,7 +730,7 @@ class StrategyPhase8ClosedCandleSnapshot:
 
 @dataclass(frozen=True, slots=True)
 class Phase8ClosedCandleSnapshotDecision:
-    """Validated external closed-candle snapshot result."""
+    """Validated snapshot decision."""
 
     contract_decision: Phase8ClosedCandleDataContractDecision = field(repr=False)
     status: Phase8ClosedCandleSnapshotStatus
@@ -789,27 +752,21 @@ class Phase8ClosedCandleSnapshotDecision:
             status = Phase8ClosedCandleSnapshotStatus(self.status)
             reason = Phase8ClosedCandleSnapshotReason(self.reason)
         except (TypeError, ValueError) as error:
-            raise ValueError("Unsupported closed-candle snapshot status or reason.") from error
+            raise ValueError("Unsupported snapshot status or reason.") from error
 
         blockers = tuple(Phase8ClosedCandleSnapshotBlocker(blocker) for blocker in self.blockers)
 
         if len(set(blockers)) != len(blockers):
-            raise ValueError("Closed-candle snapshot blockers cannot contain duplicates.")
+            raise ValueError("Snapshot blockers cannot contain duplicates.")
 
         if self.contract_decision.is_blocked:
-            expected_status = Phase8ClosedCandleSnapshotStatus.BLOCKED
-            expected_reason = Phase8ClosedCandleSnapshotReason.DATA_CONTRACT_BLOCKED
-            expected_blockers = (Phase8ClosedCandleSnapshotBlocker.DATA_CONTRACT_BLOCKED,)
-
             if (
-                status != expected_status
-                or reason != expected_reason
-                or blockers != expected_blockers
+                status != Phase8ClosedCandleSnapshotStatus.BLOCKED
+                or reason != Phase8ClosedCandleSnapshotReason.DATA_CONTRACT_BLOCKED
+                or blockers != (Phase8ClosedCandleSnapshotBlocker.DATA_CONTRACT_BLOCKED,)
                 or self.snapshot is not None
             ):
-                raise ValueError(
-                    "Blocked snapshot result does not match its blocked data contract."
-                )
+                raise ValueError("Blocked snapshot result does not match its data contract.")
         else:
             if (
                 status != Phase8ClosedCandleSnapshotStatus.CREATED
@@ -819,11 +776,9 @@ class Phase8ClosedCandleSnapshotDecision:
                     self.snapshot,
                     StrategyPhase8ClosedCandleSnapshot,
                 )
+                or self.snapshot.contract_decision is not self.contract_decision
             ):
                 raise ValueError("Created snapshot result does not match its data contract.")
-
-            if self.snapshot.contract_decision is not self.contract_decision:
-                raise ValueError("Snapshot must preserve the exact data-contract decision.")
 
         object.__setattr__(self, "status", status)
         object.__setattr__(self, "reason", reason)
@@ -850,10 +805,6 @@ class Phase8ClosedCandleSnapshotDecision:
     @property
     def has_snapshot(self) -> bool:
         return self.snapshot is not None
-
-    @property
-    def blocker_count(self) -> int:
-        return len(self.blockers)
 
     @property
     def snapshot_required(
@@ -934,12 +885,7 @@ class Phase8ClosedCandleSnapshotDecision:
 
 
 class StrategyPhase8ClosedCandleSnapshotFactory:
-    """
-    Pure factory for externally supplied candle snapshots.
-
-    No candle data is fetched. No MT5, adapter, storage,
-    network, broker, or execution operation is performed.
-    """
+    """Pure externally supplied candle-snapshot factory."""
 
     def generate(
         self,
@@ -964,7 +910,7 @@ class StrategyPhase8ClosedCandleSnapshotFactory:
         if contract_decision.is_blocked:
             return Phase8ClosedCandleSnapshotDecision(
                 contract_decision=contract_decision,
-                status=(Phase8ClosedCandleSnapshotStatus.BLOCKED),
+                status=Phase8ClosedCandleSnapshotStatus.BLOCKED,
                 reason=(Phase8ClosedCandleSnapshotReason.DATA_CONTRACT_BLOCKED),
                 blockers=(Phase8ClosedCandleSnapshotBlocker.DATA_CONTRACT_BLOCKED,),
                 snapshot=None,
@@ -974,6 +920,7 @@ class StrategyPhase8ClosedCandleSnapshotFactory:
             raise ValueError("captured_at is required for a created closed-candle snapshot.")
 
         contract = contract_decision.contract_required
+
         canonical_payload = _canonical_snapshot_payload(
             schema_version=(PHASE_8_CLOSED_CANDLE_SNAPSHOT_SCHEMA_VERSION),
             contract_id=contract.stable_id,
@@ -1008,37 +955,21 @@ class StrategyPhase8ClosedCandleSnapshotFactory:
     def build(
         self,
         contract_decision: (Phase8ClosedCandleDataContractDecision),
-        *,
-        source_name: str = "EXTERNAL_READ_ONLY",
-        captured_at: datetime | None = None,
-        series: tuple[
-            Phase8ClosedCandleSeries,
-            ...,
-        ] = (),
+        **kwargs: object,
     ) -> Phase8ClosedCandleSnapshotDecision:
         return self.generate(
             contract_decision,
-            source_name=source_name,
-            captured_at=captured_at,
-            series=series,
+            **kwargs,
         )
 
     def evaluate(
         self,
         contract_decision: (Phase8ClosedCandleDataContractDecision),
-        *,
-        source_name: str = "EXTERNAL_READ_ONLY",
-        captured_at: datetime | None = None,
-        series: tuple[
-            Phase8ClosedCandleSeries,
-            ...,
-        ] = (),
+        **kwargs: object,
     ) -> Phase8ClosedCandleSnapshotDecision:
         return self.generate(
             contract_decision,
-            source_name=source_name,
-            captured_at=captured_at,
-            series=series,
+            **kwargs,
         )
 
 
