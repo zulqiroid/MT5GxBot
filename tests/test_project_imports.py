@@ -87,6 +87,7 @@ PROJECT_MODULES = [
     "app.strategy.phase8_offline_replay_session_state",
     "app.strategy.phase8_offline_replay_transition_contract",
     "app.strategy.phase8_offline_replay_transition_application",
+    "app.strategy.phase8_offline_replay_advanced_session_state",
     "app.strategy.setup_candidate_quality",
     "app.strategy.setup_qualification",
     "app.strategy.strategy_context",
