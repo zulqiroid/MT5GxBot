@@ -3074,6 +3074,12 @@ __all__ = [
     "Phase8OfflineReplaySubsequentIterativeRecurrentBoundedProgressedSessionStateDecision",
     "StrategyPhase8OfflineReplaySubsequentIterativeRecurrentBoundedProgressedStateFactory",
     "create_phase8_offline_replay_subsequent_iterative_recurrent_bounded_progressed_state",
+    "PHASE_8_OFFLINE_REPLAY_SUCCESSIVE_ITERATIVE_RECURRENT_BOUNDED_PLAN_SCHEMA_VERSION",
+    "PHASE_8_OFFLINE_REPLAY_SUCCESSIVE_ITERATIVE_RECURRENT_BOUNDED_DEFAULT_LIMIT",
+    "Phase8OfflineReplaySuccessiveIterativeRecurrentBoundedPlan",
+    "Phase8OfflineReplaySuccessiveIterativeRecurrentBoundedPlanDecision",
+    "StrategyPhase8OfflineReplaySuccessiveIterativeRecurrentBoundedPlanner",
+    "generate_phase8_offline_replay_successive_iterative_recurrent_bounded_plan",
 ]
 
 from app.strategy.phase8_offline_replay_bounded_continuation_application import (
@@ -3195,4 +3201,12 @@ from app.strategy.phase8_offline_replay_subsequent_iterative_recurrent_bounded_p
     Phase8OfflineReplaySubsequentIterativeRecurrentBoundedProgressedSessionStateDecision,
     StrategyPhase8OfflineReplaySubsequentIterativeRecurrentBoundedProgressedStateFactory,
     create_phase8_offline_replay_subsequent_iterative_recurrent_bounded_progressed_state,
+)
+from app.strategy.phase8_offline_replay_successive_iterative_recurrent_bounded_plan import (
+    PHASE_8_OFFLINE_REPLAY_SUCCESSIVE_ITERATIVE_RECURRENT_BOUNDED_DEFAULT_LIMIT,
+    PHASE_8_OFFLINE_REPLAY_SUCCESSIVE_ITERATIVE_RECURRENT_BOUNDED_PLAN_SCHEMA_VERSION,
+    Phase8OfflineReplaySuccessiveIterativeRecurrentBoundedPlan,
+    Phase8OfflineReplaySuccessiveIterativeRecurrentBoundedPlanDecision,
+    StrategyPhase8OfflineReplaySuccessiveIterativeRecurrentBoundedPlanner,
+    generate_phase8_offline_replay_successive_iterative_recurrent_bounded_plan,
 )
