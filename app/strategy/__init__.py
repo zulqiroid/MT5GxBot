@@ -3085,6 +3085,13 @@ __all__ = [
     "Phase8OfflineReplaySuccessiveIterativeRecurrentBoundedApplicationDecision",
     "StrategyPhase8OfflineReplaySuccessiveIterativeRecurrentBoundedApplication",
     "apply_phase8_offline_replay_successive_iterative_recurrent_bounded_plan",
+    "PHASE_8_OFFLINE_REPLAY_SUCCESSIVE_ITERATIVE_RECURRENT_BOUNDED_PROGRESSED_STATE_SCHEMA_VERSION",
+    "PHASE_8_OFFLINE_REPLAY_SUCCESSIVE_ITERATIVE_RECURRENT_BOUNDED_STATE_ACTIVE",
+    "PHASE_8_OFFLINE_REPLAY_SUCCESSIVE_ITERATIVE_RECURRENT_BOUNDED_STATE_COMPLETED",
+    "Phase8OfflineReplaySuccessiveIterativeRecurrentBoundedProgressedSessionState",
+    "Phase8OfflineReplaySuccessiveIterativeRecurrentBoundedProgressedSessionStateDecision",
+    "StrategyPhase8OfflineReplaySuccessiveIterativeRecurrentBoundedProgressedStateFactory",
+    "create_phase8_offline_replay_successive_iterative_recurrent_bounded_progressed_state",
 ]
 
 from app.strategy.phase8_offline_replay_bounded_continuation_application import (
@@ -3221,4 +3228,13 @@ from app.strategy.phase8_offline_replay_successive_iterative_recurrent_bounded_p
     Phase8OfflineReplaySuccessiveIterativeRecurrentBoundedPlanDecision,
     StrategyPhase8OfflineReplaySuccessiveIterativeRecurrentBoundedPlanner,
     generate_phase8_offline_replay_successive_iterative_recurrent_bounded_plan,
+)
+from app.strategy.phase8_offline_replay_successive_iterative_recurrent_bounded_progressed_state import (
+    PHASE_8_OFFLINE_REPLAY_SUCCESSIVE_ITERATIVE_RECURRENT_BOUNDED_PROGRESSED_STATE_SCHEMA_VERSION,
+    PHASE_8_OFFLINE_REPLAY_SUCCESSIVE_ITERATIVE_RECURRENT_BOUNDED_STATE_ACTIVE,
+    PHASE_8_OFFLINE_REPLAY_SUCCESSIVE_ITERATIVE_RECURRENT_BOUNDED_STATE_COMPLETED,
+    Phase8OfflineReplaySuccessiveIterativeRecurrentBoundedProgressedSessionState,
+    Phase8OfflineReplaySuccessiveIterativeRecurrentBoundedProgressedSessionStateDecision,
+    StrategyPhase8OfflineReplaySuccessiveIterativeRecurrentBoundedProgressedStateFactory,
+    create_phase8_offline_replay_successive_iterative_recurrent_bounded_progressed_state,
 )
