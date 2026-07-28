@@ -216,3 +216,18 @@ def test_phase8_offline_replay_bounded_continuation_progressed_state_imports() -
         module,
         "StrategyPhase8OfflineReplayBoundedContinuationProgressedStateFactory",
     )
+
+
+def test_phase8_offline_replay_recurrent_bounded_plan_imports() -> None:
+    import importlib
+
+    module = importlib.import_module("app.strategy.phase8_offline_replay_recurrent_bounded_plan")
+
+    assert hasattr(
+        module,
+        "Phase8OfflineReplayRecurrentBoundedPlan",
+    )
+    assert hasattr(
+        module,
+        "StrategyPhase8OfflineReplayRecurrentBoundedPlanner",
+    )
