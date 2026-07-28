@@ -3026,6 +3026,11 @@ __all__ = [
     "Phase8OfflineReplayRecurrentBoundedPlanDecision",
     "StrategyPhase8OfflineReplayRecurrentBoundedPlanner",
     "generate_phase8_offline_replay_recurrent_bounded_plan",
+    "PHASE_8_OFFLINE_REPLAY_RECURRENT_BOUNDED_APPLICATION_SCHEMA_VERSION",
+    "Phase8OfflineReplayRecurrentBoundedApplicationReceipt",
+    "Phase8OfflineReplayRecurrentBoundedApplicationDecision",
+    "StrategyPhase8OfflineReplayRecurrentBoundedApplication",
+    "apply_phase8_offline_replay_recurrent_bounded_plan",
 ]
 
 from app.strategy.phase8_offline_replay_bounded_continuation_application import (
@@ -3075,6 +3080,13 @@ from app.strategy.phase8_offline_replay_bounded_progressed_session_state import 
     Phase8OfflineReplayBoundedProgressedSessionStateDecision,
     StrategyPhase8OfflineReplayBoundedProgressedSessionStateFactory,
     create_phase8_offline_replay_bounded_progressed_session_state,
+)
+from app.strategy.phase8_offline_replay_recurrent_bounded_application import (
+    PHASE_8_OFFLINE_REPLAY_RECURRENT_BOUNDED_APPLICATION_SCHEMA_VERSION,
+    Phase8OfflineReplayRecurrentBoundedApplicationDecision,
+    Phase8OfflineReplayRecurrentBoundedApplicationReceipt,
+    StrategyPhase8OfflineReplayRecurrentBoundedApplication,
+    apply_phase8_offline_replay_recurrent_bounded_plan,
 )
 from app.strategy.phase8_offline_replay_recurrent_bounded_plan import (
     PHASE_8_OFFLINE_REPLAY_RECURRENT_BOUNDED_DEFAULT_LIMIT,
