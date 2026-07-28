@@ -2995,6 +2995,13 @@ __all__ = [
     "Phase8OfflineReplayBoundedIterationApplicationReceipt",
     "StrategyPhase8OfflineReplayBoundedIterationApplication",
     "apply_phase8_offline_replay_bounded_iteration_plan",
+    "PHASE_8_OFFLINE_REPLAY_BOUNDED_PROGRESSED_SESSION_STATE_SCHEMA_VERSION",
+    "PHASE_8_OFFLINE_REPLAY_BOUNDED_SESSION_ACTIVE",
+    "PHASE_8_OFFLINE_REPLAY_BOUNDED_SESSION_COMPLETED",
+    "Phase8OfflineReplayBoundedProgressedSessionState",
+    "Phase8OfflineReplayBoundedProgressedSessionStateDecision",
+    "StrategyPhase8OfflineReplayBoundedProgressedSessionStateFactory",
+    "create_phase8_offline_replay_bounded_progressed_session_state",
 ]
 
 from app.strategy.phase8_offline_replay_bounded_iteration_application import (
@@ -3011,4 +3018,13 @@ from app.strategy.phase8_offline_replay_bounded_iteration_plan import (
     Phase8OfflineReplayBoundedIterationPlanPolicy,
     StrategyPhase8OfflineReplayBoundedIterationPlanFactory,
     generate_phase8_offline_replay_bounded_iteration_plan,
+)
+from app.strategy.phase8_offline_replay_bounded_progressed_session_state import (
+    PHASE_8_OFFLINE_REPLAY_BOUNDED_PROGRESSED_SESSION_STATE_SCHEMA_VERSION,
+    PHASE_8_OFFLINE_REPLAY_BOUNDED_SESSION_ACTIVE,
+    PHASE_8_OFFLINE_REPLAY_BOUNDED_SESSION_COMPLETED,
+    Phase8OfflineReplayBoundedProgressedSessionState,
+    Phase8OfflineReplayBoundedProgressedSessionStateDecision,
+    StrategyPhase8OfflineReplayBoundedProgressedSessionStateFactory,
+    create_phase8_offline_replay_bounded_progressed_session_state,
 )
