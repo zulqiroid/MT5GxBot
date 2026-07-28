@@ -133,3 +133,20 @@ def test_phase8_offline_replay_bounded_iteration_plan_imports() -> None:
         module,
         "StrategyPhase8OfflineReplayBoundedIterationPlanFactory",
     )
+
+
+def test_phase8_offline_replay_bounded_iteration_application_imports() -> None:
+    import importlib
+
+    module = importlib.import_module(
+        "app.strategy.phase8_offline_replay_bounded_iteration_application"
+    )
+
+    assert hasattr(
+        module,
+        "Phase8OfflineReplayBoundedIterationApplicationReceipt",
+    )
+    assert hasattr(
+        module,
+        "StrategyPhase8OfflineReplayBoundedIterationApplication",
+    )

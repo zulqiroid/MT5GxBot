@@ -2990,8 +2990,20 @@ __all__ = [
     "Phase8OfflineReplayBoundedIterationPlanPolicy",
     "StrategyPhase8OfflineReplayBoundedIterationPlanFactory",
     "generate_phase8_offline_replay_bounded_iteration_plan",
+    "PHASE_8_OFFLINE_REPLAY_BOUNDED_ITERATION_APPLICATION_SCHEMA_VERSION",
+    "Phase8OfflineReplayBoundedIterationApplicationDecision",
+    "Phase8OfflineReplayBoundedIterationApplicationReceipt",
+    "StrategyPhase8OfflineReplayBoundedIterationApplication",
+    "apply_phase8_offline_replay_bounded_iteration_plan",
 ]
 
+from app.strategy.phase8_offline_replay_bounded_iteration_application import (
+    PHASE_8_OFFLINE_REPLAY_BOUNDED_ITERATION_APPLICATION_SCHEMA_VERSION,
+    Phase8OfflineReplayBoundedIterationApplicationDecision,
+    Phase8OfflineReplayBoundedIterationApplicationReceipt,
+    StrategyPhase8OfflineReplayBoundedIterationApplication,
+    apply_phase8_offline_replay_bounded_iteration_plan,
+)
 from app.strategy.phase8_offline_replay_bounded_iteration_plan import (
     PHASE_8_OFFLINE_REPLAY_BOUNDED_ITERATION_PLAN_SCHEMA_VERSION,
     Phase8OfflineReplayBoundedIterationPlan,
