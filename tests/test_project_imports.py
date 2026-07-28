@@ -100,6 +100,7 @@ PROJECT_MODULES = [
     "app.strategy.phase8_offline_replay_iterative_transition_contract",
     "app.strategy.phase8_offline_replay_iterative_transition_application",
     "app.strategy.phase8_offline_replay_iterative_progressed_session_state",
+    "app.strategy.phase8_offline_replay_iterative_continuation_transition_contract",
     "app.strategy.setup_candidate_quality",
     "app.strategy.setup_qualification",
     "app.strategy.strategy_context",
