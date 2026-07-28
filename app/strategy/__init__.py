@@ -2984,4 +2984,19 @@ __all__ = [
     "StrategyPhase8OfflineReplayIterativeContinuationProgressedSessionState",
     "StrategyPhase8OfflineReplayIterativeContinuationProgressedSessionStateFactory",
     "generate_phase8_offline_replay_iterative_continuation_progressed_session_state",
+    "PHASE_8_OFFLINE_REPLAY_BOUNDED_ITERATION_PLAN_SCHEMA_VERSION",
+    "Phase8OfflineReplayBoundedIterationPlan",
+    "Phase8OfflineReplayBoundedIterationPlanDecision",
+    "Phase8OfflineReplayBoundedIterationPlanPolicy",
+    "StrategyPhase8OfflineReplayBoundedIterationPlanFactory",
+    "generate_phase8_offline_replay_bounded_iteration_plan",
 ]
+
+from app.strategy.phase8_offline_replay_bounded_iteration_plan import (
+    PHASE_8_OFFLINE_REPLAY_BOUNDED_ITERATION_PLAN_SCHEMA_VERSION,
+    Phase8OfflineReplayBoundedIterationPlan,
+    Phase8OfflineReplayBoundedIterationPlanDecision,
+    Phase8OfflineReplayBoundedIterationPlanPolicy,
+    StrategyPhase8OfflineReplayBoundedIterationPlanFactory,
+    generate_phase8_offline_replay_bounded_iteration_plan,
+)

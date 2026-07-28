@@ -118,3 +118,18 @@ def test_project_module_imports_without_starting_bot(
     imported_module = importlib.import_module(module_name)
 
     assert imported_module is not None
+
+
+def test_phase8_offline_replay_bounded_iteration_plan_imports() -> None:
+    import importlib
+
+    module = importlib.import_module("app.strategy.phase8_offline_replay_bounded_iteration_plan")
+
+    assert hasattr(
+        module,
+        "Phase8OfflineReplayBoundedIterationPlan",
+    )
+    assert hasattr(
+        module,
+        "StrategyPhase8OfflineReplayBoundedIterationPlanFactory",
+    )
