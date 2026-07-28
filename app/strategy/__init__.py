@@ -3008,8 +3008,20 @@ __all__ = [
     "Phase8OfflineReplayBoundedContinuationPlanDecision",
     "StrategyPhase8OfflineReplayBoundedContinuationPlanner",
     "generate_phase8_offline_replay_bounded_continuation_plan",
+    "PHASE_8_OFFLINE_REPLAY_BOUNDED_CONTINUATION_APPLICATION_SCHEMA_VERSION",
+    "Phase8OfflineReplayBoundedContinuationApplicationReceipt",
+    "Phase8OfflineReplayBoundedContinuationApplicationDecision",
+    "StrategyPhase8OfflineReplayBoundedContinuationApplication",
+    "apply_phase8_offline_replay_bounded_continuation_plan",
 ]
 
+from app.strategy.phase8_offline_replay_bounded_continuation_application import (
+    PHASE_8_OFFLINE_REPLAY_BOUNDED_CONTINUATION_APPLICATION_SCHEMA_VERSION,
+    Phase8OfflineReplayBoundedContinuationApplicationDecision,
+    Phase8OfflineReplayBoundedContinuationApplicationReceipt,
+    StrategyPhase8OfflineReplayBoundedContinuationApplication,
+    apply_phase8_offline_replay_bounded_continuation_plan,
+)
 from app.strategy.phase8_offline_replay_bounded_continuation_plan import (
     PHASE_8_OFFLINE_REPLAY_BOUNDED_CONTINUATION_DEFAULT_LIMIT,
     PHASE_8_OFFLINE_REPLAY_BOUNDED_CONTINUATION_PLAN_SCHEMA_VERSION,
