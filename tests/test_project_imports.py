@@ -687,3 +687,21 @@ def test_phase11_live_readiness_admission_gate_imports() -> None:
     assert hasattr(module, "Phase11LiveReadinessAdmissionPermit")
     assert hasattr(module, "StrategyPhase11LiveReadinessAdmissionGate")
     assert hasattr(module, "evaluate_phase11_live_readiness_admission")
+
+
+def test_phase11_terminal_broker_account_capability_contract_imports() -> None:
+    import importlib
+
+    module = importlib.import_module(
+        "app.strategy.phase11_terminal_broker_account_capability_contract"
+    )
+
+    assert hasattr(module, "Phase11ReadinessCapability")
+    assert hasattr(
+        module,
+        "Phase11TerminalBrokerAccountCapabilityContract",
+    )
+    assert hasattr(
+        module,
+        "create_phase11_terminal_broker_account_capability_contract",
+    )

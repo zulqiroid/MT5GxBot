@@ -3277,6 +3277,21 @@ __all__ = [
     "Phase11LiveReadinessAdmissionDecision",
     "StrategyPhase11LiveReadinessAdmissionGate",
     "evaluate_phase11_live_readiness_admission",
+    "PHASE_11_CAPABILITY_SCHEMA_VERSION",
+    "PHASE_11_CAPABILITY_STATUS",
+    "PHASE_11_CAPABILITY_MODE",
+    "PHASE_11_CAPABILITY_SOURCE",
+    "PHASE_11_CAPABILITY_LIVE_EXECUTION_STATUS",
+    "PHASE_11_CAPABILITY_PREFLIGHT_EXECUTION_STATUS",
+    "PHASE_11_CAPABILITY_PRODUCTION_ACTIVATION_STATUS",
+    "PHASE_11_TERMINAL_CAPABILITY_IDS",
+    "PHASE_11_BROKER_CAPABILITY_IDS",
+    "PHASE_11_ACCOUNT_CAPABILITY_IDS",
+    "Phase11ReadinessCapability",
+    "Phase11TerminalBrokerAccountCapabilityContract",
+    "Phase11TerminalBrokerAccountCapabilityDecision",
+    "StrategyPhase11TerminalBrokerAccountCapabilityFactory",
+    "create_phase11_terminal_broker_account_capability_contract",
 ]
 
 from app.strategy.phase8_final_audit_handoff import (
@@ -3643,4 +3658,21 @@ from app.strategy.phase11_live_readiness_admission_gate import (
     Phase11LiveReadinessAdmissionPermit,
     StrategyPhase11LiveReadinessAdmissionGate,
     evaluate_phase11_live_readiness_admission,
+)
+from app.strategy.phase11_terminal_broker_account_capability_contract import (
+    PHASE_11_ACCOUNT_CAPABILITY_IDS,
+    PHASE_11_BROKER_CAPABILITY_IDS,
+    PHASE_11_CAPABILITY_LIVE_EXECUTION_STATUS,
+    PHASE_11_CAPABILITY_MODE,
+    PHASE_11_CAPABILITY_PREFLIGHT_EXECUTION_STATUS,
+    PHASE_11_CAPABILITY_PRODUCTION_ACTIVATION_STATUS,
+    PHASE_11_CAPABILITY_SCHEMA_VERSION,
+    PHASE_11_CAPABILITY_SOURCE,
+    PHASE_11_CAPABILITY_STATUS,
+    PHASE_11_TERMINAL_CAPABILITY_IDS,
+    Phase11ReadinessCapability,
+    Phase11TerminalBrokerAccountCapabilityContract,
+    Phase11TerminalBrokerAccountCapabilityDecision,
+    StrategyPhase11TerminalBrokerAccountCapabilityFactory,
+    create_phase11_terminal_broker_account_capability_contract,
 )
