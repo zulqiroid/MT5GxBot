@@ -3124,6 +3124,15 @@ __all__ = [
     "Phase8OfflineReplayGenericRemainingCompletionDecision",
     "StrategyPhase8OfflineReplayGenericRemainingBoundedCompletionEngine",
     "complete_phase8_offline_replay_remaining_with_generic_bounded_engine",
+    "PHASE_8_OFFLINE_REPLAY_TERMINAL_EXHAUSTION_AUDIT_SCHEMA_VERSION",
+    "PHASE_8_OFFLINE_REPLAY_TERMINAL_EXHAUSTION_AUDIT_PASSED",
+    "PHASE_8_OFFLINE_REPLAY_TERMINAL_REENTRY_BLOCKED",
+    "Phase8OfflineReplayTerminalExhaustionAuditReport",
+    "Phase8OfflineReplayTerminalExhaustionAuditDecision",
+    "Phase8OfflineReplayTerminalReentryDecision",
+    "StrategyPhase8OfflineReplayTerminalExhaustionAuditor",
+    "audit_phase8_offline_replay_terminal_exhaustion",
+    "block_phase8_offline_replay_terminal_reentry",
 ]
 
 from app.strategy.phase8_offline_replay_bounded_continuation_application import (
@@ -3311,4 +3320,15 @@ from app.strategy.phase8_offline_replay_successive_iterative_recurrent_bounded_p
     Phase8OfflineReplaySuccessiveIterativeRecurrentBoundedProgressedSessionStateDecision,
     StrategyPhase8OfflineReplaySuccessiveIterativeRecurrentBoundedProgressedStateFactory,
     create_phase8_offline_replay_successive_iterative_recurrent_bounded_progressed_state,
+)
+from app.strategy.phase8_offline_replay_terminal_exhaustion_audit import (
+    PHASE_8_OFFLINE_REPLAY_TERMINAL_EXHAUSTION_AUDIT_PASSED,
+    PHASE_8_OFFLINE_REPLAY_TERMINAL_EXHAUSTION_AUDIT_SCHEMA_VERSION,
+    PHASE_8_OFFLINE_REPLAY_TERMINAL_REENTRY_BLOCKED,
+    Phase8OfflineReplayTerminalExhaustionAuditDecision,
+    Phase8OfflineReplayTerminalExhaustionAuditReport,
+    Phase8OfflineReplayTerminalReentryDecision,
+    StrategyPhase8OfflineReplayTerminalExhaustionAuditor,
+    audit_phase8_offline_replay_terminal_exhaustion,
+    block_phase8_offline_replay_terminal_reentry,
 )

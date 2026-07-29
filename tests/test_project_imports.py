@@ -522,3 +522,26 @@ def test_phase8_offline_replay_generic_remaining_bounded_completion_imports() ->
         module,
         "complete_phase8_offline_replay_remaining_with_generic_bounded_engine",
     )
+
+
+def test_phase8_offline_replay_terminal_exhaustion_audit_imports() -> None:
+    import importlib
+
+    module = importlib.import_module("app.strategy.phase8_offline_replay_terminal_exhaustion_audit")
+
+    assert hasattr(
+        module,
+        "Phase8OfflineReplayTerminalExhaustionAuditReport",
+    )
+    assert hasattr(
+        module,
+        "StrategyPhase8OfflineReplayTerminalExhaustionAuditor",
+    )
+    assert hasattr(
+        module,
+        "audit_phase8_offline_replay_terminal_exhaustion",
+    )
+    assert hasattr(
+        module,
+        "block_phase8_offline_replay_terminal_reentry",
+    )
