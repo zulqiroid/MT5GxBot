@@ -3140,6 +3140,16 @@ __all__ = [
     "Phase8FinalAuditHandoffDecision",
     "StrategyPhase8FinalAuditHandoffFactory",
     "create_phase8_final_audit_handoff",
+    "PHASE_9_SIMULATION_ADMISSION_SCHEMA_VERSION",
+    "PHASE_9_SIMULATION_ADMISSION_MODE",
+    "PHASE_9_SIMULATION_ADMISSION_GRANTED",
+    "PHASE_9_LIVE_EXECUTION_BLOCKED",
+    "PHASE_9_ALLOWED_SYMBOL",
+    "PHASE_9_ALLOWED_TIMEFRAMES",
+    "Phase9SimulationAdmissionPermit",
+    "Phase9SimulationAdmissionDecision",
+    "StrategyPhase9SimulationAdmissionGate",
+    "evaluate_phase9_simulation_admission",
 ]
 
 from app.strategy.phase8_final_audit_handoff import (
@@ -3347,4 +3357,16 @@ from app.strategy.phase8_offline_replay_terminal_exhaustion_audit import (
     StrategyPhase8OfflineReplayTerminalExhaustionAuditor,
     audit_phase8_offline_replay_terminal_exhaustion,
     block_phase8_offline_replay_terminal_reentry,
+)
+from app.strategy.phase9_simulation_admission_gate import (
+    PHASE_9_ALLOWED_SYMBOL,
+    PHASE_9_ALLOWED_TIMEFRAMES,
+    PHASE_9_LIVE_EXECUTION_BLOCKED,
+    PHASE_9_SIMULATION_ADMISSION_GRANTED,
+    PHASE_9_SIMULATION_ADMISSION_MODE,
+    PHASE_9_SIMULATION_ADMISSION_SCHEMA_VERSION,
+    Phase9SimulationAdmissionDecision,
+    Phase9SimulationAdmissionPermit,
+    StrategyPhase9SimulationAdmissionGate,
+    evaluate_phase9_simulation_admission,
 )
