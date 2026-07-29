@@ -607,3 +607,13 @@ def test_phase9_simulation_safety_audit_imports() -> None:
         module,
         "audit_phase9_deterministic_simulation_safety",
     )
+
+
+def test_phase9_final_audit_handoff_imports() -> None:
+    import importlib
+
+    module = importlib.import_module("app.strategy.phase9_final_audit_handoff")
+
+    assert hasattr(module, "Phase9FinalAuditHandoffBundle")
+    assert hasattr(module, "StrategyPhase9FinalAuditHandoffFactory")
+    assert hasattr(module, "create_phase9_final_audit_handoff")

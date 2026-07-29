@@ -3187,6 +3187,15 @@ __all__ = [
     "Phase9SimulationSafetyAuditDecision",
     "StrategyPhase9SimulationSafetyAuditor",
     "audit_phase9_deterministic_simulation_safety",
+    "PHASE_9_FINAL_HANDOFF_SCHEMA_VERSION",
+    "PHASE_9_FINAL_HANDOFF_PHASE_STATUS",
+    "PHASE_9_FINAL_HANDOFF_STATUS",
+    "PHASE_9_FINAL_HANDOFF_SIMULATION_MODE",
+    "PHASE_9_FINAL_HANDOFF_LIVE_EXECUTION_STATUS",
+    "Phase9FinalAuditHandoffBundle",
+    "Phase9FinalAuditHandoffDecision",
+    "StrategyPhase9FinalAuditHandoffFactory",
+    "create_phase9_final_audit_handoff",
 ]
 
 from app.strategy.phase8_final_audit_handoff import (
@@ -3406,6 +3415,17 @@ from app.strategy.phase9_deterministic_in_memory_simulation_runner import (
     Phase9SimulationTraceEvent,
     StrategyPhase9DeterministicInMemorySimulationRunner,
     run_phase9_deterministic_in_memory_simulation,
+)
+from app.strategy.phase9_final_audit_handoff import (
+    PHASE_9_FINAL_HANDOFF_LIVE_EXECUTION_STATUS,
+    PHASE_9_FINAL_HANDOFF_PHASE_STATUS,
+    PHASE_9_FINAL_HANDOFF_SCHEMA_VERSION,
+    PHASE_9_FINAL_HANDOFF_SIMULATION_MODE,
+    PHASE_9_FINAL_HANDOFF_STATUS,
+    Phase9FinalAuditHandoffBundle,
+    Phase9FinalAuditHandoffDecision,
+    StrategyPhase9FinalAuditHandoffFactory,
+    create_phase9_final_audit_handoff,
 )
 from app.strategy.phase9_simulation_admission_gate import (
     PHASE_9_ALLOWED_SYMBOL,
