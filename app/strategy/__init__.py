@@ -3402,6 +3402,21 @@ __all__ = [
     "Phase12PreflightReadinessSafetyAuditDecision",
     "StrategyPhase12PreflightReadinessSafetyAuditor",
     "audit_phase12_preflight_readiness_safety",
+    "PHASE_12_FINAL_HANDOFF_SCHEMA_VERSION",
+    "PHASE_12_FINAL_HANDOFF_PHASE_STATUS",
+    "PHASE_12_FINAL_HANDOFF_STATUS",
+    "PHASE_12_FINAL_HANDOFF_MODE",
+    "PHASE_12_FINAL_HANDOFF_EVIDENCE_SOURCE",
+    "PHASE_12_FINAL_HANDOFF_REAL_PREFLIGHT_STATUS",
+    "PHASE_12_FINAL_HANDOFF_MT5_STATUS",
+    "PHASE_12_FINAL_HANDOFF_TERMINAL_STATUS",
+    "PHASE_12_FINAL_HANDOFF_BROKER_STATUS",
+    "PHASE_12_FINAL_HANDOFF_PRODUCTION_STATUS",
+    "PHASE_12_FINAL_HANDOFF_LIVE_STATUS",
+    "Phase12FinalAuditHandoffBundle",
+    "Phase12FinalAuditHandoffDecision",
+    "StrategyPhase12FinalAuditHandoffFactory",
+    "create_phase12_final_audit_handoff",
 ]
 
 from app.strategy.phase8_final_audit_handoff import (
@@ -3850,6 +3865,23 @@ from app.strategy.phase12_deterministic_fake_runtime_validation import (
     Phase12FakeValidationEvent,
     StrategyPhase12DeterministicFakeRuntimeValidator,
     validate_phase12_runtime_contract_with_fakes,
+)
+from app.strategy.phase12_final_audit_handoff import (
+    PHASE_12_FINAL_HANDOFF_BROKER_STATUS,
+    PHASE_12_FINAL_HANDOFF_EVIDENCE_SOURCE,
+    PHASE_12_FINAL_HANDOFF_LIVE_STATUS,
+    PHASE_12_FINAL_HANDOFF_MODE,
+    PHASE_12_FINAL_HANDOFF_MT5_STATUS,
+    PHASE_12_FINAL_HANDOFF_PHASE_STATUS,
+    PHASE_12_FINAL_HANDOFF_PRODUCTION_STATUS,
+    PHASE_12_FINAL_HANDOFF_REAL_PREFLIGHT_STATUS,
+    PHASE_12_FINAL_HANDOFF_SCHEMA_VERSION,
+    PHASE_12_FINAL_HANDOFF_STATUS,
+    PHASE_12_FINAL_HANDOFF_TERMINAL_STATUS,
+    Phase12FinalAuditHandoffBundle,
+    Phase12FinalAuditHandoffDecision,
+    StrategyPhase12FinalAuditHandoffFactory,
+    create_phase12_final_audit_handoff,
 )
 from app.strategy.phase12_preflight_readiness_safety_audit import (
     PHASE_12_READINESS_AUDIT_BROKER_STATUS,
