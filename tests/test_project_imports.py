@@ -771,3 +771,21 @@ def test_phase12_real_preflight_runtime_contract_imports() -> None:
         module,
         "create_phase12_real_preflight_runtime_contract",
     )
+
+
+def test_phase12_deterministic_fake_runtime_validation_imports() -> None:
+    import importlib
+
+    module = importlib.import_module("app.strategy.phase12_deterministic_fake_runtime_validation")
+    assert hasattr(
+        module,
+        "Phase12DeterministicFakeRuntimeValidationReport",
+    )
+    assert hasattr(
+        module,
+        "StrategyPhase12DeterministicFakeRuntimeValidator",
+    )
+    assert hasattr(
+        module,
+        "validate_phase12_runtime_contract_with_fakes",
+    )
