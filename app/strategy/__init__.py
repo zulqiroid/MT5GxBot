@@ -3177,6 +3177,16 @@ __all__ = [
     "Phase9DeterministicSimulationDecision",
     "StrategyPhase9DeterministicInMemorySimulationRunner",
     "run_phase9_deterministic_in_memory_simulation",
+    "PHASE_9_SIMULATION_SAFETY_AUDIT_SCHEMA_VERSION",
+    "PHASE_9_SIMULATION_SAFETY_AUDIT_STATUS_PASSED",
+    "PHASE_9_SIMULATION_SAFETY_AUDIT_LIVE_EXECUTION_BLOCKED",
+    "PHASE_9_SIMULATION_SAFETY_AUDIT_READY_FOR_FINAL_HANDOFF",
+    "PHASE_9_SIMULATION_SAFETY_REQUIRED_KILL_SWITCHES",
+    "Phase9SimulationSafetyAuditFinding",
+    "Phase9SimulationSafetyAuditReport",
+    "Phase9SimulationSafetyAuditDecision",
+    "StrategyPhase9SimulationSafetyAuditor",
+    "audit_phase9_deterministic_simulation_safety",
 ]
 
 from app.strategy.phase8_final_audit_handoff import (
@@ -3408,6 +3418,18 @@ from app.strategy.phase9_simulation_admission_gate import (
     Phase9SimulationAdmissionPermit,
     StrategyPhase9SimulationAdmissionGate,
     evaluate_phase9_simulation_admission,
+)
+from app.strategy.phase9_simulation_safety_audit import (
+    PHASE_9_SIMULATION_SAFETY_AUDIT_LIVE_EXECUTION_BLOCKED,
+    PHASE_9_SIMULATION_SAFETY_AUDIT_READY_FOR_FINAL_HANDOFF,
+    PHASE_9_SIMULATION_SAFETY_AUDIT_SCHEMA_VERSION,
+    PHASE_9_SIMULATION_SAFETY_AUDIT_STATUS_PASSED,
+    PHASE_9_SIMULATION_SAFETY_REQUIRED_KILL_SWITCHES,
+    Phase9SimulationSafetyAuditDecision,
+    Phase9SimulationSafetyAuditFinding,
+    Phase9SimulationSafetyAuditReport,
+    StrategyPhase9SimulationSafetyAuditor,
+    audit_phase9_deterministic_simulation_safety,
 )
 from app.strategy.phase9_simulation_scenario_contract import (
     PHASE_9_SIMULATION_AGGREGATE_RISK_BPS,

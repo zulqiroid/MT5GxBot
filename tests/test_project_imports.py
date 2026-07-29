@@ -594,3 +594,16 @@ def test_phase9_deterministic_in_memory_simulation_runner_imports() -> None:
         module,
         "run_phase9_deterministic_in_memory_simulation",
     )
+
+
+def test_phase9_simulation_safety_audit_imports() -> None:
+    import importlib
+
+    module = importlib.import_module("app.strategy.phase9_simulation_safety_audit")
+
+    assert hasattr(module, "Phase9SimulationSafetyAuditReport")
+    assert hasattr(module, "StrategyPhase9SimulationSafetyAuditor")
+    assert hasattr(
+        module,
+        "audit_phase9_deterministic_simulation_safety",
+    )
