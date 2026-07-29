@@ -3231,6 +3231,19 @@ __all__ = [
     "Phase10PaperScenarioOrderIntentDecision",
     "StrategyPhase10PaperScenarioOrderIntentFactory",
     "create_phase10_paper_scenario_order_intent",
+    "PHASE_10_PAPER_EXECUTION_SCHEMA_VERSION",
+    "PHASE_10_PAPER_EXECUTION_STATUS",
+    "PHASE_10_PAPER_EXECUTION_OUTCOME",
+    "PHASE_10_PAPER_EXECUTION_MODE",
+    "PHASE_10_PAPER_EXECUTION_EVENT_TYPES",
+    "PHASE_10_PAPER_LEDGER_ENTRY_TYPES",
+    "Phase10PaperGuardResult",
+    "Phase10PaperLedgerEntry",
+    "Phase10PaperExecutionEvent",
+    "Phase10DeterministicPaperExecution",
+    "Phase10DeterministicPaperExecutionDecision",
+    "StrategyPhase10DeterministicPaperExecutionEngine",
+    "execute_phase10_deterministic_paper_contract",
 ]
 
 from app.strategy.phase8_final_audit_handoff import (
@@ -3504,6 +3517,21 @@ from app.strategy.phase9_simulation_scenario_contract import (
     Phase9SimulationScenarioDecision,
     StrategyPhase9SimulationScenarioFactory,
     create_phase9_simulation_scenario,
+)
+from app.strategy.phase10_deterministic_paper_execution_engine import (
+    PHASE_10_PAPER_EXECUTION_EVENT_TYPES,
+    PHASE_10_PAPER_EXECUTION_MODE,
+    PHASE_10_PAPER_EXECUTION_OUTCOME,
+    PHASE_10_PAPER_EXECUTION_SCHEMA_VERSION,
+    PHASE_10_PAPER_EXECUTION_STATUS,
+    PHASE_10_PAPER_LEDGER_ENTRY_TYPES,
+    Phase10DeterministicPaperExecution,
+    Phase10DeterministicPaperExecutionDecision,
+    Phase10PaperExecutionEvent,
+    Phase10PaperGuardResult,
+    Phase10PaperLedgerEntry,
+    StrategyPhase10DeterministicPaperExecutionEngine,
+    execute_phase10_deterministic_paper_contract,
 )
 from app.strategy.phase10_paper_admission_gate import (
     PHASE_10_AGGREGATE_RISK_BUDGET_BPS,

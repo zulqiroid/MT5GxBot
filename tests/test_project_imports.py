@@ -641,3 +641,19 @@ def test_phase10_paper_scenario_order_intent_contract_imports() -> None:
         module,
         "create_phase10_paper_scenario_order_intent",
     )
+
+
+def test_phase10_deterministic_paper_execution_engine_imports() -> None:
+    import importlib
+
+    module = importlib.import_module("app.strategy.phase10_deterministic_paper_execution_engine")
+
+    assert hasattr(module, "Phase10DeterministicPaperExecution")
+    assert hasattr(
+        module,
+        "StrategyPhase10DeterministicPaperExecutionEngine",
+    )
+    assert hasattr(
+        module,
+        "execute_phase10_deterministic_paper_contract",
+    )
