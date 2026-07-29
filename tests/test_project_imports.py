@@ -617,3 +617,13 @@ def test_phase9_final_audit_handoff_imports() -> None:
     assert hasattr(module, "Phase9FinalAuditHandoffBundle")
     assert hasattr(module, "StrategyPhase9FinalAuditHandoffFactory")
     assert hasattr(module, "create_phase9_final_audit_handoff")
+
+
+def test_phase10_paper_admission_gate_imports() -> None:
+    import importlib
+
+    module = importlib.import_module("app.strategy.phase10_paper_admission_gate")
+
+    assert hasattr(module, "Phase10PaperAdmissionPermit")
+    assert hasattr(module, "StrategyPhase10PaperAdmissionGate")
+    assert hasattr(module, "evaluate_phase10_paper_admission")

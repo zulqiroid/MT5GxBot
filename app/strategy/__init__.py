@@ -3196,6 +3196,19 @@ __all__ = [
     "Phase9FinalAuditHandoffDecision",
     "StrategyPhase9FinalAuditHandoffFactory",
     "create_phase9_final_audit_handoff",
+    "PHASE_10_PAPER_ADMISSION_SCHEMA_VERSION",
+    "PHASE_10_PAPER_ADMISSION_MODE",
+    "PHASE_10_PAPER_ADMISSION_STATUS",
+    "PHASE_10_LIVE_EXECUTION_STATUS",
+    "PHASE_10_ALLOWED_SYMBOL",
+    "PHASE_10_ALLOWED_TIMEFRAMES",
+    "PHASE_10_MAX_GOLD_POSITIONS",
+    "PHASE_10_AGGREGATE_RISK_BUDGET_BPS",
+    "PHASE_10_STAGE_RISK_BPS",
+    "Phase10PaperAdmissionPermit",
+    "Phase10PaperAdmissionDecision",
+    "StrategyPhase10PaperAdmissionGate",
+    "evaluate_phase10_paper_admission",
 ]
 
 from app.strategy.phase8_final_audit_handoff import (
@@ -3469,4 +3482,19 @@ from app.strategy.phase9_simulation_scenario_contract import (
     Phase9SimulationScenarioDecision,
     StrategyPhase9SimulationScenarioFactory,
     create_phase9_simulation_scenario,
+)
+from app.strategy.phase10_paper_admission_gate import (
+    PHASE_10_AGGREGATE_RISK_BUDGET_BPS,
+    PHASE_10_ALLOWED_SYMBOL,
+    PHASE_10_ALLOWED_TIMEFRAMES,
+    PHASE_10_LIVE_EXECUTION_STATUS,
+    PHASE_10_MAX_GOLD_POSITIONS,
+    PHASE_10_PAPER_ADMISSION_MODE,
+    PHASE_10_PAPER_ADMISSION_SCHEMA_VERSION,
+    PHASE_10_PAPER_ADMISSION_STATUS,
+    PHASE_10_STAGE_RISK_BPS,
+    Phase10PaperAdmissionDecision,
+    Phase10PaperAdmissionPermit,
+    StrategyPhase10PaperAdmissionGate,
+    evaluate_phase10_paper_admission,
 )
