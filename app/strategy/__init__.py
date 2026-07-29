@@ -3244,6 +3244,16 @@ __all__ = [
     "Phase10DeterministicPaperExecutionDecision",
     "StrategyPhase10DeterministicPaperExecutionEngine",
     "execute_phase10_deterministic_paper_contract",
+    "PHASE_10_PAPER_SAFETY_AUDIT_SCHEMA_VERSION",
+    "PHASE_10_PAPER_SAFETY_AUDIT_STATUS",
+    "PHASE_10_PAPER_SAFETY_HANDOFF_STATUS",
+    "PHASE_10_PAPER_SAFETY_LIVE_EXECUTION_STATUS",
+    "PHASE_10_PAPER_SAFETY_REQUIRED_GUARDS",
+    "Phase10PaperSafetyAuditFinding",
+    "Phase10PaperExecutionSafetyAuditReport",
+    "Phase10PaperExecutionSafetyAuditDecision",
+    "StrategyPhase10PaperExecutionSafetyAuditor",
+    "audit_phase10_paper_execution_safety",
 ]
 
 from app.strategy.phase8_final_audit_handoff import (
@@ -3547,6 +3557,18 @@ from app.strategy.phase10_paper_admission_gate import (
     Phase10PaperAdmissionPermit,
     StrategyPhase10PaperAdmissionGate,
     evaluate_phase10_paper_admission,
+)
+from app.strategy.phase10_paper_execution_safety_audit import (
+    PHASE_10_PAPER_SAFETY_AUDIT_SCHEMA_VERSION,
+    PHASE_10_PAPER_SAFETY_AUDIT_STATUS,
+    PHASE_10_PAPER_SAFETY_HANDOFF_STATUS,
+    PHASE_10_PAPER_SAFETY_LIVE_EXECUTION_STATUS,
+    PHASE_10_PAPER_SAFETY_REQUIRED_GUARDS,
+    Phase10PaperExecutionSafetyAuditDecision,
+    Phase10PaperExecutionSafetyAuditReport,
+    Phase10PaperSafetyAuditFinding,
+    StrategyPhase10PaperExecutionSafetyAuditor,
+    audit_phase10_paper_execution_safety,
 )
 from app.strategy.phase10_paper_scenario_order_intent_contract import (
     PHASE_10_PAPER_AGGREGATE_RISK_BPS,

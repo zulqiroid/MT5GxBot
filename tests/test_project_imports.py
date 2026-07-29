@@ -657,3 +657,13 @@ def test_phase10_deterministic_paper_execution_engine_imports() -> None:
         module,
         "execute_phase10_deterministic_paper_contract",
     )
+
+
+def test_phase10_paper_execution_safety_audit_imports() -> None:
+    import importlib
+
+    module = importlib.import_module("app.strategy.phase10_paper_execution_safety_audit")
+
+    assert hasattr(module, "Phase10PaperExecutionSafetyAuditReport")
+    assert hasattr(module, "StrategyPhase10PaperExecutionSafetyAuditor")
+    assert hasattr(module, "audit_phase10_paper_execution_safety")
