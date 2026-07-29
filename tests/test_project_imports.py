@@ -741,3 +741,18 @@ def test_phase11_final_audit_handoff_imports() -> None:
     assert hasattr(module, "Phase11FinalAuditHandoffBundle")
     assert hasattr(module, "StrategyPhase11FinalAuditHandoffFactory")
     assert hasattr(module, "create_phase11_final_audit_handoff")
+
+
+def test_phase12_real_preflight_planning_admission_gate_imports() -> None:
+    import importlib
+
+    module = importlib.import_module("app.strategy.phase12_real_preflight_planning_admission_gate")
+    assert hasattr(module, "Phase12RealPreflightPlanningAdmissionPermit")
+    assert hasattr(
+        module,
+        "StrategyPhase12RealPreflightPlanningAdmissionGate",
+    )
+    assert hasattr(
+        module,
+        "evaluate_phase12_real_preflight_planning_admission",
+    )
