@@ -501,3 +501,24 @@ def test_phase8_offline_replay_further_continued_successive_iterative_recurrent_
         module,
         "StrategyPhase8OfflineReplayFurtherContinuedSuccessiveIterativeRecurrentBoundedPlanner",
     )
+
+
+def test_phase8_offline_replay_generic_remaining_bounded_completion_imports() -> None:
+    import importlib
+
+    module = importlib.import_module(
+        "app.strategy.phase8_offline_replay_generic_remaining_bounded_completion"
+    )
+
+    assert hasattr(
+        module,
+        "Phase8OfflineReplayGenericRemainingCompletionState",
+    )
+    assert hasattr(
+        module,
+        "StrategyPhase8OfflineReplayGenericRemainingBoundedCompletionEngine",
+    )
+    assert hasattr(
+        module,
+        "complete_phase8_offline_replay_remaining_with_generic_bounded_engine",
+    )

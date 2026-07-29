@@ -3116,6 +3116,14 @@ __all__ = [
     "Phase8OfflineReplayFurtherContinuedSuccessiveIterativeRecurrentBoundedPlanDecision",
     "StrategyPhase8OfflineReplayFurtherContinuedSuccessiveIterativeRecurrentBoundedPlanner",
     "generate_phase8_offline_replay_further_continued_successive_iterative_recurrent_bounded_plan",
+    "PHASE_8_OFFLINE_REPLAY_GENERIC_REMAINING_BOUNDED_COMPLETION_SCHEMA_VERSION",
+    "PHASE_8_OFFLINE_REPLAY_GENERIC_REMAINING_BOUNDED_DEFAULT_CHUNK_LIMIT",
+    "PHASE_8_OFFLINE_REPLAY_GENERIC_REMAINING_BOUNDED_COMPLETED",
+    "Phase8OfflineReplayGenericBoundedChunkReceipt",
+    "Phase8OfflineReplayGenericRemainingCompletionState",
+    "Phase8OfflineReplayGenericRemainingCompletionDecision",
+    "StrategyPhase8OfflineReplayGenericRemainingBoundedCompletionEngine",
+    "complete_phase8_offline_replay_remaining_with_generic_bounded_engine",
 ]
 
 from app.strategy.phase8_offline_replay_bounded_continuation_application import (
@@ -3197,6 +3205,16 @@ from app.strategy.phase8_offline_replay_further_continued_successive_iterative_r
     Phase8OfflineReplayFurtherContinuedSuccessiveIterativeRecurrentBoundedPlanDecision,
     StrategyPhase8OfflineReplayFurtherContinuedSuccessiveIterativeRecurrentBoundedPlanner,
     generate_phase8_offline_replay_further_continued_successive_iterative_recurrent_bounded_plan,
+)
+from app.strategy.phase8_offline_replay_generic_remaining_bounded_completion import (
+    PHASE_8_OFFLINE_REPLAY_GENERIC_REMAINING_BOUNDED_COMPLETED,
+    PHASE_8_OFFLINE_REPLAY_GENERIC_REMAINING_BOUNDED_COMPLETION_SCHEMA_VERSION,
+    PHASE_8_OFFLINE_REPLAY_GENERIC_REMAINING_BOUNDED_DEFAULT_CHUNK_LIMIT,
+    Phase8OfflineReplayGenericBoundedChunkReceipt,
+    Phase8OfflineReplayGenericRemainingCompletionDecision,
+    Phase8OfflineReplayGenericRemainingCompletionState,
+    StrategyPhase8OfflineReplayGenericRemainingBoundedCompletionEngine,
+    complete_phase8_offline_replay_remaining_with_generic_bounded_engine,
 )
 from app.strategy.phase8_offline_replay_iterative_recurrent_bounded_application import (
     PHASE_8_OFFLINE_REPLAY_ITERATIVE_RECURRENT_BOUNDED_APPLICATION_SCHEMA_VERSION,
