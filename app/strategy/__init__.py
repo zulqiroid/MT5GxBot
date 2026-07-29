@@ -3417,6 +3417,21 @@ __all__ = [
     "Phase12FinalAuditHandoffDecision",
     "StrategyPhase12FinalAuditHandoffFactory",
     "create_phase12_final_audit_handoff",
+    "PHASE_13_RUNTIME_ADMISSION_SCHEMA_VERSION",
+    "PHASE_13_RUNTIME_ADMISSION_MODE",
+    "PHASE_13_RUNTIME_ADMISSION_STATUS",
+    "PHASE_13_REAL_PREFLIGHT_EXECUTION_STATUS",
+    "PHASE_13_MT5_IMPORT_STATUS",
+    "PHASE_13_MT5_INITIALIZATION_STATUS",
+    "PHASE_13_TERMINAL_CONNECTION_STATUS",
+    "PHASE_13_BROKER_ACCESS_STATUS",
+    "PHASE_13_REAL_ACCOUNT_READ_STATUS",
+    "PHASE_13_PRODUCTION_ACTIVATION_STATUS",
+    "PHASE_13_LIVE_EXECUTION_STATUS",
+    "Phase13ControlledReadOnlyRuntimeAdmissionPermit",
+    "Phase13ControlledReadOnlyRuntimeAdmissionDecision",
+    "StrategyPhase13ControlledReadOnlyRuntimeAdmissionGate",
+    "evaluate_phase13_controlled_read_only_runtime_admission",
 ]
 
 from app.strategy.phase8_final_audit_handoff import (
@@ -3941,4 +3956,21 @@ from app.strategy.phase12_real_preflight_runtime_contract import (
     Phase12RuntimeAdapterCapability,
     StrategyPhase12RealPreflightRuntimeContractFactory,
     create_phase12_real_preflight_runtime_contract,
+)
+from app.strategy.phase13_controlled_read_only_runtime_admission_gate import (
+    PHASE_13_BROKER_ACCESS_STATUS,
+    PHASE_13_LIVE_EXECUTION_STATUS,
+    PHASE_13_MT5_IMPORT_STATUS,
+    PHASE_13_MT5_INITIALIZATION_STATUS,
+    PHASE_13_PRODUCTION_ACTIVATION_STATUS,
+    PHASE_13_REAL_ACCOUNT_READ_STATUS,
+    PHASE_13_REAL_PREFLIGHT_EXECUTION_STATUS,
+    PHASE_13_RUNTIME_ADMISSION_MODE,
+    PHASE_13_RUNTIME_ADMISSION_SCHEMA_VERSION,
+    PHASE_13_RUNTIME_ADMISSION_STATUS,
+    PHASE_13_TERMINAL_CONNECTION_STATUS,
+    Phase13ControlledReadOnlyRuntimeAdmissionDecision,
+    Phase13ControlledReadOnlyRuntimeAdmissionPermit,
+    StrategyPhase13ControlledReadOnlyRuntimeAdmissionGate,
+    evaluate_phase13_controlled_read_only_runtime_admission,
 )
