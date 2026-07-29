@@ -3263,6 +3263,20 @@ __all__ = [
     "Phase10FinalAuditHandoffDecision",
     "StrategyPhase10FinalAuditHandoffFactory",
     "create_phase10_final_audit_handoff",
+    "PHASE_11_LIVE_READINESS_SCHEMA_VERSION",
+    "PHASE_11_LIVE_READINESS_ADMISSION_MODE",
+    "PHASE_11_LIVE_READINESS_ADMISSION_STATUS",
+    "PHASE_11_LIVE_EXECUTION_STATUS",
+    "PHASE_11_PRODUCTION_ACTIVATION_STATUS",
+    "PHASE_11_ALLOWED_SYMBOL",
+    "PHASE_11_ALLOWED_TIMEFRAMES",
+    "PHASE_11_MAX_GOLD_POSITIONS",
+    "PHASE_11_AGGREGATE_RISK_BUDGET_BPS",
+    "PHASE_11_STAGE_RISK_BPS",
+    "Phase11LiveReadinessAdmissionPermit",
+    "Phase11LiveReadinessAdmissionDecision",
+    "StrategyPhase11LiveReadinessAdmissionGate",
+    "evaluate_phase11_live_readiness_admission",
 ]
 
 from app.strategy.phase8_final_audit_handoff import (
@@ -3613,4 +3627,20 @@ from app.strategy.phase10_paper_scenario_order_intent_contract import (
     Phase10PaperScenarioOrderIntentDecision,
     StrategyPhase10PaperScenarioOrderIntentFactory,
     create_phase10_paper_scenario_order_intent,
+)
+from app.strategy.phase11_live_readiness_admission_gate import (
+    PHASE_11_AGGREGATE_RISK_BUDGET_BPS,
+    PHASE_11_ALLOWED_SYMBOL,
+    PHASE_11_ALLOWED_TIMEFRAMES,
+    PHASE_11_LIVE_EXECUTION_STATUS,
+    PHASE_11_LIVE_READINESS_ADMISSION_MODE,
+    PHASE_11_LIVE_READINESS_ADMISSION_STATUS,
+    PHASE_11_LIVE_READINESS_SCHEMA_VERSION,
+    PHASE_11_MAX_GOLD_POSITIONS,
+    PHASE_11_PRODUCTION_ACTIVATION_STATUS,
+    PHASE_11_STAGE_RISK_BPS,
+    Phase11LiveReadinessAdmissionDecision,
+    Phase11LiveReadinessAdmissionPermit,
+    StrategyPhase11LiveReadinessAdmissionGate,
+    evaluate_phase11_live_readiness_admission,
 )
