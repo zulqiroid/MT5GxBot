@@ -441,3 +441,23 @@ def test_phase8_offline_replay_continued_successive_iterative_recurrent_bounded_
         module,
         "StrategyPhase8OfflineReplayContinuedSuccessiveIterativeRecurrentBoundedPlanner",
     )
+
+
+def test_phase8_offline_replay_continued_successive_iterative_recurrent_bounded_application_imports() -> (
+    None
+):
+    import importlib
+
+    module = importlib.import_module(
+        "app.strategy."
+        "phase8_offline_replay_continued_successive_iterative_recurrent_bounded_application"
+    )
+
+    assert hasattr(
+        module,
+        "Phase8OfflineReplayContinuedSuccessiveIterativeRecurrentBoundedApplicationReceipt",
+    )
+    assert hasattr(
+        module,
+        "StrategyPhase8OfflineReplayContinuedSuccessiveIterativeRecurrentBoundedApplication",
+    )
