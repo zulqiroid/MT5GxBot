@@ -3254,6 +3254,15 @@ __all__ = [
     "Phase10PaperExecutionSafetyAuditDecision",
     "StrategyPhase10PaperExecutionSafetyAuditor",
     "audit_phase10_paper_execution_safety",
+    "PHASE_10_FINAL_HANDOFF_SCHEMA_VERSION",
+    "PHASE_10_FINAL_HANDOFF_PHASE_STATUS",
+    "PHASE_10_FINAL_HANDOFF_STATUS",
+    "PHASE_10_FINAL_HANDOFF_EXECUTION_MODE",
+    "PHASE_10_FINAL_HANDOFF_LIVE_EXECUTION_STATUS",
+    "Phase10FinalAuditHandoffBundle",
+    "Phase10FinalAuditHandoffDecision",
+    "StrategyPhase10FinalAuditHandoffFactory",
+    "create_phase10_final_audit_handoff",
 ]
 
 from app.strategy.phase8_final_audit_handoff import (
@@ -3542,6 +3551,17 @@ from app.strategy.phase10_deterministic_paper_execution_engine import (
     Phase10PaperLedgerEntry,
     StrategyPhase10DeterministicPaperExecutionEngine,
     execute_phase10_deterministic_paper_contract,
+)
+from app.strategy.phase10_final_audit_handoff import (
+    PHASE_10_FINAL_HANDOFF_EXECUTION_MODE,
+    PHASE_10_FINAL_HANDOFF_LIVE_EXECUTION_STATUS,
+    PHASE_10_FINAL_HANDOFF_PHASE_STATUS,
+    PHASE_10_FINAL_HANDOFF_SCHEMA_VERSION,
+    PHASE_10_FINAL_HANDOFF_STATUS,
+    Phase10FinalAuditHandoffBundle,
+    Phase10FinalAuditHandoffDecision,
+    StrategyPhase10FinalAuditHandoffFactory,
+    create_phase10_final_audit_handoff,
 )
 from app.strategy.phase10_paper_admission_gate import (
     PHASE_10_AGGREGATE_RISK_BUDGET_BPS,
