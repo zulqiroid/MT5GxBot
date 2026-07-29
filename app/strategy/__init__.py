@@ -3309,6 +3309,18 @@ __all__ = [
     "Phase11DeterministicReadOnlyPreflightDecision",
     "StrategyPhase11DeterministicReadOnlyPreflightRunner",
     "run_phase11_deterministic_read_only_preflight",
+    "PHASE_11_READINESS_AUDIT_SCHEMA_VERSION",
+    "PHASE_11_READINESS_AUDIT_STATUS",
+    "PHASE_11_READINESS_AUDIT_HANDOFF_STATUS",
+    "PHASE_11_READINESS_AUDIT_SOURCE",
+    "PHASE_11_READINESS_AUDIT_REAL_PREFLIGHT_STATUS",
+    "PHASE_11_READINESS_AUDIT_PRODUCTION_STATUS",
+    "PHASE_11_READINESS_AUDIT_LIVE_STATUS",
+    "Phase11ReadinessAuditFinding",
+    "Phase11ReadinessSafetyAuditReport",
+    "Phase11ReadinessSafetyAuditDecision",
+    "StrategyPhase11ReadinessSafetyAuditor",
+    "audit_phase11_readiness_safety",
 ]
 
 from app.strategy.phase8_final_audit_handoff import (
@@ -3694,6 +3706,20 @@ from app.strategy.phase11_live_readiness_admission_gate import (
     Phase11LiveReadinessAdmissionPermit,
     StrategyPhase11LiveReadinessAdmissionGate,
     evaluate_phase11_live_readiness_admission,
+)
+from app.strategy.phase11_readiness_safety_audit import (
+    PHASE_11_READINESS_AUDIT_HANDOFF_STATUS,
+    PHASE_11_READINESS_AUDIT_LIVE_STATUS,
+    PHASE_11_READINESS_AUDIT_PRODUCTION_STATUS,
+    PHASE_11_READINESS_AUDIT_REAL_PREFLIGHT_STATUS,
+    PHASE_11_READINESS_AUDIT_SCHEMA_VERSION,
+    PHASE_11_READINESS_AUDIT_SOURCE,
+    PHASE_11_READINESS_AUDIT_STATUS,
+    Phase11ReadinessAuditFinding,
+    Phase11ReadinessSafetyAuditDecision,
+    Phase11ReadinessSafetyAuditReport,
+    StrategyPhase11ReadinessSafetyAuditor,
+    audit_phase11_readiness_safety,
 )
 from app.strategy.phase11_terminal_broker_account_capability_contract import (
     PHASE_11_ACCOUNT_CAPABILITY_IDS,

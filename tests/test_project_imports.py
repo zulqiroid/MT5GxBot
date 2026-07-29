@@ -721,3 +721,13 @@ def test_phase11_deterministic_read_only_preflight_imports() -> None:
         module,
         "run_phase11_deterministic_read_only_preflight",
     )
+
+
+def test_phase11_readiness_safety_audit_imports() -> None:
+    import importlib
+
+    module = importlib.import_module("app.strategy.phase11_readiness_safety_audit")
+
+    assert hasattr(module, "Phase11ReadinessSafetyAuditReport")
+    assert hasattr(module, "StrategyPhase11ReadinessSafetyAuditor")
+    assert hasattr(module, "audit_phase11_readiness_safety")
