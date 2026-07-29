@@ -565,3 +565,14 @@ def test_phase9_simulation_admission_gate_imports() -> None:
     assert hasattr(module, "Phase9SimulationAdmissionPermit")
     assert hasattr(module, "StrategyPhase9SimulationAdmissionGate")
     assert hasattr(module, "evaluate_phase9_simulation_admission")
+
+
+def test_phase9_simulation_scenario_contract_imports() -> None:
+    import importlib
+
+    module = importlib.import_module("app.strategy.phase9_simulation_scenario_contract")
+
+    assert hasattr(module, "Phase9ClosedCandleSnapshot")
+    assert hasattr(module, "Phase9SimulationScenarioContract")
+    assert hasattr(module, "StrategyPhase9SimulationScenarioFactory")
+    assert hasattr(module, "create_phase9_simulation_scenario")
