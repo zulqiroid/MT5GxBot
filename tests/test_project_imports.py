@@ -545,3 +545,13 @@ def test_phase8_offline_replay_terminal_exhaustion_audit_imports() -> None:
         module,
         "block_phase8_offline_replay_terminal_reentry",
     )
+
+
+def test_phase8_final_audit_handoff_imports() -> None:
+    import importlib
+
+    module = importlib.import_module("app.strategy.phase8_final_audit_handoff")
+
+    assert hasattr(module, "Phase8FinalAuditHandoffBundle")
+    assert hasattr(module, "StrategyPhase8FinalAuditHandoffFactory")
+    assert hasattr(module, "create_phase8_final_audit_handoff")

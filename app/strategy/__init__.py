@@ -3133,8 +3133,24 @@ __all__ = [
     "StrategyPhase8OfflineReplayTerminalExhaustionAuditor",
     "audit_phase8_offline_replay_terminal_exhaustion",
     "block_phase8_offline_replay_terminal_reentry",
+    "PHASE_8_FINAL_AUDIT_HANDOFF_SCHEMA_VERSION",
+    "PHASE_8_FINAL_AUDIT_HANDOFF_COMPLETE",
+    "PHASE_8_FINAL_AUDIT_HANDOFF_READY_FOR_PHASE_9",
+    "Phase8FinalAuditHandoffBundle",
+    "Phase8FinalAuditHandoffDecision",
+    "StrategyPhase8FinalAuditHandoffFactory",
+    "create_phase8_final_audit_handoff",
 ]
 
+from app.strategy.phase8_final_audit_handoff import (
+    PHASE_8_FINAL_AUDIT_HANDOFF_COMPLETE,
+    PHASE_8_FINAL_AUDIT_HANDOFF_READY_FOR_PHASE_9,
+    PHASE_8_FINAL_AUDIT_HANDOFF_SCHEMA_VERSION,
+    Phase8FinalAuditHandoffBundle,
+    Phase8FinalAuditHandoffDecision,
+    StrategyPhase8FinalAuditHandoffFactory,
+    create_phase8_final_audit_handoff,
+)
 from app.strategy.phase8_offline_replay_bounded_continuation_application import (
     PHASE_8_OFFLINE_REPLAY_BOUNDED_CONTINUATION_APPLICATION_SCHEMA_VERSION,
     Phase8OfflineReplayBoundedContinuationApplicationDecision,
