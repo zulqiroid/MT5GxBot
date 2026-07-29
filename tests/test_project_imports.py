@@ -627,3 +627,17 @@ def test_phase10_paper_admission_gate_imports() -> None:
     assert hasattr(module, "Phase10PaperAdmissionPermit")
     assert hasattr(module, "StrategyPhase10PaperAdmissionGate")
     assert hasattr(module, "evaluate_phase10_paper_admission")
+
+
+def test_phase10_paper_scenario_order_intent_contract_imports() -> None:
+    import importlib
+
+    module = importlib.import_module("app.strategy.phase10_paper_scenario_order_intent_contract")
+
+    assert hasattr(module, "Phase10PaperClosedCandle")
+    assert hasattr(module, "Phase10PaperOrderIntent")
+    assert hasattr(module, "Phase10PaperScenarioOrderIntentContract")
+    assert hasattr(
+        module,
+        "create_phase10_paper_scenario_order_intent",
+    )
