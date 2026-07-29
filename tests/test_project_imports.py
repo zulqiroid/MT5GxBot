@@ -789,3 +789,21 @@ def test_phase12_deterministic_fake_runtime_validation_imports() -> None:
         module,
         "validate_phase12_runtime_contract_with_fakes",
     )
+
+
+def test_phase12_preflight_readiness_safety_audit_imports() -> None:
+    import importlib
+
+    module = importlib.import_module("app.strategy.phase12_preflight_readiness_safety_audit")
+    assert hasattr(
+        module,
+        "Phase12PreflightReadinessSafetyAuditReport",
+    )
+    assert hasattr(
+        module,
+        "StrategyPhase12PreflightReadinessSafetyAuditor",
+    )
+    assert hasattr(
+        module,
+        "audit_phase12_preflight_readiness_safety",
+    )

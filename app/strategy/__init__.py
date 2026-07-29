@@ -3386,6 +3386,22 @@ __all__ = [
     "Phase12DeterministicFakeRuntimeValidationDecision",
     "StrategyPhase12DeterministicFakeRuntimeValidator",
     "validate_phase12_runtime_contract_with_fakes",
+    "PHASE_12_READINESS_AUDIT_SCHEMA_VERSION",
+    "PHASE_12_READINESS_AUDIT_STATUS",
+    "PHASE_12_READINESS_AUDIT_HANDOFF_STATUS",
+    "PHASE_12_READINESS_AUDIT_SOURCE",
+    "PHASE_12_READINESS_AUDIT_REAL_PREFLIGHT_STATUS",
+    "PHASE_12_READINESS_AUDIT_MT5_STATUS",
+    "PHASE_12_READINESS_AUDIT_TERMINAL_STATUS",
+    "PHASE_12_READINESS_AUDIT_BROKER_STATUS",
+    "PHASE_12_READINESS_AUDIT_PRODUCTION_STATUS",
+    "PHASE_12_READINESS_AUDIT_LIVE_STATUS",
+    "PHASE_12_READINESS_FINDING_NAMES",
+    "Phase12ReadinessAuditFinding",
+    "Phase12PreflightReadinessSafetyAuditReport",
+    "Phase12PreflightReadinessSafetyAuditDecision",
+    "StrategyPhase12PreflightReadinessSafetyAuditor",
+    "audit_phase12_preflight_readiness_safety",
 ]
 
 from app.strategy.phase8_final_audit_handoff import (
@@ -3834,6 +3850,24 @@ from app.strategy.phase12_deterministic_fake_runtime_validation import (
     Phase12FakeValidationEvent,
     StrategyPhase12DeterministicFakeRuntimeValidator,
     validate_phase12_runtime_contract_with_fakes,
+)
+from app.strategy.phase12_preflight_readiness_safety_audit import (
+    PHASE_12_READINESS_AUDIT_BROKER_STATUS,
+    PHASE_12_READINESS_AUDIT_HANDOFF_STATUS,
+    PHASE_12_READINESS_AUDIT_LIVE_STATUS,
+    PHASE_12_READINESS_AUDIT_MT5_STATUS,
+    PHASE_12_READINESS_AUDIT_PRODUCTION_STATUS,
+    PHASE_12_READINESS_AUDIT_REAL_PREFLIGHT_STATUS,
+    PHASE_12_READINESS_AUDIT_SCHEMA_VERSION,
+    PHASE_12_READINESS_AUDIT_SOURCE,
+    PHASE_12_READINESS_AUDIT_STATUS,
+    PHASE_12_READINESS_AUDIT_TERMINAL_STATUS,
+    PHASE_12_READINESS_FINDING_NAMES,
+    Phase12PreflightReadinessSafetyAuditDecision,
+    Phase12PreflightReadinessSafetyAuditReport,
+    Phase12ReadinessAuditFinding,
+    StrategyPhase12PreflightReadinessSafetyAuditor,
+    audit_phase12_preflight_readiness_safety,
 )
 from app.strategy.phase12_real_preflight_planning_admission_gate import (
     PHASE_12_AGGREGATE_RISK_BUDGET_BPS,
