@@ -756,3 +756,18 @@ def test_phase12_real_preflight_planning_admission_gate_imports() -> None:
         module,
         "evaluate_phase12_real_preflight_planning_admission",
     )
+
+
+def test_phase12_real_preflight_runtime_contract_imports() -> None:
+    import importlib
+
+    module = importlib.import_module("app.strategy.phase12_real_preflight_runtime_contract")
+    assert hasattr(module, "Phase12RealPreflightRuntimeContract")
+    assert hasattr(
+        module,
+        "StrategyPhase12RealPreflightRuntimeContractFactory",
+    )
+    assert hasattr(
+        module,
+        "create_phase12_real_preflight_runtime_contract",
+    )
