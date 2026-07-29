@@ -705,3 +705,19 @@ def test_phase11_terminal_broker_account_capability_contract_imports() -> None:
         module,
         "create_phase11_terminal_broker_account_capability_contract",
     )
+
+
+def test_phase11_deterministic_read_only_preflight_imports() -> None:
+    import importlib
+
+    module = importlib.import_module("app.strategy.phase11_deterministic_read_only_preflight")
+
+    assert hasattr(module, "Phase11DeterministicReadOnlyPreflight")
+    assert hasattr(
+        module,
+        "StrategyPhase11DeterministicReadOnlyPreflightRunner",
+    )
+    assert hasattr(
+        module,
+        "run_phase11_deterministic_read_only_preflight",
+    )
