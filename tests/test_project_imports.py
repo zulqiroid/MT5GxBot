@@ -576,3 +576,21 @@ def test_phase9_simulation_scenario_contract_imports() -> None:
     assert hasattr(module, "Phase9SimulationScenarioContract")
     assert hasattr(module, "StrategyPhase9SimulationScenarioFactory")
     assert hasattr(module, "create_phase9_simulation_scenario")
+
+
+def test_phase9_deterministic_in_memory_simulation_runner_imports() -> None:
+    import importlib
+
+    module = importlib.import_module(
+        "app.strategy.phase9_deterministic_in_memory_simulation_runner"
+    )
+
+    assert hasattr(module, "Phase9DeterministicSimulationRun")
+    assert hasattr(
+        module,
+        "StrategyPhase9DeterministicInMemorySimulationRunner",
+    )
+    assert hasattr(
+        module,
+        "run_phase9_deterministic_in_memory_simulation",
+    )

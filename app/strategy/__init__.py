@@ -3167,6 +3167,16 @@ __all__ = [
     "Phase9SimulationScenarioDecision",
     "StrategyPhase9SimulationScenarioFactory",
     "create_phase9_simulation_scenario",
+    "PHASE_9_SIMULATION_RUNNER_SCHEMA_VERSION",
+    "PHASE_9_SIMULATION_RUN_STATUS_COMPLETED",
+    "PHASE_9_SIMULATION_RUN_OUTCOME_TAKE_PROFIT",
+    "PHASE_9_SIMULATION_RUN_EVENT_TYPES",
+    "Phase9SimulationKillSwitchResult",
+    "Phase9SimulationTraceEvent",
+    "Phase9DeterministicSimulationRun",
+    "Phase9DeterministicSimulationDecision",
+    "StrategyPhase9DeterministicInMemorySimulationRunner",
+    "run_phase9_deterministic_in_memory_simulation",
 ]
 
 from app.strategy.phase8_final_audit_handoff import (
@@ -3374,6 +3384,18 @@ from app.strategy.phase8_offline_replay_terminal_exhaustion_audit import (
     StrategyPhase8OfflineReplayTerminalExhaustionAuditor,
     audit_phase8_offline_replay_terminal_exhaustion,
     block_phase8_offline_replay_terminal_reentry,
+)
+from app.strategy.phase9_deterministic_in_memory_simulation_runner import (
+    PHASE_9_SIMULATION_RUN_EVENT_TYPES,
+    PHASE_9_SIMULATION_RUN_OUTCOME_TAKE_PROFIT,
+    PHASE_9_SIMULATION_RUN_STATUS_COMPLETED,
+    PHASE_9_SIMULATION_RUNNER_SCHEMA_VERSION,
+    Phase9DeterministicSimulationDecision,
+    Phase9DeterministicSimulationRun,
+    Phase9SimulationKillSwitchResult,
+    Phase9SimulationTraceEvent,
+    StrategyPhase9DeterministicInMemorySimulationRunner,
+    run_phase9_deterministic_in_memory_simulation,
 )
 from app.strategy.phase9_simulation_admission_gate import (
     PHASE_9_ALLOWED_SYMBOL,
