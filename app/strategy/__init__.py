@@ -3321,6 +3321,17 @@ __all__ = [
     "Phase11ReadinessSafetyAuditDecision",
     "StrategyPhase11ReadinessSafetyAuditor",
     "audit_phase11_readiness_safety",
+    "PHASE_11_FINAL_HANDOFF_SCHEMA_VERSION",
+    "PHASE_11_FINAL_HANDOFF_PHASE_STATUS",
+    "PHASE_11_FINAL_HANDOFF_STATUS",
+    "PHASE_11_FINAL_HANDOFF_MODE",
+    "PHASE_11_FINAL_HANDOFF_REAL_PREFLIGHT_STATUS",
+    "PHASE_11_FINAL_HANDOFF_PRODUCTION_STATUS",
+    "PHASE_11_FINAL_HANDOFF_LIVE_STATUS",
+    "Phase11FinalAuditHandoffBundle",
+    "Phase11FinalAuditHandoffDecision",
+    "StrategyPhase11FinalAuditHandoffFactory",
+    "create_phase11_final_audit_handoff",
 ]
 
 from app.strategy.phase8_final_audit_handoff import (
@@ -3690,6 +3701,19 @@ from app.strategy.phase11_deterministic_read_only_preflight import (
     Phase11FakeTerminalSnapshot,
     StrategyPhase11DeterministicReadOnlyPreflightRunner,
     run_phase11_deterministic_read_only_preflight,
+)
+from app.strategy.phase11_final_audit_handoff import (
+    PHASE_11_FINAL_HANDOFF_LIVE_STATUS,
+    PHASE_11_FINAL_HANDOFF_MODE,
+    PHASE_11_FINAL_HANDOFF_PHASE_STATUS,
+    PHASE_11_FINAL_HANDOFF_PRODUCTION_STATUS,
+    PHASE_11_FINAL_HANDOFF_REAL_PREFLIGHT_STATUS,
+    PHASE_11_FINAL_HANDOFF_SCHEMA_VERSION,
+    PHASE_11_FINAL_HANDOFF_STATUS,
+    Phase11FinalAuditHandoffBundle,
+    Phase11FinalAuditHandoffDecision,
+    StrategyPhase11FinalAuditHandoffFactory,
+    create_phase11_final_audit_handoff,
 )
 from app.strategy.phase11_live_readiness_admission_gate import (
     PHASE_11_AGGREGATE_RISK_BUDGET_BPS,
