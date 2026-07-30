@@ -936,3 +936,12 @@ def test_phase14_deterministic_extension_architecture_validation_imports() -> No
     assert hasattr(module, "Phase14ArchitectureValidationReport")
     assert hasattr(module, "Phase14ArchitectureValidator")
     assert hasattr(module, "validate_phase14_extension_architecture")
+
+
+def test_phase14_extension_architecture_safety_audit_imports() -> None:
+    import importlib
+
+    module = importlib.import_module("app.strategy.phase14_extension_architecture_safety_audit")
+    assert hasattr(module, "Phase14ArchitectureSafetyAuditReport")
+    assert hasattr(module, "Phase14ArchitectureSafetyAuditor")
+    assert hasattr(module, "audit_phase14_architecture_safety")

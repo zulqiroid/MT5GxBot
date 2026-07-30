@@ -3504,6 +3504,16 @@ __all__ = (
     "Phase14ArchitectureValidationDecision",
     "Phase14ArchitectureValidator",
     "validate_phase14_extension_architecture",
+    "PHASE_14_ARCHITECTURE_SAFETY_AUDIT_SOURCE",
+    "PHASE_14_ARCHITECTURE_SAFETY_AUDIT_STATUS",
+    "PHASE_14_ARCHITECTURE_SAFETY_FINDINGS",
+    "PHASE_14_ARCHITECTURE_SAFETY_HANDOFF_STATUS",
+    "PHASE_14_ARCHITECTURE_SAFETY_SCHEMA_VERSION",
+    "Phase14ArchitectureSafetyAuditDecision",
+    "Phase14ArchitectureSafetyAuditReport",
+    "Phase14ArchitectureSafetyAuditor",
+    "Phase14SafetyFinding",
+    "audit_phase14_architecture_safety",
 )
 
 from app.strategy.phase8_final_audit_handoff import (
@@ -4141,4 +4151,26 @@ from app.strategy.phase14_deterministic_extension_architecture_validation import
     Phase14ArchitectureValidationResult,
     Phase14ArchitectureValidator,
     validate_phase14_extension_architecture,
+)
+from app.strategy.phase14_extension_architecture_safety_audit import (
+    AUDIT_SOURCE as PHASE_14_ARCHITECTURE_SAFETY_AUDIT_SOURCE,
+)
+from app.strategy.phase14_extension_architecture_safety_audit import (
+    AUDIT_STATUS as PHASE_14_ARCHITECTURE_SAFETY_AUDIT_STATUS,
+)
+from app.strategy.phase14_extension_architecture_safety_audit import (
+    FINDINGS as PHASE_14_ARCHITECTURE_SAFETY_FINDINGS,
+)
+from app.strategy.phase14_extension_architecture_safety_audit import (
+    HANDOFF_STATUS as PHASE_14_ARCHITECTURE_SAFETY_HANDOFF_STATUS,
+)
+from app.strategy.phase14_extension_architecture_safety_audit import (
+    SCHEMA_VERSION as PHASE_14_ARCHITECTURE_SAFETY_SCHEMA_VERSION,
+)
+from app.strategy.phase14_extension_architecture_safety_audit import (
+    Phase14ArchitectureSafetyAuditDecision,
+    Phase14ArchitectureSafetyAuditor,
+    Phase14ArchitectureSafetyAuditReport,
+    Phase14SafetyFinding,
+    audit_phase14_architecture_safety,
 )
