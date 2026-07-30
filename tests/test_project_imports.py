@@ -903,3 +903,14 @@ def test_phase13_final_audit_handoff_imports() -> None:
     assert hasattr(module, "Phase13FinalAuditHandoffBundle")
     assert hasattr(module, "StrategyPhase13FinalAuditHandoffFactory")
     assert hasattr(module, "create_phase13_final_audit_handoff")
+
+
+def test_phase14_controlled_roadmap_extension_admission_gate_imports() -> None:
+    import importlib
+
+    module = importlib.import_module(
+        "app.strategy.phase14_controlled_roadmap_extension_admission_gate"
+    )
+    assert hasattr(module, "Phase14RoadmapExtensionPermit")
+    assert hasattr(module, "Phase14RoadmapExtensionAdmissionGate")
+    assert hasattr(module, "evaluate_phase14_roadmap_extension")

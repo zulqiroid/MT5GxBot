@@ -1573,7 +1573,7 @@ from app.strategy.swings import (
     detect_confirmed_swings,
 )
 
-__all__ = [
+__all__ = (
     "AnalysisPipeline",
     "AnalysisPipelineBuildError",
     "AnalysisPipelineErrorReason",
@@ -3476,7 +3476,16 @@ __all__ = [
     "Phase13FinalAuditHandoffDecision",
     "StrategyPhase13FinalAuditHandoffFactory",
     "create_phase13_final_audit_handoff",
-]
+    "PHASE_14_EXTENSION_ADMISSION_SCHEMA_VERSION",
+    "PHASE_14_EXTENSION_ADMISSION_MODE",
+    "PHASE_14_EXTENSION_ADMISSION_STATUS",
+    "PHASE_14_EXTENSION_ADMISSION_SOURCE",
+    "PHASE_14_EXTENSION_BLOCKED_STATUS",
+    "Phase14RoadmapExtensionPermit",
+    "Phase14RoadmapExtensionDecision",
+    "Phase14RoadmapExtensionAdmissionGate",
+    "evaluate_phase14_roadmap_extension",
+)
 
 from app.strategy.phase8_final_audit_handoff import (
     PHASE_8_FINAL_AUDIT_HANDOFF_COMPLETE,
@@ -4069,4 +4078,25 @@ from app.strategy.phase13_final_audit_handoff import (
     Phase13FinalAuditHandoffDecision,
     StrategyPhase13FinalAuditHandoffFactory,
     create_phase13_final_audit_handoff,
+)
+from app.strategy.phase14_controlled_roadmap_extension_admission_gate import (
+    ADMISSION_MODE as PHASE_14_EXTENSION_ADMISSION_MODE,
+)
+from app.strategy.phase14_controlled_roadmap_extension_admission_gate import (
+    ADMISSION_SOURCE as PHASE_14_EXTENSION_ADMISSION_SOURCE,
+)
+from app.strategy.phase14_controlled_roadmap_extension_admission_gate import (
+    ADMISSION_STATUS as PHASE_14_EXTENSION_ADMISSION_STATUS,
+)
+from app.strategy.phase14_controlled_roadmap_extension_admission_gate import (
+    BLOCKED as PHASE_14_EXTENSION_BLOCKED_STATUS,
+)
+from app.strategy.phase14_controlled_roadmap_extension_admission_gate import (
+    SCHEMA_VERSION as PHASE_14_EXTENSION_ADMISSION_SCHEMA_VERSION,
+)
+from app.strategy.phase14_controlled_roadmap_extension_admission_gate import (
+    Phase14RoadmapExtensionAdmissionGate,
+    Phase14RoadmapExtensionDecision,
+    Phase14RoadmapExtensionPermit,
+    evaluate_phase14_roadmap_extension,
 )
