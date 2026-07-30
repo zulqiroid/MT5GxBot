@@ -836,3 +836,21 @@ def test_phase13_controlled_read_only_runtime_admission_gate_imports() -> None:
         module,
         "evaluate_phase13_controlled_read_only_runtime_admission",
     )
+
+
+def test_phase13_controlled_read_only_runtime_boundary_imports() -> None:
+    import importlib
+
+    module = importlib.import_module("app.strategy.phase13_controlled_read_only_runtime_boundary")
+    assert hasattr(
+        module,
+        "Phase13ControlledReadOnlyRuntimeBoundaryContract",
+    )
+    assert hasattr(
+        module,
+        "StrategyPhase13ControlledReadOnlyRuntimeBoundaryFactory",
+    )
+    assert hasattr(
+        module,
+        "create_phase13_controlled_read_only_runtime_boundary",
+    )
