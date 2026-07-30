@@ -874,3 +874,23 @@ def test_phase13_deterministic_fake_runtime_boundary_validation_imports() -> Non
         module,
         "validate_phase13_runtime_boundary_with_fakes",
     )
+
+
+def test_phase13_controlled_read_only_runtime_safety_audit_imports() -> None:
+    import importlib
+
+    module = importlib.import_module(
+        "app.strategy.phase13_controlled_read_only_runtime_safety_audit"
+    )
+    assert hasattr(
+        module,
+        "Phase13ControlledReadOnlyRuntimeSafetyAuditReport",
+    )
+    assert hasattr(
+        module,
+        "StrategyPhase13ControlledReadOnlyRuntimeSafetyAuditor",
+    )
+    assert hasattr(
+        module,
+        "audit_phase13_controlled_read_only_runtime_safety",
+    )

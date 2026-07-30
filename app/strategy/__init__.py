@@ -3457,6 +3457,16 @@ __all__ = [
     "Phase13DeterministicFakeRuntimeBoundaryValidationReport",
     "StrategyPhase13DeterministicFakeRuntimeBoundaryValidator",
     "validate_phase13_runtime_boundary_with_fakes",
+    "PHASE_13_RUNTIME_SAFETY_AUDIT_SCHEMA_VERSION",
+    "PHASE_13_RUNTIME_SAFETY_AUDIT_STATUS",
+    "PHASE_13_RUNTIME_SAFETY_AUDIT_HANDOFF_STATUS",
+    "PHASE_13_RUNTIME_SAFETY_AUDIT_SOURCE",
+    "PHASE_13_RUNTIME_SAFETY_FINDING_NAMES",
+    "Phase13RuntimeSafetyAuditFinding",
+    "Phase13ControlledReadOnlyRuntimeSafetyAuditReport",
+    "Phase13ControlledReadOnlyRuntimeSafetyAuditDecision",
+    "StrategyPhase13ControlledReadOnlyRuntimeSafetyAuditor",
+    "audit_phase13_controlled_read_only_runtime_safety",
 ]
 
 from app.strategy.phase8_final_audit_handoff import (
@@ -4016,6 +4026,18 @@ from app.strategy.phase13_controlled_read_only_runtime_boundary import (
     Phase13SnapshotMappingContract,
     StrategyPhase13ControlledReadOnlyRuntimeBoundaryFactory,
     create_phase13_controlled_read_only_runtime_boundary,
+)
+from app.strategy.phase13_controlled_read_only_runtime_safety_audit import (
+    PHASE_13_RUNTIME_SAFETY_AUDIT_HANDOFF_STATUS,
+    PHASE_13_RUNTIME_SAFETY_AUDIT_SCHEMA_VERSION,
+    PHASE_13_RUNTIME_SAFETY_AUDIT_SOURCE,
+    PHASE_13_RUNTIME_SAFETY_AUDIT_STATUS,
+    PHASE_13_RUNTIME_SAFETY_FINDING_NAMES,
+    Phase13ControlledReadOnlyRuntimeSafetyAuditDecision,
+    Phase13ControlledReadOnlyRuntimeSafetyAuditReport,
+    Phase13RuntimeSafetyAuditFinding,
+    StrategyPhase13ControlledReadOnlyRuntimeSafetyAuditor,
+    audit_phase13_controlled_read_only_runtime_safety,
 )
 from app.strategy.phase13_deterministic_fake_runtime_boundary_validation import (
     EVENT_TYPES,
