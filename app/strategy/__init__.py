@@ -3495,6 +3495,15 @@ __all__ = (
     "Phase14ExtensionArchitectureDecision",
     "Phase14ExtensionArchitectureFactory",
     "create_phase14_extension_architecture",
+    "PHASE_14_ARCHITECTURE_VALIDATION_SCHEMA_VERSION",
+    "PHASE_14_ARCHITECTURE_VALIDATION_STATUS",
+    "PHASE_14_ARCHITECTURE_VALIDATION_OUTCOME",
+    "PHASE_14_ARCHITECTURE_VALIDATION_SOURCE",
+    "Phase14ArchitectureValidationResult",
+    "Phase14ArchitectureValidationReport",
+    "Phase14ArchitectureValidationDecision",
+    "Phase14ArchitectureValidator",
+    "validate_phase14_extension_architecture",
 )
 
 from app.strategy.phase8_final_audit_handoff import (
@@ -4121,4 +4130,15 @@ from app.strategy.phase14_controlled_roadmap_extension_admission_gate import (
     Phase14RoadmapExtensionDecision,
     Phase14RoadmapExtensionPermit,
     evaluate_phase14_roadmap_extension,
+)
+from app.strategy.phase14_deterministic_extension_architecture_validation import (
+    PHASE_14_ARCHITECTURE_VALIDATION_OUTCOME,
+    PHASE_14_ARCHITECTURE_VALIDATION_SCHEMA_VERSION,
+    PHASE_14_ARCHITECTURE_VALIDATION_SOURCE,
+    PHASE_14_ARCHITECTURE_VALIDATION_STATUS,
+    Phase14ArchitectureValidationDecision,
+    Phase14ArchitectureValidationReport,
+    Phase14ArchitectureValidationResult,
+    Phase14ArchitectureValidator,
+    validate_phase14_extension_architecture,
 )

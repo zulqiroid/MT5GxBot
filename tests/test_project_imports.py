@@ -925,3 +925,14 @@ def test_phase14_controlled_extension_architecture_blueprint_imports() -> None:
     assert hasattr(module, "Phase14ExtensionArchitectureBlueprint")
     assert hasattr(module, "Phase14ExtensionArchitectureFactory")
     assert hasattr(module, "create_phase14_extension_architecture")
+
+
+def test_phase14_deterministic_extension_architecture_validation_imports() -> None:
+    import importlib
+
+    module = importlib.import_module(
+        "app.strategy.phase14_deterministic_extension_architecture_validation"
+    )
+    assert hasattr(module, "Phase14ArchitectureValidationReport")
+    assert hasattr(module, "Phase14ArchitectureValidator")
+    assert hasattr(module, "validate_phase14_extension_architecture")
