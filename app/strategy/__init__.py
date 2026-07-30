@@ -3448,6 +3448,15 @@ __all__ = [
     "Phase13ControlledReadOnlyRuntimeBoundaryDecision",
     "StrategyPhase13ControlledReadOnlyRuntimeBoundaryFactory",
     "create_phase13_controlled_read_only_runtime_boundary",
+    "EVENT_TYPES",
+    "SCHEMA_VERSION",
+    "VALIDATION_OUTCOME",
+    "VALIDATION_SOURCE",
+    "VALIDATION_STATUS",
+    "Phase13DeterministicFakeRuntimeBoundaryValidationDecision",
+    "Phase13DeterministicFakeRuntimeBoundaryValidationReport",
+    "StrategyPhase13DeterministicFakeRuntimeBoundaryValidator",
+    "validate_phase13_runtime_boundary_with_fakes",
 ]
 
 from app.strategy.phase8_final_audit_handoff import (
@@ -4007,4 +4016,15 @@ from app.strategy.phase13_controlled_read_only_runtime_boundary import (
     Phase13SnapshotMappingContract,
     StrategyPhase13ControlledReadOnlyRuntimeBoundaryFactory,
     create_phase13_controlled_read_only_runtime_boundary,
+)
+from app.strategy.phase13_deterministic_fake_runtime_boundary_validation import (
+    EVENT_TYPES,
+    SCHEMA_VERSION,
+    VALIDATION_OUTCOME,
+    VALIDATION_SOURCE,
+    VALIDATION_STATUS,
+    Phase13DeterministicFakeRuntimeBoundaryValidationDecision,
+    Phase13DeterministicFakeRuntimeBoundaryValidationReport,
+    StrategyPhase13DeterministicFakeRuntimeBoundaryValidator,
+    validate_phase13_runtime_boundary_with_fakes,
 )

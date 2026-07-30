@@ -854,3 +854,23 @@ def test_phase13_controlled_read_only_runtime_boundary_imports() -> None:
         module,
         "create_phase13_controlled_read_only_runtime_boundary",
     )
+
+
+def test_phase13_deterministic_fake_runtime_boundary_validation_imports() -> None:
+    import importlib
+
+    module = importlib.import_module(
+        "app.strategy.phase13_deterministic_fake_runtime_boundary_validation"
+    )
+    assert hasattr(
+        module,
+        "Phase13DeterministicFakeRuntimeBoundaryValidationReport",
+    )
+    assert hasattr(
+        module,
+        "StrategyPhase13DeterministicFakeRuntimeBoundaryValidator",
+    )
+    assert hasattr(
+        module,
+        "validate_phase13_runtime_boundary_with_fakes",
+    )
