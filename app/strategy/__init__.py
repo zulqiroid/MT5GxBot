@@ -3467,6 +3467,15 @@ __all__ = [
     "Phase13ControlledReadOnlyRuntimeSafetyAuditDecision",
     "StrategyPhase13ControlledReadOnlyRuntimeSafetyAuditor",
     "audit_phase13_controlled_read_only_runtime_safety",
+    "PHASE_13_FINAL_HANDOFF_SCHEMA_VERSION",
+    "PHASE_13_FINAL_HANDOFF_PHASE_STATUS",
+    "PHASE_13_FINAL_HANDOFF_STATUS",
+    "PHASE_13_FINAL_HANDOFF_MODE",
+    "PHASE_13_FINAL_HANDOFF_EVIDENCE_SOURCE",
+    "Phase13FinalAuditHandoffBundle",
+    "Phase13FinalAuditHandoffDecision",
+    "StrategyPhase13FinalAuditHandoffFactory",
+    "create_phase13_final_audit_handoff",
 ]
 
 from app.strategy.phase8_final_audit_handoff import (
@@ -4049,4 +4058,15 @@ from app.strategy.phase13_deterministic_fake_runtime_boundary_validation import 
     Phase13DeterministicFakeRuntimeBoundaryValidationReport,
     StrategyPhase13DeterministicFakeRuntimeBoundaryValidator,
     validate_phase13_runtime_boundary_with_fakes,
+)
+from app.strategy.phase13_final_audit_handoff import (
+    PHASE_13_FINAL_HANDOFF_EVIDENCE_SOURCE,
+    PHASE_13_FINAL_HANDOFF_MODE,
+    PHASE_13_FINAL_HANDOFF_PHASE_STATUS,
+    PHASE_13_FINAL_HANDOFF_SCHEMA_VERSION,
+    PHASE_13_FINAL_HANDOFF_STATUS,
+    Phase13FinalAuditHandoffBundle,
+    Phase13FinalAuditHandoffDecision,
+    StrategyPhase13FinalAuditHandoffFactory,
+    create_phase13_final_audit_handoff,
 )

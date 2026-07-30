@@ -894,3 +894,12 @@ def test_phase13_controlled_read_only_runtime_safety_audit_imports() -> None:
         module,
         "audit_phase13_controlled_read_only_runtime_safety",
     )
+
+
+def test_phase13_final_audit_handoff_imports() -> None:
+    import importlib
+
+    module = importlib.import_module("app.strategy.phase13_final_audit_handoff")
+    assert hasattr(module, "Phase13FinalAuditHandoffBundle")
+    assert hasattr(module, "StrategyPhase13FinalAuditHandoffFactory")
+    assert hasattr(module, "create_phase13_final_audit_handoff")
