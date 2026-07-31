@@ -1013,3 +1013,15 @@ def test_phase16_release_readiness_admission_gate_imports() -> None:
         module,
         "evaluate_phase16_offline_release_readiness_admission",
     )
+
+
+def test_phase16_offline_release_readiness_blueprint_imports() -> None:
+    import importlib
+
+    module = importlib.import_module("app.strategy.phase16_offline_release_readiness_blueprint")
+    assert hasattr(module, "Phase16OfflineReleaseReadinessBlueprint")
+    assert hasattr(module, "Phase16OfflineReleaseReadinessPlanner")
+    assert hasattr(
+        module,
+        "build_phase16_offline_release_readiness_blueprint",
+    )
