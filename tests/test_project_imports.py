@@ -1001,3 +1001,15 @@ def test_phase15_final_architecture_handoff_imports() -> None:
     assert hasattr(module, "Phase15FinalArchitectureHandoff")
     assert hasattr(module, "Phase15FinalArchitectureHandoffBuilder")
     assert hasattr(module, "build_phase15_final_architecture_handoff")
+
+
+def test_phase16_release_readiness_admission_gate_imports() -> None:
+    import importlib
+
+    module = importlib.import_module("app.strategy.phase16_release_readiness_admission_gate")
+    assert hasattr(module, "Phase16OfflineReleaseReadinessPermit")
+    assert hasattr(module, "Phase16OfflineReleaseReadinessAdmissionGate")
+    assert hasattr(
+        module,
+        "evaluate_phase16_offline_release_readiness_admission",
+    )

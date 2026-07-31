@@ -3574,6 +3574,19 @@ __all__ = (
     "Phase15FinalArchitectureHandoffDecision",
     "Phase15FinalArchitectureHandoffBuilder",
     "build_phase15_final_architecture_handoff",
+    "PHASE_16_ADMISSION_SCHEMA_VERSION",
+    "PHASE_16_ADMISSION_STATUS",
+    "PHASE_16_ADMISSION_MODE",
+    "PHASE_16_ADMISSION_SOURCE",
+    "PHASE_16_NEXT_ALLOWED_STEP",
+    "PHASE_16_BLOCKED_STATUS",
+    "PHASE_16_RELEASE_READINESS_TRACKS",
+    "PHASE_16_SAFETY_REQUIREMENTS",
+    "PHASE_16_FUTURE_GATE_REQUIREMENTS",
+    "Phase16OfflineReleaseReadinessPermit",
+    "Phase16OfflineReleaseReadinessAdmissionDecision",
+    "Phase16OfflineReleaseReadinessAdmissionGate",
+    "evaluate_phase16_offline_release_readiness_admission",
 )
 
 from app.strategy.phase8_final_audit_handoff import (
@@ -4305,4 +4318,19 @@ from app.strategy.phase15_final_architecture_handoff import (
     Phase15FinalArchitectureHandoffBuilder,
     Phase15FinalArchitectureHandoffDecision,
     build_phase15_final_architecture_handoff,
+)
+from app.strategy.phase16_release_readiness_admission_gate import (
+    PHASE_16_ADMISSION_MODE,
+    PHASE_16_ADMISSION_SCHEMA_VERSION,
+    PHASE_16_ADMISSION_SOURCE,
+    PHASE_16_ADMISSION_STATUS,
+    PHASE_16_BLOCKED_STATUS,
+    PHASE_16_FUTURE_GATE_REQUIREMENTS,
+    PHASE_16_NEXT_ALLOWED_STEP,
+    PHASE_16_RELEASE_READINESS_TRACKS,
+    PHASE_16_SAFETY_REQUIREMENTS,
+    Phase16OfflineReleaseReadinessAdmissionDecision,
+    Phase16OfflineReleaseReadinessAdmissionGate,
+    Phase16OfflineReleaseReadinessPermit,
+    evaluate_phase16_offline_release_readiness_admission,
 )
