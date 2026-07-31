@@ -965,3 +965,12 @@ def test_phase15_controlled_roadmap_extension_admission_gate_imports() -> None:
     assert hasattr(module, "Phase15RoadmapExtensionPermit")
     assert hasattr(module, "Phase15RoadmapExtensionAdmissionGate")
     assert hasattr(module, "evaluate_phase15_roadmap_extension")
+
+
+def test_phase15_extension_architecture_blueprint_imports() -> None:
+    import importlib
+
+    module = importlib.import_module("app.strategy.phase15_extension_architecture_blueprint")
+    assert hasattr(module, "Phase15ExtensionArchitectureBlueprint")
+    assert hasattr(module, "Phase15ExtensionArchitecturePlanner")
+    assert hasattr(module, "build_phase15_extension_architecture")

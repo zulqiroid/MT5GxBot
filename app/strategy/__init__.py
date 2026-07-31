@@ -3535,6 +3535,17 @@ __all__ = (
     "Phase15RoadmapExtensionAdmissionDecision",
     "Phase15RoadmapExtensionAdmissionGate",
     "evaluate_phase15_roadmap_extension",
+    "PHASE_15_BLUEPRINT_SCHEMA_VERSION",
+    "PHASE_15_BLUEPRINT_STATUS",
+    "PHASE_15_BLUEPRINT_MODE",
+    "PHASE_15_BLUEPRINT_SOURCE",
+    "PHASE_15_BLUEPRINT_NEXT_ALLOWED",
+    "PHASE_15_BLUEPRINT_COMPONENTS",
+    "PHASE_15_BLUEPRINT_REQUIREMENTS",
+    "Phase15ExtensionArchitectureBlueprint",
+    "Phase15ExtensionArchitectureDecision",
+    "Phase15ExtensionArchitecturePlanner",
+    "build_phase15_extension_architecture",
 )
 
 from app.strategy.phase8_final_audit_handoff import (
@@ -4219,4 +4230,17 @@ from app.strategy.phase15_controlled_roadmap_extension_admission_gate import (
     Phase15RoadmapExtensionAdmissionGate,
     Phase15RoadmapExtensionPermit,
     evaluate_phase15_roadmap_extension,
+)
+from app.strategy.phase15_extension_architecture_blueprint import (
+    PHASE_15_BLUEPRINT_COMPONENTS,
+    PHASE_15_BLUEPRINT_MODE,
+    PHASE_15_BLUEPRINT_NEXT_ALLOWED,
+    PHASE_15_BLUEPRINT_REQUIREMENTS,
+    PHASE_15_BLUEPRINT_SCHEMA_VERSION,
+    PHASE_15_BLUEPRINT_SOURCE,
+    PHASE_15_BLUEPRINT_STATUS,
+    Phase15ExtensionArchitectureBlueprint,
+    Phase15ExtensionArchitectureDecision,
+    Phase15ExtensionArchitecturePlanner,
+    build_phase15_extension_architecture,
 )
