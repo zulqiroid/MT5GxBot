@@ -3546,6 +3546,15 @@ __all__ = (
     "Phase15ExtensionArchitectureDecision",
     "Phase15ExtensionArchitecturePlanner",
     "build_phase15_extension_architecture",
+    "PHASE_15_ARCHITECTURE_VALIDATION_SCHEMA_VERSION",
+    "PHASE_15_ARCHITECTURE_VALIDATION_STATUS",
+    "PHASE_15_ARCHITECTURE_VALIDATION_OUTCOME",
+    "PHASE_15_ARCHITECTURE_VALIDATION_SOURCE",
+    "Phase15ArchitectureValidationResult",
+    "Phase15ArchitectureValidationReport",
+    "Phase15ArchitectureValidationDecision",
+    "Phase15ArchitectureValidator",
+    "validate_phase15_extension_architecture",
 )
 
 from app.strategy.phase8_final_audit_handoff import (
@@ -4230,6 +4239,17 @@ from app.strategy.phase15_controlled_roadmap_extension_admission_gate import (
     Phase15RoadmapExtensionAdmissionGate,
     Phase15RoadmapExtensionPermit,
     evaluate_phase15_roadmap_extension,
+)
+from app.strategy.phase15_deterministic_architecture_validation import (
+    PHASE_15_ARCHITECTURE_VALIDATION_OUTCOME,
+    PHASE_15_ARCHITECTURE_VALIDATION_SCHEMA_VERSION,
+    PHASE_15_ARCHITECTURE_VALIDATION_SOURCE,
+    PHASE_15_ARCHITECTURE_VALIDATION_STATUS,
+    Phase15ArchitectureValidationDecision,
+    Phase15ArchitectureValidationReport,
+    Phase15ArchitectureValidationResult,
+    Phase15ArchitectureValidator,
+    validate_phase15_extension_architecture,
 )
 from app.strategy.phase15_extension_architecture_blueprint import (
     PHASE_15_BLUEPRINT_COMPONENTS,
