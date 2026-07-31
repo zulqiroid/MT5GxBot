@@ -3514,6 +3514,15 @@ __all__ = (
     "Phase14ArchitectureSafetyAuditor",
     "Phase14SafetyFinding",
     "audit_phase14_architecture_safety",
+    "PHASE_14_FINAL_HANDOFF_SCHEMA_VERSION",
+    "PHASE_14_FINAL_HANDOFF_PHASE_STATUS",
+    "PHASE_14_FINAL_HANDOFF_STATUS",
+    "PHASE_14_FINAL_HANDOFF_MODE",
+    "PHASE_14_FINAL_HANDOFF_EVIDENCE_SOURCE",
+    "Phase14FinalArchitectureHandoffBundle",
+    "Phase14FinalArchitectureHandoffDecision",
+    "Phase14FinalArchitectureHandoffFactory",
+    "create_phase14_final_architecture_handoff",
 )
 
 from app.strategy.phase8_final_audit_handoff import (
@@ -4173,4 +4182,15 @@ from app.strategy.phase14_extension_architecture_safety_audit import (
     Phase14ArchitectureSafetyAuditReport,
     Phase14SafetyFinding,
     audit_phase14_architecture_safety,
+)
+from app.strategy.phase14_final_architecture_handoff import (
+    PHASE_14_FINAL_HANDOFF_EVIDENCE_SOURCE,
+    PHASE_14_FINAL_HANDOFF_MODE,
+    PHASE_14_FINAL_HANDOFF_PHASE_STATUS,
+    PHASE_14_FINAL_HANDOFF_SCHEMA_VERSION,
+    PHASE_14_FINAL_HANDOFF_STATUS,
+    Phase14FinalArchitectureHandoffBundle,
+    Phase14FinalArchitectureHandoffDecision,
+    Phase14FinalArchitectureHandoffFactory,
+    create_phase14_final_architecture_handoff,
 )
