@@ -3565,6 +3565,15 @@ __all__ = (
     "Phase15ArchitectureSafetyAuditDecision",
     "Phase15ArchitectureSafetyAuditor",
     "audit_phase15_extension_architecture_safety",
+    "PHASE_15_FINAL_HANDOFF_SCHEMA_VERSION",
+    "PHASE_15_FINAL_STATUS",
+    "PHASE_15_FINAL_HANDOFF_STATUS",
+    "PHASE_15_FINAL_HANDOFF_SOURCE",
+    "PHASE_15_NEXT_PHASE_STATUS",
+    "Phase15FinalArchitectureHandoff",
+    "Phase15FinalArchitectureHandoffDecision",
+    "Phase15FinalArchitectureHandoffBuilder",
+    "build_phase15_final_architecture_handoff",
 )
 
 from app.strategy.phase8_final_audit_handoff import (
@@ -4285,4 +4294,15 @@ from app.strategy.phase15_extension_architecture_blueprint import (
     Phase15ExtensionArchitectureDecision,
     Phase15ExtensionArchitecturePlanner,
     build_phase15_extension_architecture,
+)
+from app.strategy.phase15_final_architecture_handoff import (
+    PHASE_15_FINAL_HANDOFF_SCHEMA_VERSION,
+    PHASE_15_FINAL_HANDOFF_SOURCE,
+    PHASE_15_FINAL_HANDOFF_STATUS,
+    PHASE_15_FINAL_STATUS,
+    PHASE_15_NEXT_PHASE_STATUS,
+    Phase15FinalArchitectureHandoff,
+    Phase15FinalArchitectureHandoffBuilder,
+    Phase15FinalArchitectureHandoffDecision,
+    build_phase15_final_architecture_handoff,
 )

@@ -992,3 +992,12 @@ def test_phase15_architecture_safety_audit_imports() -> None:
     assert hasattr(module, "Phase15ArchitectureSafetyAuditReport")
     assert hasattr(module, "Phase15ArchitectureSafetyAuditor")
     assert hasattr(module, "audit_phase15_extension_architecture_safety")
+
+
+def test_phase15_final_architecture_handoff_imports() -> None:
+    import importlib
+
+    module = importlib.import_module("app.strategy.phase15_final_architecture_handoff")
+    assert hasattr(module, "Phase15FinalArchitectureHandoff")
+    assert hasattr(module, "Phase15FinalArchitectureHandoffBuilder")
+    assert hasattr(module, "build_phase15_final_architecture_handoff")
