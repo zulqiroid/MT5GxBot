@@ -3523,6 +3523,18 @@ __all__ = (
     "Phase14FinalArchitectureHandoffDecision",
     "Phase14FinalArchitectureHandoffFactory",
     "create_phase14_final_architecture_handoff",
+    "PHASE_15_EXTENSION_ADMISSION_SCHEMA_VERSION",
+    "PHASE_15_EXTENSION_ADMISSION_STATUS",
+    "PHASE_15_EXTENSION_ADMISSION_MODE",
+    "PHASE_15_EXTENSION_ADMISSION_SOURCE",
+    "PHASE_15_EXTENSION_BLOCKED_STATUS",
+    "PHASE_15_PLANNING_TRACKS",
+    "PHASE_15_SAFETY_REQUIREMENTS",
+    "PHASE_15_FUTURE_GATE_REQUIREMENTS",
+    "Phase15RoadmapExtensionPermit",
+    "Phase15RoadmapExtensionAdmissionDecision",
+    "Phase15RoadmapExtensionAdmissionGate",
+    "evaluate_phase15_roadmap_extension",
 )
 
 from app.strategy.phase8_final_audit_handoff import (
@@ -4193,4 +4205,18 @@ from app.strategy.phase14_final_architecture_handoff import (
     Phase14FinalArchitectureHandoffDecision,
     Phase14FinalArchitectureHandoffFactory,
     create_phase14_final_architecture_handoff,
+)
+from app.strategy.phase15_controlled_roadmap_extension_admission_gate import (
+    PHASE_15_EXTENSION_ADMISSION_MODE,
+    PHASE_15_EXTENSION_ADMISSION_SCHEMA_VERSION,
+    PHASE_15_EXTENSION_ADMISSION_SOURCE,
+    PHASE_15_EXTENSION_ADMISSION_STATUS,
+    PHASE_15_EXTENSION_BLOCKED_STATUS,
+    PHASE_15_FUTURE_GATE_REQUIREMENTS,
+    PHASE_15_PLANNING_TRACKS,
+    PHASE_15_SAFETY_REQUIREMENTS,
+    Phase15RoadmapExtensionAdmissionDecision,
+    Phase15RoadmapExtensionAdmissionGate,
+    Phase15RoadmapExtensionPermit,
+    evaluate_phase15_roadmap_extension,
 )
