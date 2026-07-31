@@ -3555,6 +3555,16 @@ __all__ = (
     "Phase15ArchitectureValidationDecision",
     "Phase15ArchitectureValidator",
     "validate_phase15_extension_architecture",
+    "PHASE_15_ARCHITECTURE_SAFETY_AUDIT_SCHEMA_VERSION",
+    "PHASE_15_ARCHITECTURE_SAFETY_AUDIT_STATUS",
+    "PHASE_15_ARCHITECTURE_SAFETY_AUDIT_HANDOFF_STATUS",
+    "PHASE_15_ARCHITECTURE_SAFETY_AUDIT_SOURCE",
+    "PHASE_15_ARCHITECTURE_SAFETY_FINDINGS",
+    "Phase15ArchitectureSafetyFinding",
+    "Phase15ArchitectureSafetyAuditReport",
+    "Phase15ArchitectureSafetyAuditDecision",
+    "Phase15ArchitectureSafetyAuditor",
+    "audit_phase15_extension_architecture_safety",
 )
 
 from app.strategy.phase8_final_audit_handoff import (
@@ -4225,6 +4235,18 @@ from app.strategy.phase14_final_architecture_handoff import (
     Phase14FinalArchitectureHandoffDecision,
     Phase14FinalArchitectureHandoffFactory,
     create_phase14_final_architecture_handoff,
+)
+from app.strategy.phase15_architecture_safety_audit import (
+    PHASE_15_ARCHITECTURE_SAFETY_AUDIT_HANDOFF_STATUS,
+    PHASE_15_ARCHITECTURE_SAFETY_AUDIT_SCHEMA_VERSION,
+    PHASE_15_ARCHITECTURE_SAFETY_AUDIT_SOURCE,
+    PHASE_15_ARCHITECTURE_SAFETY_AUDIT_STATUS,
+    PHASE_15_ARCHITECTURE_SAFETY_FINDINGS,
+    Phase15ArchitectureSafetyAuditDecision,
+    Phase15ArchitectureSafetyAuditor,
+    Phase15ArchitectureSafetyAuditReport,
+    Phase15ArchitectureSafetyFinding,
+    audit_phase15_extension_architecture_safety,
 )
 from app.strategy.phase15_controlled_roadmap_extension_admission_gate import (
     PHASE_15_EXTENSION_ADMISSION_MODE,

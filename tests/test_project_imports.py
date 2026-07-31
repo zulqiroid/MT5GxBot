@@ -983,3 +983,12 @@ def test_phase15_deterministic_architecture_validation_imports() -> None:
     assert hasattr(module, "Phase15ArchitectureValidationReport")
     assert hasattr(module, "Phase15ArchitectureValidator")
     assert hasattr(module, "validate_phase15_extension_architecture")
+
+
+def test_phase15_architecture_safety_audit_imports() -> None:
+    import importlib
+
+    module = importlib.import_module("app.strategy.phase15_architecture_safety_audit")
+    assert hasattr(module, "Phase15ArchitectureSafetyAuditReport")
+    assert hasattr(module, "Phase15ArchitectureSafetyAuditor")
+    assert hasattr(module, "audit_phase15_extension_architecture_safety")
