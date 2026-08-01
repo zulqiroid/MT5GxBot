@@ -1125,3 +1125,6 @@ def test_phase18_deterministic_paper_runtime_simulation_admission_imports() -> N
 
 def test_phase18_paper_runtime_simulation_blueprint_imports() -> None:
     __import__("app.strategy.phase18_paper_runtime_simulation_blueprint")
+
+def test_phase18_paper_runtime_simulation_validation_imports() -> None:
+    __import__("app.strategy.phase18_paper_runtime_simulation_validation")

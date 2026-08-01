@@ -833,6 +833,19 @@ from app.strategy.phase18_paper_runtime_simulation_blueprint import (
     Phase18PaperRuntimeSimulationRequirement,
     build_phase18_paper_runtime_simulation_blueprint,
 )
+from app.strategy.phase18_paper_runtime_simulation_validation import (
+    PHASE_18_PAPER_RUNTIME_SIMULATION_VALIDATION_CHECKS,
+    PHASE_18_PAPER_RUNTIME_SIMULATION_VALIDATION_NEXT_ALLOWED,
+    PHASE_18_PAPER_RUNTIME_SIMULATION_VALIDATION_OUTCOME,
+    PHASE_18_PAPER_RUNTIME_SIMULATION_VALIDATION_SCHEMA_VERSION,
+    PHASE_18_PAPER_RUNTIME_SIMULATION_VALIDATION_SOURCE,
+    PHASE_18_PAPER_RUNTIME_SIMULATION_VALIDATION_STATUS,
+    Phase18PaperRuntimeSimulationValidationDecision,
+    Phase18PaperRuntimeSimulationValidationReport,
+    Phase18PaperRuntimeSimulationValidationResult,
+    Phase18PaperRuntimeSimulationValidator,
+    validate_phase18_paper_runtime_simulation_blueprint,
+)
 from app.strategy.planning_audit_export import (
     PLANNING_AUDIT_EXPORT_SCHEMA_VERSION,
     AuditExportEnvelope,
@@ -4599,4 +4612,18 @@ __all__ += (
     "Phase18PaperRuntimeSimulationBlueprintDecision",
     "Phase18PaperRuntimeSimulationBlueprintPlanner",
     "build_phase18_paper_runtime_simulation_blueprint",
+)
+
+__all__ += (
+    "PHASE_18_PAPER_RUNTIME_SIMULATION_VALIDATION_CHECKS",
+    "PHASE_18_PAPER_RUNTIME_SIMULATION_VALIDATION_NEXT_ALLOWED",
+    "PHASE_18_PAPER_RUNTIME_SIMULATION_VALIDATION_OUTCOME",
+    "PHASE_18_PAPER_RUNTIME_SIMULATION_VALIDATION_SCHEMA_VERSION",
+    "PHASE_18_PAPER_RUNTIME_SIMULATION_VALIDATION_SOURCE",
+    "PHASE_18_PAPER_RUNTIME_SIMULATION_VALIDATION_STATUS",
+    "Phase18PaperRuntimeSimulationValidationDecision",
+    "Phase18PaperRuntimeSimulationValidationReport",
+    "Phase18PaperRuntimeSimulationValidationResult",
+    "Phase18PaperRuntimeSimulationValidator",
+    "validate_phase18_paper_runtime_simulation_blueprint",
 )
