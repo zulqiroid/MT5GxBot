@@ -3622,6 +3622,17 @@ __all__ = (
     "Phase16OfflineReleaseSafetyAuditDecision",
     "Phase16OfflineReleaseSafetyAuditor",
     "audit_phase16_offline_release_readiness_safety",
+    "PHASE_16_FINAL_HANDOFF_SCHEMA_VERSION",
+    "PHASE_16_FINAL_STATUS",
+    "PHASE_16_FINAL_HANDOFF_STATUS",
+    "PHASE_16_FINAL_HANDOFF_SOURCE",
+    "PHASE_16_FINAL_RELEASE_DECISION",
+    "PHASE_16_FINAL_NEXT_PHASE_STATUS",
+    "PHASE_16_FINAL_BLOCKED_STATUS",
+    "Phase16FinalReleaseReadinessHandoff",
+    "Phase16FinalReleaseReadinessHandoffDecision",
+    "Phase16FinalReleaseReadinessHandoffGate",
+    "finalize_phase16_offline_release_readiness",
 )
 
 from app.strategy.phase8_final_audit_handoff import (
@@ -4364,6 +4375,19 @@ from app.strategy.phase16_deterministic_offline_release_validation import (
     Phase16OfflineReleaseValidationResult,
     Phase16OfflineReleaseValidator,
     validate_phase16_offline_release_readiness,
+)
+from app.strategy.phase16_final_release_readiness_handoff import (
+    PHASE_16_FINAL_BLOCKED_STATUS,
+    PHASE_16_FINAL_HANDOFF_SCHEMA_VERSION,
+    PHASE_16_FINAL_HANDOFF_SOURCE,
+    PHASE_16_FINAL_HANDOFF_STATUS,
+    PHASE_16_FINAL_NEXT_PHASE_STATUS,
+    PHASE_16_FINAL_RELEASE_DECISION,
+    PHASE_16_FINAL_STATUS,
+    Phase16FinalReleaseReadinessHandoff,
+    Phase16FinalReleaseReadinessHandoffDecision,
+    Phase16FinalReleaseReadinessHandoffGate,
+    finalize_phase16_offline_release_readiness,
 )
 from app.strategy.phase16_offline_release_readiness_blueprint import (
     PHASE_16_RELEASE_BASELINE_COMMIT,
