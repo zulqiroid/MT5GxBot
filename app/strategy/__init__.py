@@ -3644,6 +3644,21 @@ __all__ = (
     "Phase17PaperModeOperationalReadinessAdmissionGate",
     "Phase17PaperModeOperationalReadinessPermit",
     "evaluate_phase17_paper_mode_operational_readiness_admission",
+    "PHASE_17_BLUEPRINT_COMPONENT_NAMES",
+    "PHASE_17_BLUEPRINT_COMPONENTS",
+    "PHASE_17_BLUEPRINT_MODE",
+    "PHASE_17_BLUEPRINT_NEXT_ALLOWED_STEP",
+    "PHASE_17_BLUEPRINT_REQUIREMENT_OBJECTS",
+    "PHASE_17_BLUEPRINT_REQUIREMENTS",
+    "PHASE_17_BLUEPRINT_SCHEMA_VERSION",
+    "PHASE_17_BLUEPRINT_SOURCE",
+    "PHASE_17_BLUEPRINT_STATUS",
+    "Phase17OperationalComponent",
+    "Phase17OperationalRequirement",
+    "Phase17PaperModeOperationalReadinessBlueprint",
+    "Phase17PaperModeOperationalReadinessBlueprintDecision",
+    "Phase17PaperModeOperationalReadinessPlanner",
+    "build_phase17_paper_mode_operational_readiness_blueprint",
 )
 
 from app.strategy.phase8_final_audit_handoff import (
@@ -4457,4 +4472,21 @@ from app.strategy.phase17_paper_mode_operational_readiness_admission_gate import
     Phase17PaperModeOperationalReadinessAdmissionGate,
     Phase17PaperModeOperationalReadinessPermit,
     evaluate_phase17_paper_mode_operational_readiness_admission,
+)
+from app.strategy.phase17_paper_mode_operational_readiness_blueprint import (
+    PHASE_17_BLUEPRINT_COMPONENT_NAMES,
+    PHASE_17_BLUEPRINT_COMPONENTS,
+    PHASE_17_BLUEPRINT_MODE,
+    PHASE_17_BLUEPRINT_NEXT_ALLOWED_STEP,
+    PHASE_17_BLUEPRINT_REQUIREMENT_OBJECTS,
+    PHASE_17_BLUEPRINT_REQUIREMENTS,
+    PHASE_17_BLUEPRINT_SCHEMA_VERSION,
+    PHASE_17_BLUEPRINT_SOURCE,
+    PHASE_17_BLUEPRINT_STATUS,
+    Phase17OperationalComponent,
+    Phase17OperationalRequirement,
+    Phase17PaperModeOperationalReadinessBlueprint,
+    Phase17PaperModeOperationalReadinessBlueprintDecision,
+    Phase17PaperModeOperationalReadinessPlanner,
+    build_phase17_paper_mode_operational_readiness_blueprint,
 )

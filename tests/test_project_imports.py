@@ -1068,3 +1068,17 @@ def test_phase17_paper_mode_operational_readiness_admission_imports() -> None:
         module,
         "evaluate_phase17_paper_mode_operational_readiness_admission",
     )
+
+
+def test_phase17_paper_mode_operational_readiness_blueprint_imports() -> None:
+    import importlib
+
+    module = importlib.import_module(
+        "app.strategy.phase17_paper_mode_operational_readiness_blueprint"
+    )
+    assert hasattr(module, "Phase17PaperModeOperationalReadinessBlueprint")
+    assert hasattr(module, "Phase17PaperModeOperationalReadinessPlanner")
+    assert hasattr(
+        module,
+        "build_phase17_paper_mode_operational_readiness_blueprint",
+    )
