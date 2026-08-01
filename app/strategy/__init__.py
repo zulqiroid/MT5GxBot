@@ -818,6 +818,21 @@ from app.strategy.phase8_simulation_input_package import (
     StrategyPhase8SimulationInputPackageFactory,
     generate_phase8_simulation_input_package,
 )
+from app.strategy.phase18_paper_runtime_simulation_blueprint import (
+    PHASE_18_PAPER_RUNTIME_BLOCKED_STATUSES,
+    PHASE_18_PAPER_RUNTIME_SIMULATION_BLUEPRINT_NEXT_ALLOWED,
+    PHASE_18_PAPER_RUNTIME_SIMULATION_BLUEPRINT_SCHEMA_VERSION,
+    PHASE_18_PAPER_RUNTIME_SIMULATION_BLUEPRINT_SOURCE,
+    PHASE_18_PAPER_RUNTIME_SIMULATION_BLUEPRINT_STATUS,
+    PHASE_18_PAPER_RUNTIME_SIMULATION_COMPONENTS,
+    PHASE_18_PAPER_RUNTIME_SIMULATION_REQUIREMENTS,
+    Phase18PaperRuntimeSimulationBlueprint,
+    Phase18PaperRuntimeSimulationBlueprintDecision,
+    Phase18PaperRuntimeSimulationBlueprintPlanner,
+    Phase18PaperRuntimeSimulationComponent,
+    Phase18PaperRuntimeSimulationRequirement,
+    build_phase18_paper_runtime_simulation_blueprint,
+)
 from app.strategy.planning_audit_export import (
     PLANNING_AUDIT_EXPORT_SCHEMA_VERSION,
     AuditExportEnvelope,
@@ -4568,4 +4583,20 @@ __all__ += (
     "Phase18DeterministicPaperRuntimeSimulationAdmissionPermit",
     "Phase18DeterministicPaperRuntimeSimulationAdmissionDecision",
     "admit_phase18_deterministic_paper_runtime_simulation",
+)
+
+__all__ += (
+    "PHASE_18_PAPER_RUNTIME_SIMULATION_BLUEPRINT_SCHEMA_VERSION",
+    "PHASE_18_PAPER_RUNTIME_SIMULATION_BLUEPRINT_STATUS",
+    "PHASE_18_PAPER_RUNTIME_SIMULATION_BLUEPRINT_SOURCE",
+    "PHASE_18_PAPER_RUNTIME_SIMULATION_BLUEPRINT_NEXT_ALLOWED",
+    "PHASE_18_PAPER_RUNTIME_SIMULATION_COMPONENTS",
+    "PHASE_18_PAPER_RUNTIME_SIMULATION_REQUIREMENTS",
+    "PHASE_18_PAPER_RUNTIME_BLOCKED_STATUSES",
+    "Phase18PaperRuntimeSimulationComponent",
+    "Phase18PaperRuntimeSimulationRequirement",
+    "Phase18PaperRuntimeSimulationBlueprint",
+    "Phase18PaperRuntimeSimulationBlueprintDecision",
+    "Phase18PaperRuntimeSimulationBlueprintPlanner",
+    "build_phase18_paper_runtime_simulation_blueprint",
 )
