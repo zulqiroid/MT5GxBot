@@ -3603,6 +3603,15 @@ __all__ = (
     "Phase16OfflineReleaseReadinessBlueprintDecision",
     "Phase16OfflineReleaseReadinessPlanner",
     "build_phase16_offline_release_readiness_blueprint",
+    "PHASE_16_OFFLINE_VALIDATION_SCHEMA_VERSION",
+    "PHASE_16_OFFLINE_VALIDATION_STATUS",
+    "PHASE_16_OFFLINE_VALIDATION_OUTCOME",
+    "PHASE_16_OFFLINE_VALIDATION_SOURCE",
+    "Phase16OfflineReleaseValidationResult",
+    "Phase16OfflineReleaseValidationReport",
+    "Phase16OfflineReleaseValidationDecision",
+    "Phase16OfflineReleaseValidator",
+    "validate_phase16_offline_release_readiness",
 )
 
 from app.strategy.phase8_final_audit_handoff import (
@@ -4334,6 +4343,17 @@ from app.strategy.phase15_final_architecture_handoff import (
     Phase15FinalArchitectureHandoffBuilder,
     Phase15FinalArchitectureHandoffDecision,
     build_phase15_final_architecture_handoff,
+)
+from app.strategy.phase16_deterministic_offline_release_validation import (
+    PHASE_16_OFFLINE_VALIDATION_OUTCOME,
+    PHASE_16_OFFLINE_VALIDATION_SCHEMA_VERSION,
+    PHASE_16_OFFLINE_VALIDATION_SOURCE,
+    PHASE_16_OFFLINE_VALIDATION_STATUS,
+    Phase16OfflineReleaseValidationDecision,
+    Phase16OfflineReleaseValidationReport,
+    Phase16OfflineReleaseValidationResult,
+    Phase16OfflineReleaseValidator,
+    validate_phase16_offline_release_readiness,
 )
 from app.strategy.phase16_offline_release_readiness_blueprint import (
     PHASE_16_RELEASE_BASELINE_COMMIT,

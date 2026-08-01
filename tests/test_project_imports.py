@@ -1025,3 +1025,14 @@ def test_phase16_offline_release_readiness_blueprint_imports() -> None:
         module,
         "build_phase16_offline_release_readiness_blueprint",
     )
+
+
+def test_phase16_deterministic_offline_release_validation_imports() -> None:
+    import importlib
+
+    module = importlib.import_module(
+        "app.strategy.phase16_deterministic_offline_release_validation"
+    )
+    assert hasattr(module, "Phase16OfflineReleaseValidationReport")
+    assert hasattr(module, "Phase16OfflineReleaseValidator")
+    assert hasattr(module, "validate_phase16_offline_release_readiness")
