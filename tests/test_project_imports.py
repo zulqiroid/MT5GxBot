@@ -1036,3 +1036,12 @@ def test_phase16_deterministic_offline_release_validation_imports() -> None:
     assert hasattr(module, "Phase16OfflineReleaseValidationReport")
     assert hasattr(module, "Phase16OfflineReleaseValidator")
     assert hasattr(module, "validate_phase16_offline_release_readiness")
+
+
+def test_phase16_offline_release_safety_audit_imports() -> None:
+    import importlib
+
+    module = importlib.import_module("app.strategy.phase16_offline_release_safety_audit")
+    assert hasattr(module, "Phase16OfflineReleaseSafetyAuditReport")
+    assert hasattr(module, "Phase16OfflineReleaseSafetyAuditor")
+    assert hasattr(module, "audit_phase16_offline_release_readiness_safety")

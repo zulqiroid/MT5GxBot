@@ -3612,6 +3612,16 @@ __all__ = (
     "Phase16OfflineReleaseValidationDecision",
     "Phase16OfflineReleaseValidator",
     "validate_phase16_offline_release_readiness",
+    "PHASE_16_OFFLINE_RELEASE_SAFETY_AUDIT_SCHEMA_VERSION",
+    "PHASE_16_OFFLINE_RELEASE_SAFETY_AUDIT_STATUS",
+    "PHASE_16_OFFLINE_RELEASE_SAFETY_AUDIT_HANDOFF_STATUS",
+    "PHASE_16_OFFLINE_RELEASE_SAFETY_AUDIT_SOURCE",
+    "PHASE_16_OFFLINE_RELEASE_SAFETY_FINDINGS",
+    "Phase16OfflineReleaseSafetyFinding",
+    "Phase16OfflineReleaseSafetyAuditReport",
+    "Phase16OfflineReleaseSafetyAuditDecision",
+    "Phase16OfflineReleaseSafetyAuditor",
+    "audit_phase16_offline_release_readiness_safety",
 )
 
 from app.strategy.phase8_final_audit_handoff import (
@@ -4372,6 +4382,18 @@ from app.strategy.phase16_offline_release_readiness_blueprint import (
     Phase16ReleaseReadinessComponent,
     Phase16ReleaseReadinessRequirement,
     build_phase16_offline_release_readiness_blueprint,
+)
+from app.strategy.phase16_offline_release_safety_audit import (
+    PHASE_16_OFFLINE_RELEASE_SAFETY_AUDIT_HANDOFF_STATUS,
+    PHASE_16_OFFLINE_RELEASE_SAFETY_AUDIT_SCHEMA_VERSION,
+    PHASE_16_OFFLINE_RELEASE_SAFETY_AUDIT_SOURCE,
+    PHASE_16_OFFLINE_RELEASE_SAFETY_AUDIT_STATUS,
+    PHASE_16_OFFLINE_RELEASE_SAFETY_FINDINGS,
+    Phase16OfflineReleaseSafetyAuditDecision,
+    Phase16OfflineReleaseSafetyAuditor,
+    Phase16OfflineReleaseSafetyAuditReport,
+    Phase16OfflineReleaseSafetyFinding,
+    audit_phase16_offline_release_readiness_safety,
 )
 from app.strategy.phase16_release_readiness_admission_gate import (
     PHASE_16_ADMISSION_MODE,
