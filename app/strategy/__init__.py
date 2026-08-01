@@ -3676,6 +3676,17 @@ __all__ = (
     "Phase17PaperModeOperationalSafetyAuditReport",
     "Phase17PaperModeOperationalSafetyAuditor",
     "audit_phase17_paper_mode_operational_safety",
+    "PHASE_17_FINAL_BLOCKED_STATUS",
+    "PHASE_17_FINAL_DECISION",
+    "PHASE_17_FINAL_HANDOFF_SCHEMA_VERSION",
+    "PHASE_17_FINAL_HANDOFF_SOURCE",
+    "PHASE_17_FINAL_HANDOFF_STATUS",
+    "PHASE_17_FINAL_NEXT_PHASE_STATUS",
+    "PHASE_17_FINAL_STATUS",
+    "Phase17FinalPaperModeOperationalReadinessDecision",
+    "Phase17FinalPaperModeOperationalReadinessGate",
+    "Phase17FinalPaperModeOperationalReadinessHandoff",
+    "finalize_phase17_paper_mode_operational_readiness",
 )
 
 from app.strategy.phase8_final_audit_handoff import (
@@ -4487,6 +4498,19 @@ from app.strategy.phase17_deterministic_paper_mode_operational_validation import
     Phase17PaperModeOperationalValidationResult,
     Phase17PaperModeOperationalValidator,
     validate_phase17_paper_mode_operational_readiness,
+)
+from app.strategy.phase17_final_paper_mode_operational_readiness_handoff import (
+    PHASE_17_FINAL_BLOCKED_STATUS,
+    PHASE_17_FINAL_DECISION,
+    PHASE_17_FINAL_HANDOFF_SCHEMA_VERSION,
+    PHASE_17_FINAL_HANDOFF_SOURCE,
+    PHASE_17_FINAL_HANDOFF_STATUS,
+    PHASE_17_FINAL_NEXT_PHASE_STATUS,
+    PHASE_17_FINAL_STATUS,
+    Phase17FinalPaperModeOperationalReadinessDecision,
+    Phase17FinalPaperModeOperationalReadinessGate,
+    Phase17FinalPaperModeOperationalReadinessHandoff,
+    finalize_phase17_paper_mode_operational_readiness,
 )
 from app.strategy.phase17_paper_mode_operational_readiness_admission_gate import (
     PHASE_17_ADMISSION_MODE,

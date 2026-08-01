@@ -1105,3 +1105,17 @@ def test_phase17_paper_mode_operational_safety_audit_imports() -> None:
     assert hasattr(module, "Phase17PaperModeOperationalSafetyAuditReport")
     assert hasattr(module, "Phase17PaperModeOperationalSafetyAuditor")
     assert hasattr(module, "audit_phase17_paper_mode_operational_safety")
+
+
+def test_phase17_final_paper_mode_operational_readiness_handoff_imports() -> None:
+    import importlib
+
+    module = importlib.import_module(
+        "app.strategy.phase17_final_paper_mode_operational_readiness_handoff"
+    )
+    assert hasattr(module, "Phase17FinalPaperModeOperationalReadinessHandoff")
+    assert hasattr(module, "Phase17FinalPaperModeOperationalReadinessGate")
+    assert hasattr(
+        module,
+        "finalize_phase17_paper_mode_operational_readiness",
+    )
