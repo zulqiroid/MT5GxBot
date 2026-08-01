@@ -3659,6 +3659,15 @@ __all__ = (
     "Phase17PaperModeOperationalReadinessBlueprintDecision",
     "Phase17PaperModeOperationalReadinessPlanner",
     "build_phase17_paper_mode_operational_readiness_blueprint",
+    "PHASE_17_VALIDATION_OUTCOME",
+    "PHASE_17_VALIDATION_SCHEMA_VERSION",
+    "PHASE_17_VALIDATION_SOURCE",
+    "PHASE_17_VALIDATION_STATUS",
+    "Phase17PaperModeOperationalValidationDecision",
+    "Phase17PaperModeOperationalValidationReport",
+    "Phase17PaperModeOperationalValidationResult",
+    "Phase17PaperModeOperationalValidator",
+    "validate_phase17_paper_mode_operational_readiness",
 )
 
 from app.strategy.phase8_final_audit_handoff import (
@@ -4459,6 +4468,17 @@ from app.strategy.phase16_release_readiness_admission_gate import (
     Phase16OfflineReleaseReadinessAdmissionGate,
     Phase16OfflineReleaseReadinessPermit,
     evaluate_phase16_offline_release_readiness_admission,
+)
+from app.strategy.phase17_deterministic_paper_mode_operational_validation import (
+    PHASE_17_VALIDATION_OUTCOME,
+    PHASE_17_VALIDATION_SCHEMA_VERSION,
+    PHASE_17_VALIDATION_SOURCE,
+    PHASE_17_VALIDATION_STATUS,
+    Phase17PaperModeOperationalValidationDecision,
+    Phase17PaperModeOperationalValidationReport,
+    Phase17PaperModeOperationalValidationResult,
+    Phase17PaperModeOperationalValidator,
+    validate_phase17_paper_mode_operational_readiness,
 )
 from app.strategy.phase17_paper_mode_operational_readiness_admission_gate import (
     PHASE_17_ADMISSION_MODE,
