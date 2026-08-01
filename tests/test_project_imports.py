@@ -1119,3 +1119,6 @@ def test_phase17_final_paper_mode_operational_readiness_handoff_imports() -> Non
         module,
         "finalize_phase17_paper_mode_operational_readiness",
     )
+
+def test_phase18_deterministic_paper_runtime_simulation_admission_imports() -> None:
+    __import__("app.strategy.phase18_deterministic_paper_runtime_simulation_admission")

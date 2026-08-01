@@ -4552,3 +4552,20 @@ from app.strategy.phase17_paper_mode_operational_safety_audit import (
     Phase17PaperModeOperationalSafetyAuditReport,
     audit_phase17_paper_mode_operational_safety,
 )
+from app.strategy.phase18_deterministic_paper_runtime_simulation_admission import (
+    PHASE_18_DETERMINISTIC_PAPER_RUNTIME_SIMULATION_ADMISSION_SCHEMA_VERSION,
+    PHASE_18_DETERMINISTIC_PAPER_RUNTIME_SIMULATION_ADMITTED,
+    PHASE_18_DETERMINISTIC_PAPER_RUNTIME_SIMULATION_BLUEPRINT,
+    Phase18DeterministicPaperRuntimeSimulationAdmissionDecision,
+    Phase18DeterministicPaperRuntimeSimulationAdmissionPermit,
+    admit_phase18_deterministic_paper_runtime_simulation,
+)
+
+__all__ += (
+    "PHASE_18_DETERMINISTIC_PAPER_RUNTIME_SIMULATION_ADMISSION_SCHEMA_VERSION",
+    "PHASE_18_DETERMINISTIC_PAPER_RUNTIME_SIMULATION_ADMITTED",
+    "PHASE_18_DETERMINISTIC_PAPER_RUNTIME_SIMULATION_BLUEPRINT",
+    "Phase18DeterministicPaperRuntimeSimulationAdmissionPermit",
+    "Phase18DeterministicPaperRuntimeSimulationAdmissionDecision",
+    "admit_phase18_deterministic_paper_runtime_simulation",
+)
