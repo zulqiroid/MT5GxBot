@@ -833,6 +833,19 @@ from app.strategy.phase18_paper_runtime_simulation_blueprint import (
     Phase18PaperRuntimeSimulationRequirement,
     build_phase18_paper_runtime_simulation_blueprint,
 )
+from app.strategy.phase18_paper_runtime_simulation_final_handoff import (
+    PHASE_18_PAPER_RUNTIME_SIMULATION_FINAL_HANDOFF_GUARDS,
+    PHASE_18_PAPER_RUNTIME_SIMULATION_FINAL_HANDOFF_NEXT_ALLOWED,
+    PHASE_18_PAPER_RUNTIME_SIMULATION_FINAL_HANDOFF_SCHEMA_VERSION,
+    PHASE_18_PAPER_RUNTIME_SIMULATION_FINAL_HANDOFF_SOURCE,
+    PHASE_18_PAPER_RUNTIME_SIMULATION_FINAL_HANDOFF_STATUS,
+    PHASE_18_PAPER_RUNTIME_SIMULATION_RELEASE_TAG,
+    Phase18PaperRuntimeSimulationFinalHandoff,
+    Phase18PaperRuntimeSimulationFinalHandoffDecision,
+    Phase18PaperRuntimeSimulationFinalHandoffFactory,
+    Phase18PaperRuntimeSimulationFinalHandoffGuard,
+    generate_phase18_paper_runtime_simulation_final_handoff,
+)
 from app.strategy.phase18_paper_runtime_simulation_safety_audit import (
     PHASE_18_PAPER_RUNTIME_SIMULATION_SAFETY_AUDIT_HANDOFF_STATUS,
     PHASE_18_PAPER_RUNTIME_SIMULATION_SAFETY_AUDIT_SCHEMA_VERSION,
@@ -4651,4 +4664,18 @@ __all__ += (
     "Phase18PaperRuntimeSimulationSafetyAuditor",
     "Phase18PaperRuntimeSimulationSafetyFinding",
     "audit_phase18_paper_runtime_simulation_safety",
+)
+
+__all__ += (
+    "PHASE_18_PAPER_RUNTIME_SIMULATION_FINAL_HANDOFF_GUARDS",
+    "PHASE_18_PAPER_RUNTIME_SIMULATION_FINAL_HANDOFF_NEXT_ALLOWED",
+    "PHASE_18_PAPER_RUNTIME_SIMULATION_FINAL_HANDOFF_SCHEMA_VERSION",
+    "PHASE_18_PAPER_RUNTIME_SIMULATION_FINAL_HANDOFF_SOURCE",
+    "PHASE_18_PAPER_RUNTIME_SIMULATION_FINAL_HANDOFF_STATUS",
+    "PHASE_18_PAPER_RUNTIME_SIMULATION_RELEASE_TAG",
+    "Phase18PaperRuntimeSimulationFinalHandoff",
+    "Phase18PaperRuntimeSimulationFinalHandoffDecision",
+    "Phase18PaperRuntimeSimulationFinalHandoffFactory",
+    "Phase18PaperRuntimeSimulationFinalHandoffGuard",
+    "generate_phase18_paper_runtime_simulation_final_handoff",
 )
