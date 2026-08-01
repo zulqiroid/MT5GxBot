@@ -1128,3 +1128,6 @@ def test_phase18_paper_runtime_simulation_blueprint_imports() -> None:
 
 def test_phase18_paper_runtime_simulation_validation_imports() -> None:
     __import__("app.strategy.phase18_paper_runtime_simulation_validation")
+
+def test_phase18_paper_runtime_simulation_safety_audit_imports() -> None:
+    __import__("app.strategy.phase18_paper_runtime_simulation_safety_audit")

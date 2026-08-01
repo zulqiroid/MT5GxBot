@@ -833,6 +833,18 @@ from app.strategy.phase18_paper_runtime_simulation_blueprint import (
     Phase18PaperRuntimeSimulationRequirement,
     build_phase18_paper_runtime_simulation_blueprint,
 )
+from app.strategy.phase18_paper_runtime_simulation_safety_audit import (
+    PHASE_18_PAPER_RUNTIME_SIMULATION_SAFETY_AUDIT_HANDOFF_STATUS,
+    PHASE_18_PAPER_RUNTIME_SIMULATION_SAFETY_AUDIT_SCHEMA_VERSION,
+    PHASE_18_PAPER_RUNTIME_SIMULATION_SAFETY_AUDIT_SOURCE,
+    PHASE_18_PAPER_RUNTIME_SIMULATION_SAFETY_AUDIT_STATUS,
+    PHASE_18_PAPER_RUNTIME_SIMULATION_SAFETY_FINDINGS,
+    Phase18PaperRuntimeSimulationSafetyAuditDecision,
+    Phase18PaperRuntimeSimulationSafetyAuditor,
+    Phase18PaperRuntimeSimulationSafetyAuditReport,
+    Phase18PaperRuntimeSimulationSafetyFinding,
+    audit_phase18_paper_runtime_simulation_safety,
+)
 from app.strategy.phase18_paper_runtime_simulation_validation import (
     PHASE_18_PAPER_RUNTIME_SIMULATION_VALIDATION_CHECKS,
     PHASE_18_PAPER_RUNTIME_SIMULATION_VALIDATION_NEXT_ALLOWED,
@@ -4626,4 +4638,17 @@ __all__ += (
     "Phase18PaperRuntimeSimulationValidationResult",
     "Phase18PaperRuntimeSimulationValidator",
     "validate_phase18_paper_runtime_simulation_blueprint",
+)
+
+__all__ += (
+    "PHASE_18_PAPER_RUNTIME_SIMULATION_SAFETY_AUDIT_HANDOFF_STATUS",
+    "PHASE_18_PAPER_RUNTIME_SIMULATION_SAFETY_AUDIT_SCHEMA_VERSION",
+    "PHASE_18_PAPER_RUNTIME_SIMULATION_SAFETY_AUDIT_SOURCE",
+    "PHASE_18_PAPER_RUNTIME_SIMULATION_SAFETY_AUDIT_STATUS",
+    "PHASE_18_PAPER_RUNTIME_SIMULATION_SAFETY_FINDINGS",
+    "Phase18PaperRuntimeSimulationSafetyAuditDecision",
+    "Phase18PaperRuntimeSimulationSafetyAuditReport",
+    "Phase18PaperRuntimeSimulationSafetyAuditor",
+    "Phase18PaperRuntimeSimulationSafetyFinding",
+    "audit_phase18_paper_runtime_simulation_safety",
 )
