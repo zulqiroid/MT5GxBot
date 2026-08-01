@@ -1096,3 +1096,12 @@ def test_phase17_deterministic_paper_mode_operational_validation_imports() -> No
         module,
         "validate_phase17_paper_mode_operational_readiness",
     )
+
+
+def test_phase17_paper_mode_operational_safety_audit_imports() -> None:
+    import importlib
+
+    module = importlib.import_module("app.strategy.phase17_paper_mode_operational_safety_audit")
+    assert hasattr(module, "Phase17PaperModeOperationalSafetyAuditReport")
+    assert hasattr(module, "Phase17PaperModeOperationalSafetyAuditor")
+    assert hasattr(module, "audit_phase17_paper_mode_operational_safety")

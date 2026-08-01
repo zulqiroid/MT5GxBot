@@ -3668,6 +3668,14 @@ __all__ = (
     "Phase17PaperModeOperationalValidationResult",
     "Phase17PaperModeOperationalValidator",
     "validate_phase17_paper_mode_operational_readiness",
+    "PHASE_17_SAFETY_AUDIT_HANDOFF_STATUS",
+    "PHASE_17_SAFETY_AUDIT_SOURCE",
+    "PHASE_17_SAFETY_AUDIT_STATUS",
+    "PHASE_17_SAFETY_FINDINGS",
+    "Phase17PaperModeOperationalSafetyAuditDecision",
+    "Phase17PaperModeOperationalSafetyAuditReport",
+    "Phase17PaperModeOperationalSafetyAuditor",
+    "audit_phase17_paper_mode_operational_safety",
 )
 
 from app.strategy.phase8_final_audit_handoff import (
@@ -4509,4 +4517,14 @@ from app.strategy.phase17_paper_mode_operational_readiness_blueprint import (
     Phase17PaperModeOperationalReadinessBlueprintDecision,
     Phase17PaperModeOperationalReadinessPlanner,
     build_phase17_paper_mode_operational_readiness_blueprint,
+)
+from app.strategy.phase17_paper_mode_operational_safety_audit import (
+    PHASE_17_SAFETY_AUDIT_HANDOFF_STATUS,
+    PHASE_17_SAFETY_AUDIT_SOURCE,
+    PHASE_17_SAFETY_AUDIT_STATUS,
+    PHASE_17_SAFETY_FINDINGS,
+    Phase17PaperModeOperationalSafetyAuditDecision,
+    Phase17PaperModeOperationalSafetyAuditor,
+    Phase17PaperModeOperationalSafetyAuditReport,
+    audit_phase17_paper_mode_operational_safety,
 )
