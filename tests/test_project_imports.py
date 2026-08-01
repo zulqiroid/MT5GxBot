@@ -1054,3 +1054,17 @@ def test_phase16_final_release_readiness_handoff_imports() -> None:
     assert hasattr(module, "Phase16FinalReleaseReadinessHandoff")
     assert hasattr(module, "Phase16FinalReleaseReadinessHandoffGate")
     assert hasattr(module, "finalize_phase16_offline_release_readiness")
+
+
+def test_phase17_paper_mode_operational_readiness_admission_imports() -> None:
+    import importlib
+
+    module = importlib.import_module(
+        "app.strategy.phase17_paper_mode_operational_readiness_admission_gate"
+    )
+    assert hasattr(module, "Phase17PaperModeOperationalReadinessPermit")
+    assert hasattr(module, "Phase17PaperModeOperationalReadinessAdmissionGate")
+    assert hasattr(
+        module,
+        "evaluate_phase17_paper_mode_operational_readiness_admission",
+    )

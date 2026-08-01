@@ -3633,6 +3633,17 @@ __all__ = (
     "Phase16FinalReleaseReadinessHandoffDecision",
     "Phase16FinalReleaseReadinessHandoffGate",
     "finalize_phase16_offline_release_readiness",
+    "PHASE_17_ADMISSION_MODE",
+    "PHASE_17_ADMISSION_SOURCE",
+    "PHASE_17_ADMISSION_STATUS",
+    "PHASE_17_FUTURE_GATES",
+    "PHASE_17_NEXT_ALLOWED_STEP",
+    "PHASE_17_OPERATIONAL_TRACKS",
+    "PHASE_17_SAFETY_REQUIREMENTS",
+    "Phase17PaperModeOperationalReadinessAdmissionDecision",
+    "Phase17PaperModeOperationalReadinessAdmissionGate",
+    "Phase17PaperModeOperationalReadinessPermit",
+    "evaluate_phase17_paper_mode_operational_readiness_admission",
 )
 
 from app.strategy.phase8_final_audit_handoff import (
@@ -4433,4 +4444,17 @@ from app.strategy.phase16_release_readiness_admission_gate import (
     Phase16OfflineReleaseReadinessAdmissionGate,
     Phase16OfflineReleaseReadinessPermit,
     evaluate_phase16_offline_release_readiness_admission,
+)
+from app.strategy.phase17_paper_mode_operational_readiness_admission_gate import (
+    PHASE_17_ADMISSION_MODE,
+    PHASE_17_ADMISSION_SOURCE,
+    PHASE_17_ADMISSION_STATUS,
+    PHASE_17_FUTURE_GATES,
+    PHASE_17_NEXT_ALLOWED_STEP,
+    PHASE_17_OPERATIONAL_TRACKS,
+    PHASE_17_SAFETY_REQUIREMENTS,
+    Phase17PaperModeOperationalReadinessAdmissionDecision,
+    Phase17PaperModeOperationalReadinessAdmissionGate,
+    Phase17PaperModeOperationalReadinessPermit,
+    evaluate_phase17_paper_mode_operational_readiness_admission,
 )
