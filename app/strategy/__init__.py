@@ -910,6 +910,19 @@ from app.strategy.phase19_paper_runtime_simulation_execution_blueprint_validatio
     Phase19PaperRuntimeSimulationExecutionValidationReport,
     validate_phase19_paper_runtime_simulation_execution_blueprint,
 )
+from app.strategy.phase19_paper_runtime_simulation_execution_final_handoff import (
+    PHASE_19_PAPER_RUNTIME_SIMULATION_EXECUTION_FINAL_HANDOFF_GUARDS,
+    PHASE_19_PAPER_RUNTIME_SIMULATION_EXECUTION_FINAL_HANDOFF_NEXT_ALLOWED,
+    PHASE_19_PAPER_RUNTIME_SIMULATION_EXECUTION_FINAL_HANDOFF_SCHEMA_VERSION,
+    PHASE_19_PAPER_RUNTIME_SIMULATION_EXECUTION_FINAL_HANDOFF_SOURCE,
+    PHASE_19_PAPER_RUNTIME_SIMULATION_EXECUTION_FINAL_HANDOFF_STATUS,
+    PHASE_19_PAPER_RUNTIME_SIMULATION_EXECUTION_RELEASE_TAG,
+    Phase19PaperRuntimeSimulationExecutionFinalHandoff,
+    Phase19PaperRuntimeSimulationExecutionFinalHandoffBuilder,
+    Phase19PaperRuntimeSimulationExecutionFinalHandoffDecision,
+    Phase19PaperRuntimeSimulationExecutionFinalHandoffGuard,
+    generate_phase19_paper_runtime_simulation_execution_final_handoff,
+)
 from app.strategy.phase19_paper_runtime_simulation_execution_safety_audit import (
     PHASE_19_PAPER_RUNTIME_SIMULATION_EXECUTION_SAFETY_AUDIT_NEXT_ALLOWED,
     PHASE_19_PAPER_RUNTIME_SIMULATION_EXECUTION_SAFETY_AUDIT_SCHEMA_VERSION,
@@ -4784,4 +4797,18 @@ __all__ += (
     "Phase19PaperRuntimeSimulationExecutionSafetyAuditor",
     "Phase19PaperRuntimeSimulationExecutionSafetyFinding",
     "audit_phase19_paper_runtime_simulation_execution_safety",
+)
+
+__all__ += (
+    "PHASE_19_PAPER_RUNTIME_SIMULATION_EXECUTION_FINAL_HANDOFF_GUARDS",
+    "PHASE_19_PAPER_RUNTIME_SIMULATION_EXECUTION_FINAL_HANDOFF_NEXT_ALLOWED",
+    "PHASE_19_PAPER_RUNTIME_SIMULATION_EXECUTION_FINAL_HANDOFF_SCHEMA_VERSION",
+    "PHASE_19_PAPER_RUNTIME_SIMULATION_EXECUTION_FINAL_HANDOFF_SOURCE",
+    "PHASE_19_PAPER_RUNTIME_SIMULATION_EXECUTION_FINAL_HANDOFF_STATUS",
+    "PHASE_19_PAPER_RUNTIME_SIMULATION_EXECUTION_RELEASE_TAG",
+    "Phase19PaperRuntimeSimulationExecutionFinalHandoff",
+    "Phase19PaperRuntimeSimulationExecutionFinalHandoffBuilder",
+    "Phase19PaperRuntimeSimulationExecutionFinalHandoffDecision",
+    "Phase19PaperRuntimeSimulationExecutionFinalHandoffGuard",
+    "generate_phase19_paper_runtime_simulation_execution_final_handoff",
 )
