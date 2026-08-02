@@ -1152,3 +1152,6 @@ def test_phase19_paper_runtime_simulation_execution_final_handoff_imports() -> N
 
 def test_phase20_in_memory_paper_runtime_execution_admission_imports() -> None:
     __import__("app.strategy.phase20_in_memory_paper_runtime_execution_admission")
+
+def test_phase20_in_memory_paper_runtime_execution_engine_blueprint_imports() -> None:
+    __import__("app.strategy.phase20_in_memory_paper_runtime_execution_engine_blueprint")

@@ -948,6 +948,21 @@ from app.strategy.phase20_in_memory_paper_runtime_execution_admission import (
     Phase20InMemoryPaperRuntimeExecutionAdmissionRequirement,
     admit_phase20_in_memory_paper_runtime_simulation_execution,
 )
+from app.strategy.phase20_in_memory_paper_runtime_execution_engine_blueprint import (
+    PHASE_20_IN_MEMORY_PAPER_RUNTIME_ENGINE_BLUEPRINT_NEXT_ALLOWED,
+    PHASE_20_IN_MEMORY_PAPER_RUNTIME_ENGINE_BLUEPRINT_SCHEMA_VERSION,
+    PHASE_20_IN_MEMORY_PAPER_RUNTIME_ENGINE_BLUEPRINT_SOURCE,
+    PHASE_20_IN_MEMORY_PAPER_RUNTIME_ENGINE_BLUEPRINT_STATUS,
+    PHASE_20_IN_MEMORY_PAPER_RUNTIME_ENGINE_COMPONENTS,
+    PHASE_20_IN_MEMORY_PAPER_RUNTIME_ENGINE_INVARIANTS,
+    PHASE_20_IN_MEMORY_PAPER_RUNTIME_ENGINE_STATES,
+    Phase20InMemoryPaperRuntimeEngineBlueprint,
+    Phase20InMemoryPaperRuntimeEngineBlueprintDecision,
+    Phase20InMemoryPaperRuntimeEngineBlueprintPlanner,
+    Phase20InMemoryPaperRuntimeEngineComponent,
+    Phase20InMemoryPaperRuntimeEngineInvariant,
+    build_phase20_in_memory_paper_runtime_execution_engine_blueprint,
+)
 from app.strategy.planning_audit_export import (
     PLANNING_AUDIT_EXPORT_SCHEMA_VERSION,
     AuditExportEnvelope,
@@ -4838,4 +4853,20 @@ __all__ += (
     "Phase20InMemoryPaperRuntimeExecutionAdmissionGate",
     "Phase20InMemoryPaperRuntimeExecutionAdmissionRequirement",
     "admit_phase20_in_memory_paper_runtime_simulation_execution",
+)
+
+__all__ += (
+    "PHASE_20_IN_MEMORY_PAPER_RUNTIME_ENGINE_BLUEPRINT_NEXT_ALLOWED",
+    "PHASE_20_IN_MEMORY_PAPER_RUNTIME_ENGINE_BLUEPRINT_SCHEMA_VERSION",
+    "PHASE_20_IN_MEMORY_PAPER_RUNTIME_ENGINE_BLUEPRINT_SOURCE",
+    "PHASE_20_IN_MEMORY_PAPER_RUNTIME_ENGINE_BLUEPRINT_STATUS",
+    "PHASE_20_IN_MEMORY_PAPER_RUNTIME_ENGINE_COMPONENTS",
+    "PHASE_20_IN_MEMORY_PAPER_RUNTIME_ENGINE_INVARIANTS",
+    "PHASE_20_IN_MEMORY_PAPER_RUNTIME_ENGINE_STATES",
+    "Phase20InMemoryPaperRuntimeEngineBlueprint",
+    "Phase20InMemoryPaperRuntimeEngineBlueprintDecision",
+    "Phase20InMemoryPaperRuntimeEngineBlueprintPlanner",
+    "Phase20InMemoryPaperRuntimeEngineComponent",
+    "Phase20InMemoryPaperRuntimeEngineInvariant",
+    "build_phase20_in_memory_paper_runtime_execution_engine_blueprint",
 )
