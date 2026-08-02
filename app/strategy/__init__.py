@@ -884,6 +884,20 @@ from app.strategy.phase19_paper_runtime_simulation_execution_admission import (
     Phase19PaperRuntimeSimulationExecutionAdmissionRequirement,
     admit_phase19_paper_runtime_simulation_execution_planning,
 )
+from app.strategy.phase19_paper_runtime_simulation_execution_blueprint import (
+    PHASE_19_PAPER_RUNTIME_SIMULATION_EXECUTION_BLUEPRINT_NEXT_ALLOWED,
+    PHASE_19_PAPER_RUNTIME_SIMULATION_EXECUTION_BLUEPRINT_SCHEMA_VERSION,
+    PHASE_19_PAPER_RUNTIME_SIMULATION_EXECUTION_BLUEPRINT_SOURCE,
+    PHASE_19_PAPER_RUNTIME_SIMULATION_EXECUTION_BLUEPRINT_STATUS,
+    PHASE_19_PAPER_RUNTIME_SIMULATION_EXECUTION_COMPONENTS,
+    PHASE_19_PAPER_RUNTIME_SIMULATION_EXECUTION_REQUIREMENTS,
+    Phase19PaperRuntimeSimulationExecutionBlueprint,
+    Phase19PaperRuntimeSimulationExecutionBlueprintDecision,
+    Phase19PaperRuntimeSimulationExecutionBlueprintPlanner,
+    Phase19PaperRuntimeSimulationExecutionComponent,
+    Phase19PaperRuntimeSimulationExecutionRequirement,
+    build_phase19_paper_runtime_simulation_execution_blueprint,
+)
 from app.strategy.planning_audit_export import (
     PLANNING_AUDIT_EXPORT_SCHEMA_VERSION,
     AuditExportEnvelope,
@@ -4705,4 +4719,19 @@ __all__ += (
     "Phase19PaperRuntimeSimulationExecutionAdmissionGate",
     "Phase19PaperRuntimeSimulationExecutionAdmissionRequirement",
     "admit_phase19_paper_runtime_simulation_execution_planning",
+)
+
+__all__ += (
+    "PHASE_19_PAPER_RUNTIME_SIMULATION_EXECUTION_BLUEPRINT_NEXT_ALLOWED",
+    "PHASE_19_PAPER_RUNTIME_SIMULATION_EXECUTION_BLUEPRINT_SCHEMA_VERSION",
+    "PHASE_19_PAPER_RUNTIME_SIMULATION_EXECUTION_BLUEPRINT_SOURCE",
+    "PHASE_19_PAPER_RUNTIME_SIMULATION_EXECUTION_BLUEPRINT_STATUS",
+    "PHASE_19_PAPER_RUNTIME_SIMULATION_EXECUTION_COMPONENTS",
+    "PHASE_19_PAPER_RUNTIME_SIMULATION_EXECUTION_REQUIREMENTS",
+    "Phase19PaperRuntimeSimulationExecutionBlueprint",
+    "Phase19PaperRuntimeSimulationExecutionBlueprintDecision",
+    "Phase19PaperRuntimeSimulationExecutionBlueprintPlanner",
+    "Phase19PaperRuntimeSimulationExecutionComponent",
+    "Phase19PaperRuntimeSimulationExecutionRequirement",
+    "build_phase19_paper_runtime_simulation_execution_blueprint",
 )
