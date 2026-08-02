@@ -963,6 +963,19 @@ from app.strategy.phase20_in_memory_paper_runtime_execution_engine_blueprint imp
     Phase20InMemoryPaperRuntimeEngineInvariant,
     build_phase20_in_memory_paper_runtime_execution_engine_blueprint,
 )
+from app.strategy.phase20_in_memory_paper_runtime_execution_engine_final_handoff import (
+    PHASE_20_IN_MEMORY_PAPER_RUNTIME_ENGINE_FINAL_HANDOFF_GUARDS,
+    PHASE_20_IN_MEMORY_PAPER_RUNTIME_ENGINE_FINAL_HANDOFF_NEXT_ALLOWED,
+    PHASE_20_IN_MEMORY_PAPER_RUNTIME_ENGINE_FINAL_HANDOFF_SCHEMA_VERSION,
+    PHASE_20_IN_MEMORY_PAPER_RUNTIME_ENGINE_FINAL_HANDOFF_SOURCE,
+    PHASE_20_IN_MEMORY_PAPER_RUNTIME_ENGINE_FINAL_HANDOFF_STATUS,
+    PHASE_20_IN_MEMORY_PAPER_RUNTIME_ENGINE_RELEASE_TAG,
+    Phase20InMemoryPaperRuntimeEngineFinalHandoff,
+    Phase20InMemoryPaperRuntimeEngineFinalHandoffBuilder,
+    Phase20InMemoryPaperRuntimeEngineFinalHandoffDecision,
+    Phase20InMemoryPaperRuntimeEngineFinalHandoffGuard,
+    generate_phase20_in_memory_paper_runtime_execution_engine_final_handoff,
+)
 from app.strategy.phase20_in_memory_paper_runtime_execution_engine_safety_audit import (
     PHASE_20_IN_MEMORY_PAPER_RUNTIME_ENGINE_SAFETY_AUDIT_NEXT_ALLOWED,
     PHASE_20_IN_MEMORY_PAPER_RUNTIME_ENGINE_SAFETY_AUDIT_SCHEMA_VERSION,
@@ -4919,4 +4932,18 @@ __all__ += (
     "Phase20InMemoryPaperRuntimeEngineSafetyAuditor",
     "Phase20InMemoryPaperRuntimeEngineSafetyFinding",
     "audit_phase20_in_memory_paper_runtime_execution_engine_safety",
+)
+
+__all__ += (
+    "PHASE_20_IN_MEMORY_PAPER_RUNTIME_ENGINE_FINAL_HANDOFF_GUARDS",
+    "PHASE_20_IN_MEMORY_PAPER_RUNTIME_ENGINE_FINAL_HANDOFF_NEXT_ALLOWED",
+    "PHASE_20_IN_MEMORY_PAPER_RUNTIME_ENGINE_FINAL_HANDOFF_SCHEMA_VERSION",
+    "PHASE_20_IN_MEMORY_PAPER_RUNTIME_ENGINE_FINAL_HANDOFF_SOURCE",
+    "PHASE_20_IN_MEMORY_PAPER_RUNTIME_ENGINE_FINAL_HANDOFF_STATUS",
+    "PHASE_20_IN_MEMORY_PAPER_RUNTIME_ENGINE_RELEASE_TAG",
+    "Phase20InMemoryPaperRuntimeEngineFinalHandoff",
+    "Phase20InMemoryPaperRuntimeEngineFinalHandoffBuilder",
+    "Phase20InMemoryPaperRuntimeEngineFinalHandoffDecision",
+    "Phase20InMemoryPaperRuntimeEngineFinalHandoffGuard",
+    "generate_phase20_in_memory_paper_runtime_execution_engine_final_handoff",
 )
