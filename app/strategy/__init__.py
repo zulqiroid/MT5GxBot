@@ -871,6 +871,19 @@ from app.strategy.phase18_paper_runtime_simulation_validation import (
     Phase18PaperRuntimeSimulationValidator,
     validate_phase18_paper_runtime_simulation_blueprint,
 )
+from app.strategy.phase19_paper_runtime_simulation_execution_admission import (
+    PHASE_19_PAPER_RUNTIME_SIMULATION_EXECUTION_ADMISSION_NEXT_ALLOWED,
+    PHASE_19_PAPER_RUNTIME_SIMULATION_EXECUTION_ADMISSION_REQUIREMENTS,
+    PHASE_19_PAPER_RUNTIME_SIMULATION_EXECUTION_ADMISSION_SCHEMA_VERSION,
+    PHASE_19_PAPER_RUNTIME_SIMULATION_EXECUTION_ADMISSION_SOURCE,
+    PHASE_19_PAPER_RUNTIME_SIMULATION_EXECUTION_ADMISSION_STATUS,
+    PHASE_19_PAPER_RUNTIME_SIMULATION_EXECUTION_BLOCKED_CAPABILITIES,
+    Phase19PaperRuntimeSimulationExecutionAdmission,
+    Phase19PaperRuntimeSimulationExecutionAdmissionDecision,
+    Phase19PaperRuntimeSimulationExecutionAdmissionGate,
+    Phase19PaperRuntimeSimulationExecutionAdmissionRequirement,
+    admit_phase19_paper_runtime_simulation_execution_planning,
+)
 from app.strategy.planning_audit_export import (
     PLANNING_AUDIT_EXPORT_SCHEMA_VERSION,
     AuditExportEnvelope,
@@ -4678,4 +4691,18 @@ __all__ += (
     "Phase18PaperRuntimeSimulationFinalHandoffFactory",
     "Phase18PaperRuntimeSimulationFinalHandoffGuard",
     "generate_phase18_paper_runtime_simulation_final_handoff",
+)
+
+__all__ += (
+    "PHASE_19_PAPER_RUNTIME_SIMULATION_EXECUTION_ADMISSION_NEXT_ALLOWED",
+    "PHASE_19_PAPER_RUNTIME_SIMULATION_EXECUTION_ADMISSION_REQUIREMENTS",
+    "PHASE_19_PAPER_RUNTIME_SIMULATION_EXECUTION_ADMISSION_SCHEMA_VERSION",
+    "PHASE_19_PAPER_RUNTIME_SIMULATION_EXECUTION_ADMISSION_SOURCE",
+    "PHASE_19_PAPER_RUNTIME_SIMULATION_EXECUTION_ADMISSION_STATUS",
+    "PHASE_19_PAPER_RUNTIME_SIMULATION_EXECUTION_BLOCKED_CAPABILITIES",
+    "Phase19PaperRuntimeSimulationExecutionAdmission",
+    "Phase19PaperRuntimeSimulationExecutionAdmissionDecision",
+    "Phase19PaperRuntimeSimulationExecutionAdmissionGate",
+    "Phase19PaperRuntimeSimulationExecutionAdmissionRequirement",
+    "admit_phase19_paper_runtime_simulation_execution_planning",
 )
