@@ -963,6 +963,18 @@ from app.strategy.phase20_in_memory_paper_runtime_execution_engine_blueprint imp
     Phase20InMemoryPaperRuntimeEngineInvariant,
     build_phase20_in_memory_paper_runtime_execution_engine_blueprint,
 )
+from app.strategy.phase20_in_memory_paper_runtime_execution_engine_safety_audit import (
+    PHASE_20_IN_MEMORY_PAPER_RUNTIME_ENGINE_SAFETY_AUDIT_NEXT_ALLOWED,
+    PHASE_20_IN_MEMORY_PAPER_RUNTIME_ENGINE_SAFETY_AUDIT_SCHEMA_VERSION,
+    PHASE_20_IN_MEMORY_PAPER_RUNTIME_ENGINE_SAFETY_AUDIT_SOURCE,
+    PHASE_20_IN_MEMORY_PAPER_RUNTIME_ENGINE_SAFETY_AUDIT_STATUS,
+    PHASE_20_IN_MEMORY_PAPER_RUNTIME_ENGINE_SAFETY_FINDINGS,
+    Phase20InMemoryPaperRuntimeEngineSafetyAudit,
+    Phase20InMemoryPaperRuntimeEngineSafetyAuditDecision,
+    Phase20InMemoryPaperRuntimeEngineSafetyAuditor,
+    Phase20InMemoryPaperRuntimeEngineSafetyFinding,
+    audit_phase20_in_memory_paper_runtime_execution_engine_safety,
+)
 from app.strategy.phase20_in_memory_paper_runtime_execution_engine_validation import (
     PHASE_20_IN_MEMORY_PAPER_RUNTIME_ENGINE_VALIDATION_CHECKS,
     PHASE_20_IN_MEMORY_PAPER_RUNTIME_ENGINE_VALIDATION_NEXT_ALLOWED,
@@ -4894,4 +4906,17 @@ __all__ += (
     "Phase20InMemoryPaperRuntimeEngineValidationDecision",
     "Phase20InMemoryPaperRuntimeEngineValidationReport",
     "validate_phase20_in_memory_paper_runtime_execution_engine_blueprint",
+)
+
+__all__ += (
+    "PHASE_20_IN_MEMORY_PAPER_RUNTIME_ENGINE_SAFETY_AUDIT_NEXT_ALLOWED",
+    "PHASE_20_IN_MEMORY_PAPER_RUNTIME_ENGINE_SAFETY_AUDIT_SCHEMA_VERSION",
+    "PHASE_20_IN_MEMORY_PAPER_RUNTIME_ENGINE_SAFETY_AUDIT_SOURCE",
+    "PHASE_20_IN_MEMORY_PAPER_RUNTIME_ENGINE_SAFETY_AUDIT_STATUS",
+    "PHASE_20_IN_MEMORY_PAPER_RUNTIME_ENGINE_SAFETY_FINDINGS",
+    "Phase20InMemoryPaperRuntimeEngineSafetyAudit",
+    "Phase20InMemoryPaperRuntimeEngineSafetyAuditDecision",
+    "Phase20InMemoryPaperRuntimeEngineSafetyAuditor",
+    "Phase20InMemoryPaperRuntimeEngineSafetyFinding",
+    "audit_phase20_in_memory_paper_runtime_execution_engine_safety",
 )

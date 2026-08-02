@@ -1158,3 +1158,6 @@ def test_phase20_in_memory_paper_runtime_execution_engine_blueprint_imports() ->
 
 def test_phase20_in_memory_paper_runtime_execution_engine_validation_imports() -> None:
     __import__("app.strategy.phase20_in_memory_paper_runtime_execution_engine_validation")
+
+def test_phase20_in_memory_paper_runtime_execution_engine_safety_audit_imports() -> None:
+    __import__("app.strategy.phase20_in_memory_paper_runtime_execution_engine_safety_audit")
