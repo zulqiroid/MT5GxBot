@@ -1155,3 +1155,6 @@ def test_phase20_in_memory_paper_runtime_execution_admission_imports() -> None:
 
 def test_phase20_in_memory_paper_runtime_execution_engine_blueprint_imports() -> None:
     __import__("app.strategy.phase20_in_memory_paper_runtime_execution_engine_blueprint")
+
+def test_phase20_in_memory_paper_runtime_execution_engine_validation_imports() -> None:
+    __import__("app.strategy.phase20_in_memory_paper_runtime_execution_engine_validation")

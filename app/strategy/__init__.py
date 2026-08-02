@@ -963,6 +963,18 @@ from app.strategy.phase20_in_memory_paper_runtime_execution_engine_blueprint imp
     Phase20InMemoryPaperRuntimeEngineInvariant,
     build_phase20_in_memory_paper_runtime_execution_engine_blueprint,
 )
+from app.strategy.phase20_in_memory_paper_runtime_execution_engine_validation import (
+    PHASE_20_IN_MEMORY_PAPER_RUNTIME_ENGINE_VALIDATION_CHECKS,
+    PHASE_20_IN_MEMORY_PAPER_RUNTIME_ENGINE_VALIDATION_NEXT_ALLOWED,
+    PHASE_20_IN_MEMORY_PAPER_RUNTIME_ENGINE_VALIDATION_SCHEMA_VERSION,
+    PHASE_20_IN_MEMORY_PAPER_RUNTIME_ENGINE_VALIDATION_SOURCE,
+    PHASE_20_IN_MEMORY_PAPER_RUNTIME_ENGINE_VALIDATION_STATUS,
+    Phase20InMemoryPaperRuntimeEngineBlueprintValidator,
+    Phase20InMemoryPaperRuntimeEngineValidationCheck,
+    Phase20InMemoryPaperRuntimeEngineValidationDecision,
+    Phase20InMemoryPaperRuntimeEngineValidationReport,
+    validate_phase20_in_memory_paper_runtime_execution_engine_blueprint,
+)
 from app.strategy.planning_audit_export import (
     PLANNING_AUDIT_EXPORT_SCHEMA_VERSION,
     AuditExportEnvelope,
@@ -4869,4 +4881,17 @@ __all__ += (
     "Phase20InMemoryPaperRuntimeEngineComponent",
     "Phase20InMemoryPaperRuntimeEngineInvariant",
     "build_phase20_in_memory_paper_runtime_execution_engine_blueprint",
+)
+
+__all__ += (
+    "PHASE_20_IN_MEMORY_PAPER_RUNTIME_ENGINE_VALIDATION_CHECKS",
+    "PHASE_20_IN_MEMORY_PAPER_RUNTIME_ENGINE_VALIDATION_NEXT_ALLOWED",
+    "PHASE_20_IN_MEMORY_PAPER_RUNTIME_ENGINE_VALIDATION_SCHEMA_VERSION",
+    "PHASE_20_IN_MEMORY_PAPER_RUNTIME_ENGINE_VALIDATION_SOURCE",
+    "PHASE_20_IN_MEMORY_PAPER_RUNTIME_ENGINE_VALIDATION_STATUS",
+    "Phase20InMemoryPaperRuntimeEngineBlueprintValidator",
+    "Phase20InMemoryPaperRuntimeEngineValidationCheck",
+    "Phase20InMemoryPaperRuntimeEngineValidationDecision",
+    "Phase20InMemoryPaperRuntimeEngineValidationReport",
+    "validate_phase20_in_memory_paper_runtime_execution_engine_blueprint",
 )
