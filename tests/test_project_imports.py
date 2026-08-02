@@ -1149,3 +1149,6 @@ def test_phase19_paper_runtime_simulation_execution_safety_audit_imports() -> No
 
 def test_phase19_paper_runtime_simulation_execution_final_handoff_imports() -> None:
     __import__("app.strategy.phase19_paper_runtime_simulation_execution_final_handoff")
+
+def test_phase20_in_memory_paper_runtime_execution_admission_imports() -> None:
+    __import__("app.strategy.phase20_in_memory_paper_runtime_execution_admission")

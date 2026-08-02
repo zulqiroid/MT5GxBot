@@ -935,6 +935,19 @@ from app.strategy.phase19_paper_runtime_simulation_execution_safety_audit import
     Phase19PaperRuntimeSimulationExecutionSafetyFinding,
     audit_phase19_paper_runtime_simulation_execution_safety,
 )
+from app.strategy.phase20_in_memory_paper_runtime_execution_admission import (
+    PHASE_20_IN_MEMORY_PAPER_RUNTIME_EXECUTION_ADMISSION_NEXT_ALLOWED,
+    PHASE_20_IN_MEMORY_PAPER_RUNTIME_EXECUTION_ADMISSION_REQUIREMENTS,
+    PHASE_20_IN_MEMORY_PAPER_RUNTIME_EXECUTION_ADMISSION_SCHEMA_VERSION,
+    PHASE_20_IN_MEMORY_PAPER_RUNTIME_EXECUTION_ADMISSION_SOURCE,
+    PHASE_20_IN_MEMORY_PAPER_RUNTIME_EXECUTION_ADMISSION_STATUS,
+    PHASE_20_IN_MEMORY_PAPER_RUNTIME_EXECUTION_BLOCKED_CAPABILITIES,
+    Phase20InMemoryPaperRuntimeExecutionAdmission,
+    Phase20InMemoryPaperRuntimeExecutionAdmissionDecision,
+    Phase20InMemoryPaperRuntimeExecutionAdmissionGate,
+    Phase20InMemoryPaperRuntimeExecutionAdmissionRequirement,
+    admit_phase20_in_memory_paper_runtime_simulation_execution,
+)
 from app.strategy.planning_audit_export import (
     PLANNING_AUDIT_EXPORT_SCHEMA_VERSION,
     AuditExportEnvelope,
@@ -4811,4 +4824,18 @@ __all__ += (
     "Phase19PaperRuntimeSimulationExecutionFinalHandoffDecision",
     "Phase19PaperRuntimeSimulationExecutionFinalHandoffGuard",
     "generate_phase19_paper_runtime_simulation_execution_final_handoff",
+)
+
+__all__ += (
+    "PHASE_20_IN_MEMORY_PAPER_RUNTIME_EXECUTION_ADMISSION_NEXT_ALLOWED",
+    "PHASE_20_IN_MEMORY_PAPER_RUNTIME_EXECUTION_ADMISSION_REQUIREMENTS",
+    "PHASE_20_IN_MEMORY_PAPER_RUNTIME_EXECUTION_ADMISSION_SCHEMA_VERSION",
+    "PHASE_20_IN_MEMORY_PAPER_RUNTIME_EXECUTION_ADMISSION_SOURCE",
+    "PHASE_20_IN_MEMORY_PAPER_RUNTIME_EXECUTION_ADMISSION_STATUS",
+    "PHASE_20_IN_MEMORY_PAPER_RUNTIME_EXECUTION_BLOCKED_CAPABILITIES",
+    "Phase20InMemoryPaperRuntimeExecutionAdmission",
+    "Phase20InMemoryPaperRuntimeExecutionAdmissionDecision",
+    "Phase20InMemoryPaperRuntimeExecutionAdmissionGate",
+    "Phase20InMemoryPaperRuntimeExecutionAdmissionRequirement",
+    "admit_phase20_in_memory_paper_runtime_simulation_execution",
 )
